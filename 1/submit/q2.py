@@ -147,7 +147,6 @@ def measure_intervals_cv_helper(xtrain, ytrain, xtest, ytest, k):
     y = y[idx]
     #run ERM
     intervals, error = find_best_interval(x, y, k)
-    empirical_error = float(error) / float(len(xtrain))
     
     #Calculate error on test set
     error = 0
@@ -155,7 +154,7 @@ def measure_intervals_cv_helper(xtrain, ytrain, xtest, ytest, k):
         if ytest[i] != predict(intervals, xtest[i]):
             error += 1
     cv_error = float(error) / float(len(xtest))
-    return cv_error, empirical_error
+    return cv_error
 
 #Measure intervals CV error
 #kfold is the K-fold CV's K parameter (i.e. how many folds)
@@ -177,7 +176,8 @@ def prepare_2f(kfold):
     x, y = draw_samples(m=50)
     for k in range(1, 20 + 1, 1):
         start = time.time()
-        cv_errors[k], empirical_errors[k] = measure_intervals_cv(x, y, kfold, k)
+        cv_errors[k] = measure_intervals_cv(x, y, kfold, k)
+        intervals, empirical_errors[k] = find_best_interval(x, y, k)
         end = time.time()
         print "k:",k, "cv_error:",true_errors[k], "empirical_error:",empirical_errors[k],"elapsed:",end-start
     return cv_errors, empirical_errors
