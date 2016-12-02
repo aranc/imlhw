@@ -890,7 +890,51 @@ c.
 \end_layout
 
 \begin_layout Standard
-Best k is 1
+The best K is 1.
+ As we use a more flexible K, we get inferior results on the test data.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Box ovalbox
+position "t"
+hor_pos "c"
+has_inner_box 1
+inner_pos "t"
+use_parbox 0
+use_makebox 0
+width "100col%"
+special "none"
+height "1in"
+height_special "totalheight"
+thickness "0.4pt"
+separation "3pt"
+shadowsize "4pt"
+framecolor "black"
+backgroundcolor "none"
+status open
+
+\begin_layout Plain Layout
+How to run:
+\end_layout
+
+\begin_layout Plain Layout
+python 
+\begin_inset Formula $\sim$
+\end_inset
+
+arancarmon/imlhw/1/submit/1c.py <image output location>
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $\phantom{A}$
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
@@ -902,6 +946,55 @@ d.
 	filename pics/imlhw1_1d.png
 	lyxscale 20
 	scale 30
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+The more training images we use, the better are the results.
+\end_layout
+
+\begin_layout Standard
+It should be noted, the sometimes images appear both in the test and in
+ the training sets.
+\end_layout
+
+\begin_layout Standard
+In such cases, when using K=1, we will of course get a correct classification.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Box ovalbox
+position "t"
+hor_pos "c"
+has_inner_box 1
+inner_pos "t"
+use_parbox 0
+use_makebox 0
+width "100col%"
+special "none"
+height "1in"
+height_special "totalheight"
+thickness "0.4pt"
+separation "3pt"
+shadowsize "4pt"
+framecolor "black"
+backgroundcolor "none"
+status open
+
+\begin_layout Plain Layout
+How to run:
+\end_layout
+
+\begin_layout Plain Layout
+python 
+\begin_inset Formula $\sim$
+\end_inset
+
+arancarmon/imlhw/1/submit/1d.py <image output location>
+\end_layout
 
 \end_inset
 
