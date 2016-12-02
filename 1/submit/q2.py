@@ -152,7 +152,7 @@ def measure_intervals_cv_helper(xtrain, ytrain, xtest, ytest, k):
     #Calculate error on test set
     error = 0
     for i in range(len(xtest)):
-        if ytest[i] != predict(intervals, xtest):
+        if ytest[i] != predict(intervals, xtest[i]):
             error += 1
     cv_error = float(error) / float(len(xtest))
     return cv_error, empirical_error
