@@ -1,0 +1,11 @@
+Files & Usage:
+
+knn.py:
+  KNN implementation, used by other commands
+
+1a.py:
+  Answer question 1a
+  Outputs measurement to stdout
+
+interval.py:
+  ERM implementation received as part of the exercise
