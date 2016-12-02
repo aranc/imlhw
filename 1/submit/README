@@ -4,8 +4,16 @@ knn.py:
   KNN implementation, used by other commands
 
 1b.py:
-  Answer question 1a
+  Answer question 1b
   Outputs measurement to stdout
 
-interval.py:
+1c.py:
+  Answer question 1c
+  Usage: python 1c.py <image output name>
+
+1d.py:
+  Answer question 1d
+  Usage: python 1d.py <image output name>
+
+intervals.py:
   ERM implementation received as part of the exercise
