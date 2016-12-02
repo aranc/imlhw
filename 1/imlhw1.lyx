@@ -1158,6 +1158,9 @@ arancarmon/imlhw/1/submit/2c.py <image output location>
 
 \begin_layout Standard
 d.
+ The measurements done this way are not stable enough in my opinion, I would
+ rather use the measurements averaged as requested in question 2e.
+ And indeed, we see from the plot in 2e that K=2 gives the lowest true error.
 \end_layout
 
 \begin_layout Standard
