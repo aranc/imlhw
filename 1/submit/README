@@ -3,7 +3,7 @@ Files & Usage:
 knn.py:
   KNN implementation, used by other commands
 
-1a.py:
+1b.py:
   Answer question 1a
   Outputs measurement to stdout
 
