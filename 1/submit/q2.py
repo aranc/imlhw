@@ -167,7 +167,7 @@ def measure_intervals_cv(x, y, kfold, k):
         ytest = y[fold_len * i : fold_len * (i+1)]
         xtrain = np.concatenate((x[:fold_len * i],x[fold_len * (i+1):]))
         ytrain = np.concatenate((y[:fold_len * i],y[fold_len * (i+1):]))
-        res[i] = measure_intervals_cv_helper(xtrain, ytrain, xtest, ytest)
+        res[i] = measure_intervals_cv_helper(xtrain, ytrain, xtest, ytest, k)
     return np.mean(res)
 
 #Prepare measurements for question 2f
