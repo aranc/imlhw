@@ -1,5 +1,6 @@
 import time
 import numpy
+import numpy as np
 import matplotlib.pyplot as plt
 from intervals import find_best_interval
 
@@ -129,24 +130,63 @@ def plot_2e(output):
     plt.legend()
     plt.savefig(output)
 
+#Predict for x according to intervals model
+def predict(intervals, x):
+    for interval in intervals:
+        if interval[0] < x < interval[1]:
+            return True
+    return False
+
+#Measure intervals CV error helper function, calcuate for a specific fold
+def measure_intervals_cv_helper(xtrain, ytrain, xtest, ytest):
+    x = xtrain
+    y = ytrain
+    #sort sample
+    idx = numpy.argsort(x)
+    x = x[idx]
+    y = y[idx]
+    #run ERM
+    intervals, error = find_best_interval(x, y, k)
+    empirical_error = float(error) / float(len(xtrain))
+    
+    #Calculate error on test set
+    error = 0
+    for i in range(len(xtest)):
+        if ytest[i] != predict(intervals, xtest):
+            error += 1
+    cv_error = float(error) / float(len(xtest))
+    return cv_error, empirical_error
+
+#Measure intervals CV error
+#kfold is the K-fold CV's K parameter (i.e. how many folds)
+def measure_intervals_cv_helper(x, y, kfold):
+    fold_len = len(x) / kfold
+    res = np.zeros(kfold)
+    for i in range(kfold):
+        xtest = x[fold_len * i : fold_len * (i+1)]
+        ytest = y[fold_len * i : fold_len * (i+1)]
+        xtrain = np.concatenate((x[:fold_len * i],x[fold_len * (i+1):]))
+        ytrain = np.concatenate((y[:fold_len * i],y[fold_len * (i+1):]))
+        res[i] = measure_intervals_cv_helper(xtrain, ytrain, xtest, ytest)
+    return np.mean(res)
 
 #Prepare measurements for question 2f
 def prepare_2f(kfold):
     empirical_errors = {}
-    true_errors = {}
+    cv_errors = {}
     m = 50
     for k in range(1, 20 + 1, 1):
         start = time.time()
-        true_errors[k], empirical_errors[k] = measure_intervals_T_times(m, k, 100)
+        cv_errors[k], empirical_errors[k] = measure_intervals_cv(x, y, kfold)
         end = time.time()
-        print "k:",k, "true_error:",true_errors[k], "empirical_error:",empirical_errors[k],"elapsed:",end-start
-    return true_errors, empirical_errors
+        print "k:",k, "cv_error:",true_errors[k], "empirical_error:",empirical_errors[k],"elapsed:",end-start
+    return cv_errors, empirical_errors
 
-#Plot question 2e
-def plot_2f(output):
-    true_errors, empirical_errors = prepare_2e()
+#Plot question 2f
+def plot_2f(kfold, output):
+    cv_errors, empirical_errors = prepare_2f(kfold)
     ks = range(1, 20 + 1, 1)
-    plt.plot(ks, [true_errors[k] for k in ks], 'ko-', label='True error')
+    plt.plot(ks, [cv_errors[k] for k in ks], 'ko-', label='CV error ('+str(kfold)+')')
     plt.plot(ks, [empirical_errors[k] for k in ks],'ko--', label='Empirical error')
     plt.legend()
     plt.savefig(output)

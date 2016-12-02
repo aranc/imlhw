@@ -1288,12 +1288,24 @@ python
 \begin_inset Formula $\sim$
 \end_inset
 
-arancarmon/imlhw/1/submit/2f.py <K value for K-fold>
+arancarmon/imlhw/1/submit/2f.py <K value for K-fold> <image output location>
 \end_layout
 
 \end_inset
 
 
+\end_layout
+
+\begin_layout Standard
+With K=5:
+\end_layout
+
+\begin_layout Standard
+With K=10:
+\end_layout
+
+\begin_layout Standard
+With K=50:
 \end_layout
 
 \end_body
