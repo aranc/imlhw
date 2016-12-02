@@ -128,3 +128,25 @@ def plot_2e(output):
     plt.plot(ks, [empirical_errors[k] for k in ks],'ko--', label='Empirical error')
     plt.legend()
     plt.savefig(output)
+
+
+#Prepare measurements for question 2f
+def prepare_2f(kfold):
+    empirical_errors = {}
+    true_errors = {}
+    m = 50
+    for k in range(1, 20 + 1, 1):
+        start = time.time()
+        true_errors[k], empirical_errors[k] = measure_intervals_T_times(m, k, 100)
+        end = time.time()
+        print "k:",k, "true_error:",true_errors[k], "empirical_error:",empirical_errors[k],"elapsed:",end-start
+    return true_errors, empirical_errors
+
+#Plot question 2e
+def plot_2f(output):
+    true_errors, empirical_errors = prepare_2e()
+    ks = range(1, 20 + 1, 1)
+    plt.plot(ks, [true_errors[k] for k in ks], 'ko-', label='True error')
+    plt.plot(ks, [empirical_errors[k] for k in ks],'ko--', label='Empirical error')
+    plt.legend()
+    plt.savefig(output)

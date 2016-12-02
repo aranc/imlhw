@@ -1252,8 +1252,7 @@ arancarmon/imlhw/1/submit/2c.py <image output location>
 
 \begin_layout Standard
 f.
- Instead of drawing a new sample every time, we will use K-fold CV and LOOCV
- (i.e.
+ We will try K-fold CV (with K=5 and K=10) and LOOCV (i.e.
  K-fold with K=50).
  According to what we learned, using K-fold with K=5 or K=10 is the recommended
  way to do so.
@@ -1287,7 +1286,7 @@ python
 \begin_inset Formula $\sim$
 \end_inset
 
-arancarmon/imlhw/1/submit/2f.py <K value for K-fold> <image output location>
+arancarmon/imlhw/1/submit/2f.py <K value for K-fold>
 \end_layout
 
 \end_inset
