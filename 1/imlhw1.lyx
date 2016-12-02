@@ -1100,6 +1100,27 @@ c.
 \end_layout
 
 \begin_layout Standard
+As the training size increase, the model classifies more successfully and
+ the true error decreases.
+\end_layout
+
+\begin_layout Standard
+On the other hand, this model is not very flexible, and when using more
+ points, the empirical error increases .
+\end_layout
+
+\begin_layout Standard
+Both errors are bounded.
+ The true error is bounded by the Bayes error.
+ The empirical error is bounded because when 
+\begin_inset Formula $m\to\infty$
+\end_inset
+
+, the model approximately doesn't change, and there is always a proportion
+ of points that will fall outside of the appropriate intervals.
+\end_layout
+
+\begin_layout Standard
 \begin_inset Box ovalbox
 position "t"
 hor_pos "c"
