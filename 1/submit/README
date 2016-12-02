@@ -25,4 +25,10 @@ q2.py:
   Answer question 2a
   Usage: python 2a.py <image output name>
 
+2c.py:
+  Answer question 2c
+  Usage: python 2c.py <image output name>
 
+2e.py:
+  Answer question 2e
+  Usage: python 2e.py <image output name>
