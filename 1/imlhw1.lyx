@@ -957,7 +957,7 @@ The more training images we use, the better are the results.
 \end_layout
 
 \begin_layout Standard
-It should be noted, the sometimes images appear both in the test and in
+It should be noted, that sometimes images appear both in the test and in
  the training sets.
 \end_layout
 
