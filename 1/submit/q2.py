@@ -138,7 +138,7 @@ def predict(intervals, x):
     return False
 
 #Measure intervals CV error helper function, calcuate for a specific fold
-def measure_intervals_cv_helper(xtrain, ytrain, xtest, ytest):
+def measure_intervals_cv_helper(xtrain, ytrain, xtest, ytest, k):
     x = xtrain
     y = ytrain
     #sort sample
@@ -159,7 +159,7 @@ def measure_intervals_cv_helper(xtrain, ytrain, xtest, ytest):
 
 #Measure intervals CV error
 #kfold is the K-fold CV's K parameter (i.e. how many folds)
-def measure_intervals_cv(x, y, kfold):
+def measure_intervals_cv(x, y, kfold, k):
     fold_len = len(x) / kfold
     res = np.zeros(kfold)
     for i in range(kfold):
@@ -177,7 +177,7 @@ def prepare_2f(kfold):
     x, y = draw_samples(m=50)
     for k in range(1, 20 + 1, 1):
         start = time.time()
-        cv_errors[k], empirical_errors[k] = measure_intervals_cv(x, y, kfold)
+        cv_errors[k], empirical_errors[k] = measure_intervals_cv(x, y, kfold, k)
         end = time.time()
         print "k:",k, "cv_error:",true_errors[k], "empirical_error:",empirical_errors[k],"elapsed:",end-start
     return cv_errors, empirical_errors
