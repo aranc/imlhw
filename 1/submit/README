@@ -36,3 +36,7 @@ q2.py:
 2e.py:
   Answer question 2e
   Usage: python 2e.py <image output name>
+
+2f.py:
+  Answer question 2f
+  Usage: python 2f.py <K value for K-fold CV> <image output name>
