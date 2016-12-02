@@ -189,7 +189,7 @@ def prepare_2f(kfold):
         cv_errors[k] = measure_intervals_cv(x, y, kfold, k)
         empirical_errors[k] = measure_empirical_error(x, y, k)
         end = time.time()
-        print "k:",k, "cv_error:",true_errors[k], "empirical_error:",empirical_errors[k],"elapsed:",end-start
+        print "k:",k, "cv_error:",cv_errors[k], "empirical_error:",empirical_errors[k],"elapsed:",end-start
     return cv_errors, empirical_errors
 
 #Plot question 2f
