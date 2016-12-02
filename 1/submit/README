@@ -29,6 +29,10 @@ q2.py:
   Answer question 2c
   Usage: python 2c.py <image output name>
 
+2d.py:
+  Answer question 2d
+  Outputs measurement to stdout
+
 2e.py:
   Answer question 2e
   Usage: python 2e.py <image output name>
