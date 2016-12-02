@@ -39,5 +39,4 @@ q2.py:
 
 2f.py:
   Answer question 2f
-  Usage: python 2f.py <K value for K-fold CV>
-  Outputs measurement to stdout
+  Usage: python 2f.py <K value for K-fold CV> <image output name>
