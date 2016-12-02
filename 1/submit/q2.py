@@ -71,6 +71,7 @@ def measure_intervals(m=50, k=2):
     true_error = calculate_true_error(intervals)
     return true_error, empirical_error
 
+#measure intervals ERM errors, averaged over T times
 def measure_intervals_T_times(m=50, k=2, T=100):
     empirical_errors = numpy.zeros(T)
     true_errors = numpy.zeros(T)
