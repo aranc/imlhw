@@ -20,7 +20,7 @@ def draw_samples(m=100):
         y[i] = 1 if y[i] < p else 0
     return x, y
 
-#Plot 2_a
+#Plot 2a
 def plot_2a(output):
     for x in (0.25, 0.5, 0.75):
         plt.plot([x,x],[-.1,1.1],'k--')
