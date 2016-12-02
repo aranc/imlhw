@@ -1158,9 +1158,11 @@ arancarmon/imlhw/1/submit/2c.py <image output location>
 
 \begin_layout Standard
 d.
- The measurements done this way are not stable enough in my opinion, I would
- rather use the measurements averaged as requested in question 2e.
- And indeed, we see from the plot in 2e that K=2 gives the lowest true error.
+ The K that gives the minimal measured empirical error is somewhat random
+ and becomes 0 very quick.
+ In anycase even when an increased K gives a low empirical error, it still
+ overfits on real data (as seen in the plot of question 2e).
+ 
 \end_layout
 
 \begin_layout Standard

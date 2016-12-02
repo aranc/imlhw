@@ -106,7 +106,7 @@ def answer_2d():
     ks = range(1, 20 + 1, 1)
     for k in ks:
         res[k] = measure_intervals(50, k)
-        print k, res[k]
+        print "K:",k, "Empirical error:", res[k][1]
 
 #Prepare measurements for question 2e
 def prepare_2e():
