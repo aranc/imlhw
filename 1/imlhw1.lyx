@@ -1,0 +1,913 @@
+#LyX 2.2 created this file. For more info see http://www.lyx.org/
+\lyxformat 508
+\begin_document
+\begin_header
+\save_transient_properties true
+\origin unavailable
+\textclass article
+\begin_preamble
+\date{}
+\usepackage{tikz}
+\usepackage{xcolor}
+\hypersetup{
+    colorlinks,
+    linkcolor={black!50!black},
+    citecolor={blue!50!black},
+    urlcolor={blue!80!black}
+}
+\usepackage{culmus}
+\def\L{\protect\pL}
+\usepackage{minted}
+\end_preamble
+\use_default_options true
+\maintain_unincluded_children false
+\language english
+\language_package default
+\inputencoding auto
+\fontencoding global
+\font_roman "default" "default"
+\font_sans "default" "default"
+\font_typewriter "default" "default"
+\font_math "auto" "auto"
+\font_default_family default
+\use_non_tex_fonts false
+\font_sc false
+\font_osf false
+\font_sf_scale 100 100
+\font_tt_scale 100 100
+\graphics default
+\default_output_format default
+\output_sync 0
+\bibtex_command default
+\index_command default
+\paperfontsize default
+\spacing single
+\use_hyperref true
+\pdf_bookmarks true
+\pdf_bookmarksnumbered false
+\pdf_bookmarksopen false
+\pdf_bookmarksopenlevel 1
+\pdf_breaklinks false
+\pdf_pdfborder false
+\pdf_colorlinks false
+\pdf_backref section
+\pdf_pdfusetitle false
+\papersize default
+\use_geometry false
+\use_package amsmath 2
+\use_package amssymb 1
+\use_package cancel 1
+\use_package esint 1
+\use_package mathdots 1
+\use_package mathtools 1
+\use_package mhchem 1
+\use_package stackrel 1
+\use_package stmaryrd 1
+\use_package undertilde 1
+\cite_engine basic
+\cite_engine_type default
+\biblio_style plain
+\use_bibtopic false
+\use_indices false
+\paperorientation portrait
+\suppress_date false
+\justification true
+\use_refstyle 1
+\index Index
+\shortcut idx
+\color #008000
+\end_index
+\secnumdepth 3
+\tocdepth 3
+\paragraph_separation skip
+\defskip smallskip
+\quotes_language english
+\papercolumns 1
+\papersides 1
+\paperpagestyle default
+\tracking_changes false
+\output_changes false
+\html_math_output 0
+\html_css_as_file 0
+\html_be_strict false
+\end_header
+
+\begin_body
+
+\begin_layout Title
+HW1
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+\begin{array}{ccc}
+\text{Aran Carmon} & \text{<aran.carmon@gmail.com>} & \text{038847588}\\
+\text{Danny Vainstein} & \text{<dannyvainstein@gmail.com>} & \text{201040763}
+\end{array}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $\phantom{A}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Part*
+Theory Questions
+\end_layout
+
+\begin_layout Standard
+1.
+ We will use the following algorithm: Given a sample 
+\begin_inset Formula $S$
+\end_inset
+
+ of size 
+\begin_inset Formula $m$
+\end_inset
+
+, find the tightest fit circle.
+\end_layout
+
+\begin_layout Standard
+Proof: Define 
+\begin_inset Formula $r'$
+\end_inset
+
+ to be the radius of that circle.
+ And define 
+\begin_inset Formula $r$
+\end_inset
+
+ to be the true radius we are trying to learn.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $C_{r'}\subseteq C_{r}$
+\end_inset
+
+ therefore the only possible error is labeling positive samples as negative.
+\end_layout
+
+\begin_layout Standard
+A sample will mislead us only if it is too concentrated in the middle.
+ Therefore our task is to show that with a high enough 
+\begin_inset Formula $m$
+\end_inset
+
+, the sample with high probability will not be too concentrated.
+\end_layout
+
+\begin_layout Standard
+We will construct a ring 
+\begin_inset Formula $R=\left\{ (x,y):r_{ring}^{2}<x^{2}+y^{2}<r^{2}\right\} $
+\end_inset
+
+ such that 
+\begin_inset Formula $D(R)=\epsilon$
+\end_inset
+
+.
+ (It is possible that we can extend 
+\begin_inset Formula $R$
+\end_inset
+
+ to cover all 
+\begin_inset Formula $C_{r}$
+\end_inset
+
+ and still have 
+\begin_inset Formula $D(R)<\epsilon$
+\end_inset
+
+.
+ In that case the error is clearly smaller than 
+\begin_inset Formula $\epsilon$
+\end_inset
+
+).
+\end_layout
+
+\begin_layout Standard
+Let the ring 
+\begin_inset Formula $R'$
+\end_inset
+
+ be the ring from the edge of 
+\begin_inset Formula $C_{r}$
+\end_inset
+
+ to the first sample.
+ We would want to have 
+\begin_inset Formula $R'\subseteq R$
+\end_inset
+
+.
+ If that is the case, we obtained our requirement since
+\begin_inset Formula 
+\[
+\text{error}(C_{r'})=D(C_{r}\bigtriangleup C_{r'})=D(R')\le D(R)=\epsilon
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+From the construction, if there is at least one sampled point that resides
+ in 
+\begin_inset Formula $R$
+\end_inset
+
+, it implies 
+\begin_inset Formula $R'\subseteq R$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+We will now ask what is the probability of receiving a bad sample.
+ That is a sample with no points in 
+\begin_inset Formula $R$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+\begin_inset FormulaMacro
+\newcommand{\pr}{\text{Pr}}
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{align*}
+\pr\left[\text{error}>\epsilon\right] & \le\pr\left[\forall x\in S,\,x\notin R\right]\\
+ & \le(1-\epsilon)^{m}\\
+ & \le e^{\mbox{-}\epsilon m}
+\end{align*}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+So it is enough to choose a sample size 
+\begin_inset Formula $m$
+\end_inset
+
+ such that 
+\begin_inset Formula $e^{\mbox{-}\epsilon m}\le\delta$
+\end_inset
+
+, i.e.
+ 
+\begin_inset Formula $m\ge\frac{1}{\epsilon}\ln\frac{1}{\delta}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $\phantom{A}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+2.
+ The VCdim is 
+\begin_inset Formula $4$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+Example of a shattered 4 points set:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Graphics
+	filename pics/imlhw1_t1.png
+	scale 30
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+By symmetry, we covered all cases (no points and all points are trivial).
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $\phantom{A}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Let 
+\begin_inset Formula $S$
+\end_inset
+
+ be a set of any 
+\begin_inset Formula $5$
+\end_inset
+
+ points.
+ Draw the tightest rectangle containing all points.
+ If at least one of the points is inside this rectangle, then we cannot
+ give it a negative classification while giving a positive classification
+ to the rest of the points.
+\end_layout
+
+\begin_layout Standard
+Otherwise there is at least one point that is on the edge of the tightest
+ rectangle containing all other 4 points.
+ And we cannot give it a negative classification while giving a positive
+ classification to the rest of the points.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $\phantom{A}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+3.
+ The VCdim is 
+\begin_inset Formula $n$
+\end_inset
+
+.
+ (for 
+\begin_inset Formula $n\ge2).$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Example for a set of size 
+\begin_inset Formula $n$
+\end_inset
+
+ that can be shuttered:
+\end_layout
+
+\begin_layout Standard
+Take the set of vectors that have only one place set to 1 and the other
+ places set to 0.
+\end_layout
+
+\begin_layout Standard
+e.g.
+ for 
+\begin_inset Formula $n=4$
+\end_inset
+
+:
+\end_layout
+
+\begin_layout Standard
+0001
+\end_layout
+
+\begin_layout Standard
+0010
+\end_layout
+
+\begin_layout Standard
+0100
+\end_layout
+
+\begin_layout Standard
+1000
+\end_layout
+
+\begin_layout Standard
+A concept with 
+\begin_inset Formula $T_{2}=\phi$
+\end_inset
+
+, will classify as 
+\begin_inset Formula $1$
+\end_inset
+
+ a vector with the i
+\begin_inset script superscript
+
+\begin_layout Plain Layout
+th
+\end_layout
+
+\end_inset
+
+ place set, if and only if 
+\begin_inset Formula $i\in T_{1}$
+\end_inset
+
+.
+ Therefore this set is shuttered.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $\phantom{A}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+A set of 
+\begin_inset Formula $n+1$
+\end_inset
+
+ vectors can not be shuttered.
+\end_layout
+
+\begin_layout Standard
+We will show this using the following 
+\begin_inset Quotes eld
+\end_inset
+
+inductive
+\begin_inset Quotes erd
+\end_inset
+
+ argument: first we will show that if it was possible to shutter a set of
+ 
+\begin_inset Formula $n+1$
+\end_inset
+
+ vectors, each with length of 
+\begin_inset Formula $n$
+\end_inset
+
+ bits, then it is also possible to shutter a set of 
+\begin_inset Formula $n$
+\end_inset
+
+ vectors with length of 
+\begin_inset Formula $n-1$
+\end_inset
+
+ bits each.
+\end_layout
+
+\begin_layout Standard
+And then we will show that a set of 
+\begin_inset Formula $3$
+\end_inset
+
+ vectors with length of 
+\begin_inset Formula $2$
+\end_inset
+
+ bits can't be shuttered.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $\phantom{A}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Suppose we have a set of 
+\begin_inset Formula $n+1$
+\end_inset
+
+ vectors of length 
+\begin_inset Formula $n$
+\end_inset
+
+ bits that are shuttered.
+ Then at least two of the vectors agree on at least one bit.
+\end_layout
+
+\begin_layout Standard
+We ignore this bit, in the vectors and in the concepts.
+\end_layout
+
+\begin_layout Standard
+We now have a set of 
+\begin_inset Formula $n$
+\end_inset
+
+ vectors (the two vectors mentioned above are identical now, so we treat
+ them as one vector.
+ We don't need to be concerned at the moment about the possibility of other
+ vectors being the same).
+ each vector now has the length of 
+\begin_inset Formula $n-1$
+\end_inset
+
+ bits.
+\end_layout
+
+\begin_layout Standard
+We now take only the concepts that gave 1 on the first vector, and 0 on
+ the second vector.
+ Since they separated the two vectors, these concepts didn't include the
+ shared bit in 
+\begin_inset Formula $T_{1}$
+\end_inset
+
+ or 
+\begin_inset Formula $T_{2}$
+\end_inset
+
+, and ignoring it does not change how they split the set.
+ 
+\end_layout
+
+\begin_layout Standard
+Since the original set was shuttered, this new set is also shuttered.
+\end_layout
+
+\begin_layout Standard
+So we have a set of 
+\begin_inset Formula $n$
+\end_inset
+
+ vectors, with length of 
+\begin_inset Formula $n-1$
+\end_inset
+
+ bits, that are shuttered.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $\phantom{A}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+To complete the proof, we will show that for vectors of length 
+\begin_inset Formula $2$
+\end_inset
+
+ bits, no set of 
+\begin_inset Formula $3$
+\end_inset
+
+ vectors can shuttered.
+ Therefore no set of 
+\begin_inset Formula $n+1$
+\end_inset
+
+ vectors with 
+\begin_inset Formula $n$
+\end_inset
+
+ bits can be shuttered.
+ Therefore the VCdim is 
+\begin_inset Formula $n$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $\phantom{A}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Let 
+\begin_inset Formula $S$
+\end_inset
+
+ be a set of 
+\begin_inset Formula $3$
+\end_inset
+
+ vectors of length 
+\begin_inset Formula $2$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+If 
+\begin_inset Formula $00\notin S$
+\end_inset
+
+, then there is no concept that classify as 1 only 
+\begin_inset Formula $11$
+\end_inset
+
+ and not 
+\begin_inset Formula $01$
+\end_inset
+
+ or 
+\begin_inset Formula $10$
+\end_inset
+
+.
+ 
+\end_layout
+
+\begin_layout Standard
+If 
+\begin_inset Formula $11\notin S$
+\end_inset
+
+, then there is no concept that classify as 1 only 
+\begin_inset Formula $00$
+\end_inset
+
+ and not 
+\begin_inset Formula $01$
+\end_inset
+
+ or 
+\begin_inset Formula $10$
+\end_inset
+
+.
+ 
+\end_layout
+
+\begin_layout Standard
+If 
+\begin_inset Formula $10\notin S$
+\end_inset
+
+, then there is no concept that classify as 1 only 
+\begin_inset Formula $01$
+\end_inset
+
+ and not 
+\begin_inset Formula $11$
+\end_inset
+
+ or 
+\begin_inset Formula $00$
+\end_inset
+
+.
+ 
+\end_layout
+
+\begin_layout Standard
+If 
+\begin_inset Formula $01\notin S$
+\end_inset
+
+, then there is no concept that classify as 1 only 
+\begin_inset Formula $10$
+\end_inset
+
+ and not 
+\begin_inset Formula $11$
+\end_inset
+
+ or 
+\begin_inset Formula $00$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+No set of size 
+\begin_inset Formula $3$
+\end_inset
+
+ can be shuttered.
+\end_layout
+
+\begin_layout Part*
+\begin_inset Newpage pagebreak
+\end_inset
+
+HW1: Programming Assignment
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+\begin{array}{ccc}
+\text{Aran Carmon} & \text{<aran.carmon@gmail.com>} & \text{038847588}\\
+\text{Danny Vainstein} & \text{<dannyvainstein@gmail.com>} & \text{201040763}
+\end{array}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Section*
+1.
+ Nearest Neighbor
+\end_layout
+
+\begin_layout Standard
+a.
+ KNN:
+\end_layout
+
+\begin_layout Standard
+\begin_inset listings
+lstparams "language=Python,basicstyle={\small\ttfamily},tabsize=4"
+inline false
+status open
+
+\begin_layout Plain Layout
+
+def knn(images, labels, image, k): 
+\end_layout
+
+\begin_layout Plain Layout
+
+    images = images.astype('int')
+\end_layout
+
+\begin_layout Plain Layout
+
+    image = image.astype('int')
+\end_layout
+
+\begin_layout Plain Layout
+
+    dists = np.linalg.norm(images - image, axis=1)
+\end_layout
+
+\begin_layout Plain Layout
+
+    nearest = np.argsort(dists)[:k]
+\end_layout
+
+\begin_layout Plain Layout
+
+    return stats.mode(labels[nearest]).mode[0
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $\phantom{A}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+b.
+ We measured 86.8% correct classifications.
+ For a completely random classifier, we would expect 10% correct classifications.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $\phantom{A}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+c.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Graphics
+	filename pics/imlhw1_1c.png
+	lyxscale 20
+	scale 30
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Best k is 1
+\end_layout
+
+\begin_layout Standard
+d.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Graphics
+	filename pics/imlhw1_1d.png
+	lyxscale 20
+	scale 30
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Section*
+2.
+ Union of intervals
+\end_layout
+
+\begin_layout Standard
+a.
+ The intervals are the thick lines int the middle:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Graphics
+	filename pics/imlhw1_2a.png
+	lyxscale 20
+	scale 30
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+b.
+ The hypothesis with the smallest error is the Bayes hypothesis:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+h^{*}(x)=\begin{cases}
+1 & x\in[0,0.25]\bigcup[0.5,0.75]\\
+0 & \text{otherwise}
+\end{cases}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+c.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Graphics
+	filename pics/imlhw1_2c.png
+	lyxscale 20
+	scale 30
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+d.
+\end_layout
+
+\begin_layout Standard
+e.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Graphics
+	filename pics/imlhw1_2e.png
+	lyxscale 20
+	scale 30
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+f.
+\end_layout
+
+\end_body
+\end_document
