@@ -17,3 +17,12 @@ knn.py:
 
 intervals.py:
   ERM implementation received as part of the exercise
+
+q2.py:
+  Shared code for question 2 sub-questions, used by other commands
+
+2a.py:
+  Answer question 2a
+  Usage: python 2a.py <image output name>
+
+
