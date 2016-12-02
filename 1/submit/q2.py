@@ -169,6 +169,16 @@ def measure_intervals_cv(x, y, kfold, k):
         res[i] = measure_intervals_cv_helper(xtrain, ytrain, xtest, ytest, k)
     return np.mean(res)
 
+#Measure empirical error
+def measure_empirical_error(x, y, k):
+    #sort sample
+    idx = numpy.argsort(x)
+    x = x[idx]
+    y = y[idx]
+    #run ERM
+    intervals, error = find_best_interval(x, y, k)
+    return float(error) / float(len(x))
+
 #Prepare measurements for question 2f
 def prepare_2f(kfold):
     empirical_errors = {}
@@ -177,7 +187,7 @@ def prepare_2f(kfold):
     for k in range(1, 20 + 1, 1):
         start = time.time()
         cv_errors[k] = measure_intervals_cv(x, y, kfold, k)
-        intervals, empirical_errors[k] = find_best_interval(x, y, k)
+        empirical_errors[k] = measure_empirical_error(x, y, k)
         end = time.time()
         print "k:",k, "cv_error:",true_errors[k], "empirical_error:",empirical_errors[k],"elapsed:",end-start
     return cv_errors, empirical_errors
