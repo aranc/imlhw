@@ -159,7 +159,7 @@ def measure_intervals_cv_helper(xtrain, ytrain, xtest, ytest):
 
 #Measure intervals CV error
 #kfold is the K-fold CV's K parameter (i.e. how many folds)
-def measure_intervals_cv_helper(x, y, kfold):
+def measure_intervals_cv(x, y, kfold):
     fold_len = len(x) / kfold
     res = np.zeros(kfold)
     for i in range(kfold):
@@ -174,7 +174,7 @@ def measure_intervals_cv_helper(x, y, kfold):
 def prepare_2f(kfold):
     empirical_errors = {}
     cv_errors = {}
-    m = 50
+    x, y = draw_samples(m=50)
     for k in range(1, 20 + 1, 1):
         start = time.time()
         cv_errors[k], empirical_errors[k] = measure_intervals_cv(x, y, kfold)
