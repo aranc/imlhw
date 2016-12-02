@@ -79,6 +79,7 @@ def measure_intervals_T_times(m=50, k=2, T=100):
         true_errors[t], empirical_errors[t] = measure_intervals(m, k)
     return numpy.mean(true_errors), numpy.mean(empirical_errors)
 
+#Prepare measurements for question 2c
 def prepare_2c():
     empirical_errors = {}
     true_errors = {}
@@ -90,14 +91,16 @@ def prepare_2c():
         print "m:",m, "true_error:",true_errors[m], "empirical_error:",empirical_errors[m],"elapsed:",end-start
     return true_errors, empirical_errors
 
+#Plot question 2c
 def plot_2c(output):
-    true_errors, empirical_errors = pickle.load(open("2c.pkl"))
+    true_errors, empirical_errors = prepare_2c()
     ms = range(10, 100 + 1, 5)
     plt.plot(ms, [true_errors[m] for m in ms], 'k-', label='True error')
     plt.plot(ms, [empirical_errors[m] for m in ms],'k--', label='Empirical error')
     plt.legend()
     plt.savefig(output)
 
+#Perform measurements for question 2d
 def answer_2d():
     res = {}
     ks = range(1, 20 + 1, 1)
@@ -105,6 +108,7 @@ def answer_2d():
         res[k] = measure_intervals(50, k)
         print k, res[k]
 
+#Prepare measurements for question 2e
 def prepare_2e():
     empirical_errors = {}
     true_errors = {}
@@ -114,13 +118,13 @@ def prepare_2e():
         true_errors[k], empirical_errors[k] = measure_intervals_T_times(m, k, 100)
         end = time.time()
         print "k:",k, "true_error:",true_errors[k], "empirical_error:",empirical_errors[k],"elapsed:",end-start
-    pickle.dump([true_errors, empirical_errors], open("2e.pkl", "w"))
     return true_errors, empirical_errors
 
-def plot_2e():
-    true_errors, empirical_errors = pickle.load(open("2e.pkl"))
+#Plot question 2e
+def plot_2e(output):
+    true_errors, empirical_errors = prepare_2e()
     ks = range(1, 20 + 1, 1)
     plt.plot(ks, [true_errors[k] for k in ks], 'ko-', label='True error')
     plt.plot(ks, [empirical_errors[k] for k in ks],'ko--', label='Empirical error')
     plt.legend()
-    plt.show()
+    plt.savefig(output)
