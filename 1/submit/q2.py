@@ -167,7 +167,7 @@ def measure_intervals_cv_error(x, y, kfold, k):
         ytest = y[fold_len * i : fold_len * (i+1)]
         xtrain = np.concatenate((x[:fold_len * i],x[fold_len * (i+1):]))
         ytrain = np.concatenate((y[:fold_len * i],y[fold_len * (i+1):]))
-        res[i] = measure_intervals_cv_helper(xtrain, ytrain, xtest, ytest, k)
+        res[i] = measure_intervals_cv_error_helper(xtrain, ytrain, xtest, ytest, k)
     return np.mean(res)
 
 #Measure empirical error (simple wraper around find_best_interval)
