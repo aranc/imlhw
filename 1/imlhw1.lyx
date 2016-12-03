@@ -1297,15 +1297,48 @@ arancarmon/imlhw/1/submit/2f.py <K value for K-fold> <image output location>
 \end_layout
 
 \begin_layout Standard
-With K=5:
+With 5-fold:
 \end_layout
 
 \begin_layout Standard
-With K=10:
+\begin_inset Graphics
+	filename pics/imlhw1_2f_5.png
+	lyxscale 20
+	scale 30
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
-With K=50:
+With 10-fold:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Graphics
+	filename pics/imlhw1_2f_10.png
+	lyxscale 20
+	scale 30
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+With 50-fold:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Graphics
+	filename pics/imlhw1_2f_50.png
+	lyxscale 20
+	scale 30
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
