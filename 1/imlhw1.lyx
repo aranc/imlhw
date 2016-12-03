@@ -1308,5 +1308,17 @@ With K=10:
 With K=50:
 \end_layout
 
+\begin_layout Standard
+Note: these plots were a bit cherry-picked: running 2f.py may also give plots
+ with no obvious minimum point.
+ I assume this is due to the small sample size m=50.
+\end_layout
+
+\begin_layout Standard
+Without researching it too much, it seems that using K=5 almost always works,
+ increasing the K to 10 and to 50 requires more tries (where each new try
+ is a different sample drawn).
+\end_layout
+
 \end_body
 \end_document
