@@ -1,3 +1,5 @@
+import matplotlib
+matplotlib.use('Agg')
 import sys
 import matplotlib.pyplot as plt
 from knn import measure_knn
