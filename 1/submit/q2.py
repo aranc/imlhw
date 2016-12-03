@@ -130,15 +130,16 @@ def plot_2e(output):
     plt.legend()
     plt.savefig(output)
 
-#Predict for x according to intervals model
+#Predict for point x according to intervals model
 def predict(intervals, x):
     for interval in intervals:
         if interval[0] < x < interval[1]:
             return True
     return False
 
-#Measure intervals CV error helper function, calcuate for a specific fold
-def measure_intervals_cv_helper(xtrain, ytrain, xtest, ytest, k):
+#Measure intervals CV error helper function, calculate for a specific fold
+def measure_intervals_cv_error_helper(xtrain, ytrain, xtest, ytest, k):
+    #alias xtrain as x, ytrain as y
     x = xtrain
     y = ytrain
     #sort sample
@@ -158,7 +159,7 @@ def measure_intervals_cv_helper(xtrain, ytrain, xtest, ytest, k):
 
 #Measure intervals CV error
 #kfold is the K-fold CV's K parameter (i.e. how many folds)
-def measure_intervals_cv(x, y, kfold, k):
+def measure_intervals_cv_error(x, y, kfold, k):
     fold_len = len(x) / kfold
     res = np.zeros(kfold)
     for i in range(kfold):
@@ -169,7 +170,7 @@ def measure_intervals_cv(x, y, kfold, k):
         res[i] = measure_intervals_cv_helper(xtrain, ytrain, xtest, ytest, k)
     return np.mean(res)
 
-#Measure empirical error
+#Measure empirical error (simple wraper around find_best_interval)
 def measure_empirical_error(x, y, k):
     #sort sample
     idx = numpy.argsort(x)
@@ -186,7 +187,7 @@ def prepare_2f(kfold):
     x, y = draw_samples(m=50)
     for k in range(1, 20 + 1, 1):
         start = time.time()
-        cv_errors[k] = measure_intervals_cv(x, y, kfold, k)
+        cv_errors[k] = measure_intervals_cv_error(x, y, kfold, k)
         empirical_errors[k] = measure_empirical_error(x, y, k)
         end = time.time()
         print "k:",k, "cv_error:",cv_errors[k], "empirical_error:",empirical_errors[k],"elapsed:",end-start
