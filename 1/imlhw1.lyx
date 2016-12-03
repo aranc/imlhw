@@ -1085,6 +1085,13 @@ h^{*}(x)=\begin{cases}
 \end_layout
 
 \begin_layout Standard
+\begin_inset Formula $\phantom{A}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
 c.
 \end_layout
 
@@ -1157,6 +1164,13 @@ arancarmon/imlhw/1/submit/2c.py <image output location>
 \end_layout
 
 \begin_layout Standard
+\begin_inset Formula $\phantom{A}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
 d.
  The K that gives the minimal measured empirical error is somewhat random
  and becomes 0 very quick.
@@ -1196,6 +1210,13 @@ python
 arancarmon/imlhw/1/submit/2d.py
 \end_layout
 
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $\phantom{A}$
 \end_inset
 
 
@@ -1253,6 +1274,13 @@ arancarmon/imlhw/1/submit/2c.py <image output location>
 \end_layout
 
 \begin_layout Standard
+\begin_inset Formula $\phantom{A}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
 f.
  We will try K-fold CV (with K=5 and K=10) and LOOCV (i.e.
  K-fold with K=50).
@@ -1297,6 +1325,13 @@ arancarmon/imlhw/1/submit/2f.py <K value for K-fold> <image output location>
 \end_layout
 
 \begin_layout Standard
+\begin_inset Formula $\phantom{A}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
 With 5-fold:
 \end_layout
 
@@ -1312,6 +1347,13 @@ With 5-fold:
 \end_layout
 
 \begin_layout Standard
+\begin_inset Formula $\phantom{A}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
 With 10-fold:
 \end_layout
 
@@ -1321,6 +1363,13 @@ With 10-fold:
 	lyxscale 20
 	scale 30
 
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Newpage pagebreak
 \end_inset
 
 
@@ -1348,9 +1397,9 @@ Note: these plots were a bit cherry-picked: running 2f.py may also give plots
 \end_layout
 
 \begin_layout Standard
-Without researching it too much, it seems that using K=5 almost always works,
- increasing the K to 10 and to 50 requires more tries (where each new try
- is a different sample drawn).
+It seems that using 5-fold almost always works, increasing the 10-fold and
+ to 50-fold requires more tries (where each new try is a different sample
+ drawn).
 \end_layout
 
 \end_body
