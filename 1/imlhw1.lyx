@@ -508,6 +508,7 @@ Suppose we have a set of
 
 \begin_layout Standard
 We ignore this bit, in the vectors and in the concepts.
+ And we throw one of these two vectors.
 \end_layout
 
 \begin_layout Standard
@@ -515,10 +516,7 @@ We now have a set of
 \begin_inset Formula $n$
 \end_inset
 
- vectors (the two vectors mentioned above are identical now, so we treat
- them as one vector.
- We don't need to be concerned at the moment about the possibility of other
- vectors being the same).
+ vectors.
  each vector now has the length of 
 \begin_inset Formula $n-1$
 \end_inset
