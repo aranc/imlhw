@@ -150,6 +150,87 @@ b.
 
 \end_layout
 
+\begin_layout Standard
+c.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{align*}
+\frac{\partial\lag}{\partial w} & =\frac{\left(\frac{1}{2}w^{T}w-\sum_{i=1}^{m}\alpha_{i}y_{i}w^{T}x_{i}\right)}{\partial w}\\
+ & =w-\sum_{i=1}^{m}\alpha_{i}y_{i}x_{i}
+\end{align*}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+\frac{\partial\lag}{\partial b}=-\sum_{i=1}^{m}\alpha_{i}y_{i}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+\frac{\partial\lag}{\partial\xi_{i}}=C\xi_{i}-\alpha_{i}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Setting the derivatives to 
+\begin_inset Formula $0$
+\end_inset
+
+,
+\begin_inset Formula 
+\begin{align*}
+w & =\sum_{i=1}^{m}\alpha_{i}y_{i}x_{i}
+\end{align*}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+\sum_{i=1}^{m}\alpha_{i}y_{i}=0
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+C\xi=\alpha
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+d.
+ 
+\end_layout
+
 \begin_layout Part*
 \begin_inset Newpage pagebreak
 \end_inset
