@@ -123,6 +123,33 @@ HW2
 Theory Questions
 \end_layout
 
+\begin_layout Standard
+\begin_inset FormulaMacro
+\newcommand{\lag}{\mathcal{L}}
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+1.
+ a.
+ 
+\end_layout
+
+\begin_layout Standard
+b.
+ 
+\begin_inset Formula 
+\[
+\lag(x,\alpha)=\frac{1}{2}w^{T}w+\frac{C}{2}\sum_{i=1}^{m}\xi_{i}^{2}+\sum_{i=1}^{m}\alpha_{i}\left(1-\xi_{i}-y_{i}\left(w^{T}x_{i}+b\right)\right)
+\]
+
+\end_inset
+
+
+\end_layout
+
 \begin_layout Part*
 \begin_inset Newpage pagebreak
 \end_inset
