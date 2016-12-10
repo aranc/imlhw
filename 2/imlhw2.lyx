@@ -134,7 +134,63 @@ Theory Questions
 \begin_layout Standard
 1.
  a.
- 
+ Let 
+\begin_inset Formula $\{w_{1},b_{1},\xi_{1}\}$
+\end_inset
+
+ be the solution with the additional constraint.
+ And let 
+\begin_inset Formula $\{w_{2},b_{2},\xi_{2}\}$
+\end_inset
+
+ be the solution without the additional constraint.
+\end_layout
+
+\begin_layout Standard
+And let 
+\begin_inset Formula $v_{1}$
+\end_inset
+
+ and 
+\begin_inset Formula $v_{2}$
+\end_inset
+
+ be the optimal values with and without the additional constraint, respectively.
+\end_layout
+
+\begin_layout Standard
+When considering an optimal solution without the additional constraints,
+ all the solutions that respect that constraint, are also considered.
+ Therefore 
+\begin_inset Formula $v_{2}\le v_{1}$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+On the otherhand, when considering an optimal solution with the additional
+ constraint, 
+\begin_inset Formula $P=\{w_{2},b_{2},\left|\xi_{2}\right|\}$
+\end_inset
+
+ is considered, and it has the same value as 
+\begin_inset Formula $\{w_{2},b_{2},\xi_{2}\}$
+\end_inset
+
+.
+ Therefore 
+\begin_inset Formula $v_{1}\le v_{2}$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $\phantom{A}$
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
@@ -145,6 +201,13 @@ b.
 \lag(x,\alpha)=\frac{1}{2}w^{T}w+\frac{C}{2}\sum_{i=1}^{m}\xi_{i}^{2}+\sum_{i=1}^{m}\alpha_{i}\left(1-\xi_{i}-y_{i}\left(w^{T}x_{i}+b\right)\right)
 \]
 
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $\phantom{A}$
 \end_inset
 
 
@@ -221,6 +284,13 @@ w & =\sum_{i=1}^{m}\alpha_{i}y_{i}x_{i}
 C\xi=\alpha
 \]
 
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $\phantom{A}$
 \end_inset
 
 
