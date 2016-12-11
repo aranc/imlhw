@@ -326,6 +326,14 @@ d.
 
 \begin_layout Standard
 2.
+\begin_inset Formula 
+\[
+\frac{1}{2}w^{*T}w^{*}+C\sum_{n=1}^{N}\xi_{i}^{*}=\mbox{-}\frac{1}{2}\sum_{i=1}^{N}\sum_{j=1}^{N}\alpha_{i}^{*}\alpha_{j}^{*}y_{i}y_{j}x_{i}^{T}x_{j}+\sum_{n=1}^{N}\alpha_{n}^{*}
+\]
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Part*
