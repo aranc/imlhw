@@ -12,6 +12,7 @@ def build_preceptron(samples, labels):
         predicted = classify(w, samples[i])
         if predicted != labels[i]:
             w += labels[i] * samples[i]
+    return w
 
 def classify(w, x):
     return 1 if np.dot(w, x) >= 0 else -1
