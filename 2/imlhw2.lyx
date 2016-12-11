@@ -305,11 +305,11 @@ d.
 \begin_inset Formula 
 \begin{align*}
 \max_{\alpha}\lag(w,b,\xi,\alpha) & =\max_{\alpha}\frac{1}{2}w^{T}w+\frac{C}{2}\sum_{i=1}^{m}\xi_{i}^{2}+\sum_{i=1}^{m}\alpha_{i}\left(1-\xi_{i}-y_{i}\left(w^{T}x_{i}+b\right)\right)\\
- & =\max_{\alpha}\frac{1}{2}\sum_{i=1}^{N}\sum_{j=1}^{N}\alpha_{i}\alpha_{j}y_{i}y_{j}x_{i}^{T}x_{j}+\frac{1}{2}\sum_{n=1}^{N}\alpha_{n}^{2}+\\
+ & =\max_{\alpha}\frac{1}{2}\sum_{i=1}^{m}\sum_{j=1}^{m}\alpha_{i}\alpha_{j}y_{i}y_{j}x_{i}^{T}x_{j}+\frac{1}{2}\sum_{n=1}^{N}\alpha_{n}^{2}+\\
  & +\sum_{i=1}^{m}\alpha_{i}-\sum_{i=1}^{m}\alpha_{i}\xi_{i}-\sum_{i=1}^{m}\alpha_{i}y_{i}w^{T}x_{i}-\sum_{i=1}^{m}\alpha_{i}y_{i}b\\
- & =\max_{\alpha}\frac{1}{2}\sum_{i=1}^{N}\sum_{j=1}^{N}\alpha_{i}\alpha_{j}y_{i}y_{j}x_{i}^{T}x_{j}+\sum_{i=1}^{m}\alpha_{i}+\left(\frac{1}{2}-\frac{1}{C}\right)\sum_{i=1}^{m}\alpha_{i}^{2}-\\
+ & =\max_{\alpha}\frac{1}{2}\sum_{i=1}^{m}\sum_{j=1}^{m}\alpha_{i}\alpha_{j}y_{i}y_{j}x_{i}^{T}x_{j}+\sum_{i=1}^{m}\alpha_{i}+\left(\frac{1}{2}-\frac{1}{C}\right)\sum_{i=1}^{m}\alpha_{i}^{2}-\\
  & -\sum_{i=1}^{m}\alpha_{i}y_{i}\left(\sum_{j=1}^{m}\alpha_{j}y_{j}x_{j}\right)^{T}x_{i}\\
- & =\max_{\alpha}\mbox{-}\frac{1}{2}\sum_{i=1}^{N}\sum_{j=1}^{N}\alpha_{i}\alpha_{j}y_{i}y_{j}x_{i}^{T}x_{j}+\sum_{i=1}^{m}\alpha_{i}+\left(\frac{1}{2}-\frac{1}{C}\right)\sum_{i=1}^{m}\alpha_{i}^{2}
+ & =\max_{\alpha}\mbox{-}\frac{1}{2}\sum_{i=1}^{m}\sum_{j=1}^{m}\alpha_{i}\alpha_{j}y_{i}y_{j}x_{i}^{T}x_{j}+\sum_{i=1}^{m}\alpha_{i}+\left(\frac{1}{2}-\frac{1}{C}\right)\sum_{i=1}^{m}\alpha_{i}^{2}
 \end{align*}
 
 \end_inset
@@ -326,9 +326,58 @@ d.
 
 \begin_layout Standard
 2.
+ a.
 \begin_inset Formula 
 \[
-\frac{1}{2}w^{*T}w^{*}+C\sum_{n=1}^{N}\xi_{i}^{*}=\mbox{-}\frac{1}{2}\sum_{i=1}^{N}\sum_{j=1}^{N}\alpha_{i}^{*}\alpha_{j}^{*}y_{i}y_{j}x_{i}^{T}x_{j}+\sum_{n=1}^{N}\alpha_{n}^{*}
+\frac{1}{2}w^{*T}w^{*}+C\sum_{n=1}^{m}\xi_{i}^{*}=\mbox{-}\frac{1}{2}\sum_{i=1}^{m}\sum_{j=1}^{m}\alpha_{i}^{*}\alpha_{j}^{*}y_{i}y_{j}x_{i}^{T}x_{j}+\sum_{n=1}^{m}\alpha_{n}^{*}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $\phantom{A}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+b.
+ Using the constraints 
+\begin_inset Formula $C\ge\alpha_{n}^{*}\ge0$
+\end_inset
+
+ and 
+\begin_inset Formula $w^{*}=\sum\alpha_{n}y_{n}x_{n}$
+\end_inset
+
+ , we can rewrite the equation above as:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{align*}
+w^{*T}w^{*} & =\sum_{n=1}^{m}\alpha_{n}^{*}-C\sum_{n=1}^{N}\xi_{i}^{*}\\
+ & \le Cm-C\sum_{n=1}^{m}\xi_{i}^{*}\\
+ & \le Cm
+\end{align*}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Therefore,
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+\left\Vert w^{*}\right\Vert \le\sqrt{Cm}
 \]
 
 \end_inset
