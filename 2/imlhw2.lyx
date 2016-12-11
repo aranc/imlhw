@@ -160,7 +160,7 @@ And let
 
 \begin_layout Standard
 When considering an optimal solution without the additional constraints,
- all the solutions that respect that constraint, are also considered.
+ all the solutions that satisfy that constraint, are also considered.
  Therefore 
 \begin_inset Formula $v_{2}\le v_{1}$
 \end_inset
