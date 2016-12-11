@@ -11,10 +11,11 @@ def build_preceptron(samples, labels):
     for i in range(len(samples)):
         predicted = classify(w, samples[i])
         if predicted != labels[i]:
-            w += labels[i] * samples[i]
+            w += labels[i] * samples[i] / np.linalg.norm(samples[i])
     return w
 
 def classify(w, x):
+    x = x / np.linalg.norm(x)
     return 1 if np.dot(w, x) >= 0 else -1
 
 def go():
