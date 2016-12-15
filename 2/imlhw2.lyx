@@ -580,8 +580,303 @@ b.
 \end_layout
 
 \begin_layout Standard
+\begin_inset FormulaMacro
+\newcommand{\pluseq}{\mathrel{+}=}
+{+=}
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
 b.
- TODO
+ Since we want to use kernels, we want on classification to use the dot-product
+ of the new sample with the training samples.
+\end_layout
+
+\begin_layout Standard
+Instead of keeping 
+\begin_inset Formula $w^{*}$
+\end_inset
+
+, we will keep a list of samples that should have been incorporated into
+ the weights, (i.e.
+ misclassified samples) in addition to their correct label.
+\end_layout
+
+\begin_layout Standard
+Pseudo-code for classification:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Box Boxed
+position "t"
+hor_pos "c"
+has_inner_box 1
+inner_pos "t"
+use_parbox 0
+use_makebox 0
+width "100col%"
+special "none"
+height "1in"
+height_special "totalheight"
+thickness "0.4pt"
+separation "3pt"
+shadowsize "4pt"
+framecolor "black"
+backgroundcolor "none"
+status open
+
+\begin_layout Plain Layout
+Input: kernel 
+\begin_inset Formula $K$
+\end_inset
+
+, 
+\begin_inset Formula $m$
+\end_inset
+
+ samples 
+\begin_inset Formula $\left\langle x_{i},y_{i}\right\rangle $
+\end_inset
+
+, and a sample 
+\begin_inset Formula $x$
+\end_inset
+
+ to classify
+\end_layout
+
+\begin_layout Plain Layout
+Output: classification 
+\begin_inset Formula $y$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Formula $\phantom{A}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+let 
+\begin_inset Formula $s=0$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+for each sample in 
+\begin_inset Formula $\left\langle x_{i},y_{i}\right\rangle $
+\end_inset
+
+:
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset Formula $s\pluseq y_{i}K(x_{i},x)$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+return 
+\begin_inset Formula $s\ge0$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $\phantom{A}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+The 
+\begin_inset Formula $m$
+\end_inset
+
+ samples above, are the misclassified training samples.
+\end_layout
+
+\begin_layout Standard
+Training is simply classifying with each new training sample, and adding
+ to the list of samples only the samples that were misclassified.
+\end_layout
+
+\begin_layout Standard
+Pseudo-code for training:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Box Boxed
+position "t"
+hor_pos "c"
+has_inner_box 1
+inner_pos "t"
+use_parbox 0
+use_makebox 0
+width "100col%"
+special "none"
+height "1in"
+height_special "totalheight"
+thickness "0.4pt"
+separation "3pt"
+shadowsize "4pt"
+framecolor "black"
+backgroundcolor "none"
+status open
+
+\begin_layout Plain Layout
+Input: kernel 
+\begin_inset Formula $K$
+\end_inset
+
+, list 
+\begin_inset Formula $\left\langle x_{i},y_{i}\right\rangle $
+\end_inset
+
+ of 
+\begin_inset Formula $n$
+\end_inset
+
+ training samples
+\end_layout
+
+\begin_layout Plain Layout
+Output: list 
+\begin_inset Formula $\left\langle x_{j},y_{j}\right\rangle $
+\end_inset
+
+ of 
+\begin_inset Formula $m$
+\end_inset
+
+ misclassified samples
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Formula $\phantom{A}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+let 
+\begin_inset Formula $L$
+\end_inset
+
+ be an empty list of samples
+\end_layout
+
+\begin_layout Plain Layout
+for each point in 
+\begin_inset Formula $\left\langle x_{i},y_{i}\right\rangle $
+\end_inset
+
+:
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+classify(
+\begin_inset Formula $K$
+\end_inset
+
+, 
+\begin_inset Formula $L$
+\end_inset
+
+, 
+\begin_inset Formula $x_{i},y_{i}$
+\end_inset
+
+)
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+if misclassified: add 
+\begin_inset Formula $x_{i},y_{i}$
+\end_inset
+
+ to 
+\begin_inset Formula $L$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+return 
+\begin_inset Formula $L$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Part*
