@@ -97,7 +97,6 @@ def q3b(_from, _to, _step, output=None):
     else:
         plt.savefig(output)
 
-
 #Plot for subquestion 3c
 def q3c(output=None):
     w=build_sgd(train_data, train_labels, C=10**(-4), eta_0=1, T=20000)
@@ -107,7 +106,12 @@ def q3c(output=None):
     else:
         plt.savefig(output)
 
-if __name__ == "__main__" and False:
+#Answer question d
+def q3d():
+    w=build_sgd(train_data, train_labels, C=10**(-4), eta_0=1, T=20000)
+    return measure_sgd(w, test_data, test_labels)
+
+if True:
     #Get subquestion from first argument
     if sys.argv[1] == 'a':
         #get _from, _to, _step, and plot output filename from remaining arguments
@@ -126,5 +130,7 @@ if __name__ == "__main__" and False:
     if sys.argv[1] == 'c':
         output = sys.argv[2]
         q3c(output)
+    if sys.argv[1] == 'd':
+        print q3d()
     else:
         print "Error: please choose subquestion (a,b,c,d)"
