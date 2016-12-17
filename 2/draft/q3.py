@@ -2,10 +2,11 @@ import sys
 import time
 import numpy as np
 import matplotlib
-#matplotlib.use('Agg')
+matplotlib.use('Agg')
 import matplotlib.pyplot as plt
 from hw2 import *
 
+#Build using SGD as specified in question 3
 def build_sgd(train_data, train_labels, C, mu0, T):
     d = len(train_data[0])
     m = len(train_data)
@@ -22,10 +23,12 @@ def build_sgd(train_data, train_labels, C, mu0, T):
 
     return w
 
+#Classify sample x using weights w
 def classify(w, x):
     x = x / np.linalg.norm(x)
     return 1 if np.dot(w, x) >= 0 else -1
 
+#Test / Validate weights w
 def measure_sgd(w, data, labels):
     errors = 0
     for i in range(len(data)):
@@ -34,6 +37,7 @@ def measure_sgd(w, data, labels):
             errors += 1
     return 1 - float(errors)/float(len(data))
 
+#Sanity test, not part of the submission
 def basic_sanity_test():
     print "building SGD"
     start = time.time()
@@ -45,7 +49,9 @@ def basic_sanity_test():
     acc = measure_sgd(w, test_data, test_labels)
     print "acc:", acc, "elapsed:", time.time() - start
 
-def q3a():
+#Plot for subquestion 3a
+def q3a(_from, _to, _step, output=None):
+    #Measure for a specific mu0 value
     def measure_for_mu0(mu0):
         accuracy = np.zeros(10)
         for i in range(10):
@@ -53,10 +59,23 @@ def q3a():
             accuracy[i] = measure_sgd(w, validation_data, validation_labels)
         return np.mean(accuracy)
 
+    p_range = np.arange(_from, _to, _step)
     accuracy = {}
-    for p in np.arange(-10,10.1,.5):
+    for p in p_range:
         mu0 = 10**p
         accuracy[p] = measure_for_mu0(mu0)
         print "p:", p, "accuracy:", accuracy[p]
+    plt.gca().set_xlabel("log10(mu0)")
+    plt.gca().set_ylabel("Accuracy")
+    plt.plot(p_range, [accuracy[p] for p in p_range], 'ko')
+    if output == None:
+        plt.show()
+    else:
+        plt.savefig(output)
 
-
+if __name__ == "__main__":
+    #Get subquestion from first argument
+    if sys.argv[0] == 'a':
+        q3a()
+    else:
+        print "Error: please choose subquestion (a,b,c,d)"
