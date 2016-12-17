@@ -937,6 +937,7 @@ arancarmon/imlhw/2/submit
 
 \begin_layout Standard
 3.
+ a.
  
 \end_layout
 
@@ -977,7 +978,17 @@ arancarmon/imlhw/2/submit/q3.py a <from> <to> <step> <image output location>
 \end_layout
 
 \begin_layout Standard
+Researched various 
+\begin_inset Formula $\log_{10}\eta_{0}$
+\end_inset
 
+ values where.
+ Some plots below.
+ Best 
+\begin_inset Formula $\log_{10}\eta_{0}$
+\end_inset
+
+ values 
 \end_layout
 
 \begin_layout Standard
