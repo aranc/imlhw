@@ -77,4 +77,16 @@ def q1c():
             plt.show()
     print "done. success rate:", 1 - float(errors)/float(len(test_data)), "elapsed:", time.time() - start
 
+import sklearn.svm
+def q2():
+    S=sklearn.svm.LinearSVC(loss='hinge', fit_intercept=False, C=1.0)
+    S.fit(train_data, train_labels)
+    errors = 0
+    for i in range(len(test_data)):
+        predicted = S.predict(test_data[i].reshape(1, -1))
+        if predicted != test_labels[i]:
+            errors += 1
+    print "done. success rate:", 1 - float(errors)/float(len(test_data))
+    return S.coef_
 
+w=q2()
