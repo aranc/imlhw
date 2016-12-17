@@ -75,7 +75,13 @@ def q3a(_from, _to, _step, output=None):
 
 if __name__ == "__main__":
     #Get subquestion from first argument
-    if sys.argv[0] == 'a':
-        q3a()
+    print sys.argv
+    if sys.argv[1] == 'a':
+        #get _from, _to, _step, and plot output filename from remaining arguments
+        _from = float(sys.argv[2])
+        _to = float(sys.argv[3])
+        _step = float(sys.argv[4])
+        output = sys.argv[5]
+        q3a(_from, _to, _step, output)
     else:
         print "Error: please choose subquestion (a,b,c,d)"
