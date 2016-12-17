@@ -73,6 +73,40 @@ def q3a(_from, _to, _step, output=None):
     else:
         plt.savefig(output)
 
+#Plot for subquestion 3b
+def q3b(_from, _to, _step, output=None):
+    #Measure for a specific C value
+    def measure_for_C(C):
+        accuracy = np.zeros(10)
+        for i in range(10):
+            w = build_sgd(train_data, train_labels, C=C, eta_0=1, T=1000)
+            accuracy[i] = measure_sgd(w, validation_data, validation_labels)
+        return np.mean(accuracy)
+
+    p_range = np.arange(_from, _to, _step)
+    accuracy = {}
+    for p in p_range:
+        C = 10**p
+        accuracy[p] = measure_for_C(C)
+        print "p:", p, "accuracy:", accuracy[p]
+    plt.gca().set_xlabel("log10(C)")
+    plt.gca().set_ylabel("Accuracy")
+    plt.plot(p_range, [accuracy[p] for p in p_range], 'ko')
+    if output == None:
+        plt.show()
+    else:
+        plt.savefig(output)
+
+
+#Plot for subquestion 3c
+def q3c(output=None):
+    w=build_sgd(train_data, train_labels, C=10**(-4), eta_0=1, T=20000)
+    plt.imshow(w.reshape(28,28))
+    if output == None:
+        plt.show()
+    else:
+        plt.savefig(output)
+
 if __name__ == "__main__" and False:
     #Get subquestion from first argument
     if sys.argv[1] == 'a':
@@ -82,5 +116,15 @@ if __name__ == "__main__" and False:
         _step = float(sys.argv[4])
         output = sys.argv[5]
         q3a(_from, _to, _step, output)
+    if sys.argv[1] == 'b':
+        #get _from, _to, _step, and plot output filename from remaining arguments
+        _from = float(sys.argv[2])
+        _to = float(sys.argv[3])
+        _step = float(sys.argv[4])
+        output = sys.argv[5]
+        q3b(_from, _to, _step, output)
+    if sys.argv[1] == 'c':
+        output = sys.argv[2]
+        q3c(output)
     else:
         print "Error: please choose subquestion (a,b,c,d)"
