@@ -73,9 +73,8 @@ def q3a(_from, _to, _step, output=None):
     else:
         plt.savefig(output)
 
-if __name__ == "__main__":
+if __name__ == "__main__" and False:
     #Get subquestion from first argument
-    print sys.argv
     if sys.argv[1] == 'a':
         #get _from, _to, _step, and plot output filename from remaining arguments
         _from = float(sys.argv[2])
