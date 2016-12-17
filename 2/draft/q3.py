@@ -34,7 +34,7 @@ def measure_sgd(w, data, labels):
             errors += 1
     return 1 - float(errors)/float(len(data))
 
-def go():
+def basic_sanity_test():
     print "building SGD"
     start = time.time()
     w = build_sgd(train_data, train_labels, C=1, mu0=1, T=1000)
@@ -45,4 +45,18 @@ def go():
     acc = measure_sgd(w, test_data, test_labels)
     print "acc:", acc, "elapsed:", time.time() - start
 
-go()
+def q3a():
+    def measure_for_mu0(mu0):
+        accuracy = np.zeros(10)
+        for i in range(10):
+            w = build_sgd(train_data, train_labels, C=1, mu0=mu0, T=1000)
+            accuracy[i] = measure_sgd(w, validation_data, validation_labels)
+        return np.mean(accuracy)
+
+    accuracy = {}
+    for p in np.arange(-10,10.1,.5):
+        mu0 = 10**p
+        accuracy[p] = measure_for_mu0(mu0)
+        print "p:", p, "accuracy:", accuracy[p]
+
+
