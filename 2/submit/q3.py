@@ -2,7 +2,7 @@ import sys
 import time
 import numpy as np
 import matplotlib
-#matplotlib.use('Agg')
+matplotlib.use('Agg')
 import matplotlib.pyplot as plt
 from hw2 import *
 
