@@ -1,0 +1,35 @@
+Aran Carmon aran.carmon@gmail.com 038847588
+Inbal Joffe inbaljoffe@mail.tau.ac.il 302868898
+
+Files:
+q1.py code for question 1
+q2.py code for question 2
+q3.py code for question 3
+
+Usage:
+Question 1a:
+  python ~arancarmon/imlhw/2/submit/q1.py a
+  will print out the table to stdout
+Question 1b:
+  python ~arancarmon/imlhw/2/submit/q1.py b <image output location>
+  save image to requested location
+Question 1c:
+  python ~arancarmon/imlhw/2/submit/q1.py c
+  print accuracy to stdout
+Qustion 1d:
+  python ~arancarmon/imlhw/2/submit/q1.py d <num_images> <output prefix>
+  e.g. `q1.py d 5 out` will create out1.png ... out5.png
+Question 2a:
+  python ~arancarmon/imlhw/2/submit/q2.py a <from> <to> <step> <image output location>
+Question 2c:
+  python ~arancarmon/imlhw/2/submit/q2.py c <image output location>
+Question 2d:
+  python ~arancarmon/imlhw/2/submit/q2.py d
+Question 3a:
+  python ~arancarmon/imlhw/2/submit/q3.py a <from> <to> <step> <image output location>
+Question 3b:
+  python ~arancarmon/imlhw/2/submit/q3.py b <from> <to> <step> <image output location>
+Question 3c:
+  python ~arancarmon/imlhw/2/submit/q3.py c <image output location>
+Question 3d:
+  python ~arancarmon/imlhw/2/submit/q3.py d
