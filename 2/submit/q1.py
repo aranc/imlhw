@@ -6,6 +6,7 @@ import matplotlib
 import matplotlib.pyplot as plt
 from hw2 import *
 
+#Build perceptron from training set
 def build_perceptron(samples, labels):
     w = np.zeros(len(samples[0]))
     for i in range(len(samples)):
@@ -14,6 +15,7 @@ def build_perceptron(samples, labels):
             w += labels[i] * samples[i] / np.linalg.norm(samples[i])
     return w
 
+#Classify sample x using weights w
 def classify(w, x):
     x = x / np.linalg.norm(x)
     return 1 if np.dot(w, x) >= 0 else -1
