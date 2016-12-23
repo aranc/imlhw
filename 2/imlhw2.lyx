@@ -1364,6 +1364,53 @@ c.
 \end_layout
 
 \begin_layout Standard
+\begin_inset Graphics
+	filename pics/3c.png
+	lyxscale 20
+	scale 30
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Box ovalbox
+position "t"
+hor_pos "c"
+has_inner_box 1
+inner_pos "t"
+use_parbox 0
+use_makebox 0
+width "100col%"
+special "none"
+height "1in"
+height_special "totalheight"
+thickness "0.4pt"
+separation "3pt"
+shadowsize "4pt"
+framecolor "black"
+backgroundcolor "none"
+status open
+
+\begin_layout Plain Layout
+How to run:
+\end_layout
+
+\begin_layout Plain Layout
+python 
+\begin_inset Formula $\sim$
+\end_inset
+
+arancarmon/imlhw/2/submit/q2.py c <image output location>
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
 \begin_inset Formula $\phantom{A}$
 \end_inset
 
@@ -1373,6 +1420,49 @@ c.
 \begin_layout Standard
 d.
  Accuracy measured: 0.99
+\end_layout
+
+\begin_layout Standard
+\begin_inset Box ovalbox
+position "t"
+hor_pos "c"
+has_inner_box 1
+inner_pos "t"
+use_parbox 0
+use_makebox 0
+width "100col%"
+special "none"
+height "1in"
+height_special "totalheight"
+thickness "0.4pt"
+separation "3pt"
+shadowsize "4pt"
+framecolor "black"
+backgroundcolor "none"
+status open
+
+\begin_layout Plain Layout
+How to run:
+\end_layout
+
+\begin_layout Plain Layout
+python 
+\begin_inset Formula $\sim$
+\end_inset
+
+arancarmon/imlhw/2/submit/q2.py d
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $\phantom{A}$
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
