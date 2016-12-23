@@ -2,7 +2,7 @@ import sys
 import time
 import numpy as np
 import matplotlib
-#matplotlib.use('Agg')
+matplotlib.use('Agg')
 import matplotlib.pyplot as plt
 from hw2 import *
 
@@ -51,13 +51,20 @@ def q1a():
         mean, p5, p95 = q1a_helper(n)
         print n, mean, p5, p95
 
+#Plot w for question 1b
 def q1b(output=None):
     w=build_perceptron(train_data, train_labels)
-    plt.imshow(w.reshape(28,28))
+    plt.imshow(w.reshape(28,28), interpolation='nearest')
     if output == None:
         plt.show()
     else:
         plt.savefig(output)
+
+#Print accuracy for question 1c
+def q1c():
+    w = build_perceptron(train_data, train_labels)
+    print measure(w, test_data, test_labels)
+
 
 if True:
     #Get subquestion from first argument
@@ -66,10 +73,9 @@ if True:
     elif sys.argv[1] == 'b':
         #output filename from remaining arguments
         output = sys.argv[2]
-        q1b()
+        q1b(output)
     elif sys.argv[1] == 'c':
-        output = sys.argv[2]
-        q3c(output)
+        q3c()
     elif sys.argv[1] == 'd':
         print q3d()
     else:
