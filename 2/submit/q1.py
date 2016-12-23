@@ -74,7 +74,7 @@ def q1d(num_images, output):
             plt.imshow(test_data[img].reshape(28,28))
             plt.savefig(output+str(indx)+".png")
             indx += 1
-            if indx >= num_images:
+            if indx > num_images:
                 return
 
 
@@ -91,6 +91,6 @@ if True:
     elif sys.argv[1] == 'd':
         num_images = int(sys.argv[2])
         output = sys.argv[3]
-        print q1d(num_images, output)
+        q1d(num_images, output)
     else:
         print "Error: please choose subquestion (a,b,c,d)"

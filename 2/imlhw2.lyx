@@ -1169,6 +1169,46 @@ arancarmon/imlhw/2/submit/q1.py c
 \end_layout
 
 \begin_layout Standard
+d.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Graphics
+	filename pics/q1d_1.png
+	lyxscale 20
+	scale 30
+
+\end_inset
+
+
+\begin_inset Graphics
+	filename pics/q1d_2.png
+	lyxscale 20
+	scale 30
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Both images have an appendix at the middle, that makes them similar to 
+\begin_inset Formula $8$
+\end_inset
+
+.
+ Also seen: some distorted eights that looks like zeros with an outside
+ appendix.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $\phantom{A}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
 3.
  a.
  
