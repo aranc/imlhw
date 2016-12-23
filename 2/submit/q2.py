@@ -45,7 +45,7 @@ def q2a(_from, _to, _step, output=None):
 def q2c(output=None):
     S=sklearn.svm.LinearSVC(loss='hinge', fit_intercept=False, C=pow(10,-6.6))
     S.fit(train_data, train_labels)
-    w=S.coeff_
+    w=S.coef_
     plt.imshow(w.reshape(28,28), interpolation='nearest')
     if output == None:
         plt.show()
@@ -56,7 +56,7 @@ def q2c(output=None):
 def q2d():
     S=sklearn.svm.LinearSVC(loss='hinge', fit_intercept=False, C=pow(10,-6.6))
     S.fit(train_data, train_labels)
-    return measure(w, test_data, test_labels)
+    return measure(S, test_data, test_labels)
 
 
 if True:
