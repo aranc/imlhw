@@ -947,6 +947,112 @@ arancarmon/imlhw/2/submit
 \end_layout
 
 \begin_layout Standard
+1.
+ a.
+\end_layout
+
+\begin_layout Standard
+\begin_inset listings
+inline false
+status open
+
+\begin_layout Plain Layout
+
+n    mean           5 percentile   95 percentile
+\end_layout
+
+\begin_layout Plain Layout
+
+5    0.856156601842 0.67451381781  0.905322415558 
+\end_layout
+
+\begin_layout Plain Layout
+
+10   0.907118730809 0.806038894575 0.948311156602 
+\end_layout
+
+\begin_layout Plain Layout
+
+50   0.955209825998 0.921699078813 0.977993858751 
+\end_layout
+
+\begin_layout Plain Layout
+
+100  0.965516888434 0.936028659161 0.982088024565 
+\end_layout
+
+\begin_layout Plain Layout
+
+500  0.977743091095 0.950358239509 0.988741044012 
+\end_layout
+
+\begin_layout Plain Layout
+
+1000 0.984426816786 0.973387922211 0.990788126919 
+\end_layout
+
+\begin_layout Plain Layout
+
+5000 0.988121801433 0.981064483112 0.992835209826 
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Box ovalbox
+position "t"
+hor_pos "c"
+has_inner_box 1
+inner_pos "t"
+use_parbox 0
+use_makebox 0
+width "100col%"
+special "none"
+height "1in"
+height_special "totalheight"
+thickness "0.4pt"
+separation "3pt"
+shadowsize "4pt"
+framecolor "black"
+backgroundcolor "none"
+status open
+
+\begin_layout Plain Layout
+How to run:
+\end_layout
+
+\begin_layout Plain Layout
+python 
+\begin_inset Formula $\sim$
+\end_inset
+
+arancarmon/imlhw/2/submit/q1.py a
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $\phantom{A}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+b.
+\end_layout
+
+\begin_layout Standard
+
+\end_layout
+
+\begin_layout Standard
 \begin_inset Formula $\phantom{A}$
 \end_inset
 

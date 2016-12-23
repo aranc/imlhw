@@ -51,7 +51,7 @@ def q1a():
         mean, p5, p95 = q1a_helper(n)
         print n, mean, p5, p95
 
-def _q1b(output=None):
+def q1b(output=None):
     w=build_perceptron(train_data, train_labels)
     plt.imshow(w.reshape(28,28))
     if output == None:
@@ -59,21 +59,18 @@ def _q1b(output=None):
     else:
         plt.savefig(output)
 
-def q1b():
-    w=build_perceptron(train_data, train_labels)
-    plt.imshow(w.reshape(28,28))
-    plt.show()
-
 if True:
     #Get subquestion from first argument
     if sys.argv[1] == 'a':
         q1a()
     elif sys.argv[1] == 'b':
+        #output filename from remaining arguments
+        output = sys.argv[2]
         q1b()
-    if sys.argv[1] == 'c':
+    elif sys.argv[1] == 'c':
         output = sys.argv[2]
         q3c(output)
-    if sys.argv[1] == 'd':
+    elif sys.argv[1] == 'd':
         print q3d()
     else:
         print "Error: please choose subquestion (a,b,c,d)"

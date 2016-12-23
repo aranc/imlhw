@@ -120,17 +120,17 @@ if True:
         _step = float(sys.argv[4])
         output = sys.argv[5]
         q3a(_from, _to, _step, output)
-    if sys.argv[1] == 'b':
+    elif sys.argv[1] == 'b':
         #get _from, _to, _step, and plot output filename from remaining arguments
         _from = float(sys.argv[2])
         _to = float(sys.argv[3])
         _step = float(sys.argv[4])
         output = sys.argv[5]
         q3b(_from, _to, _step, output)
-    if sys.argv[1] == 'c':
+    elif sys.argv[1] == 'c':
         output = sys.argv[2]
         q3c(output)
-    if sys.argv[1] == 'd':
+    elif sys.argv[1] == 'd':
         print q3d()
     else:
         print "Error: please choose subquestion (a,b,c,d)"
