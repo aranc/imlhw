@@ -446,7 +446,7 @@ b.
 \begin_layout Standard
 \begin_inset Formula 
 \[
-\min_{\alpha}\frac{1}{2}\sum_{i=1}^{m}\sum_{j=1}^{m}\alpha_{i}\alpha_{j}y_{i}y_{j}x_{i}^{T}x_{j}-\sum_{n=1}^{m}\alpha_{n}
+\min_{\alpha_{1}}\frac{1}{2}\sum_{i=1}^{m}\sum_{j=1}^{m}\alpha_{i}\alpha_{j}y_{i}y_{j}x_{i}^{T}x_{j}-\sum_{n=1}^{m}\alpha_{n}
 \]
 
 \end_inset
@@ -481,7 +481,7 @@ c.
 \begin_layout Standard
 \begin_inset Formula 
 \[
-\alpha_{1}y_{1}y_{1}x_{1}^{T}x_{1}+\frac{1}{2}\sum_{i=2}^{m}\alpha_{i}y_{1}y_{i}x_{1}^{T}x_{i}-1=0
+\alpha_{1}y_{1}y_{1}x_{1}^{T}x_{1}+\sum_{i=2}^{m}\alpha_{i}y_{1}y_{i}x_{1}^{T}x_{i}-1=0
 \]
 
 \end_inset
@@ -492,7 +492,7 @@ c.
 \begin_layout Standard
 \begin_inset Formula 
 \[
-\alpha_{1}=\frac{1-\frac{1}{2}\sum_{i=2}^{m}\alpha_{i}y_{1}y_{i}x_{1}^{T}x_{i}}{y_{1}y_{1}x_{1}^{T}x_{1}}
+\alpha_{1}=\frac{1-\sum_{i=2}^{m}\alpha_{i}y_{1}y_{i}x_{1}^{T}x_{i}}{y_{1}y_{1}x_{1}^{T}x_{1}}
 \]
 
 \end_inset
@@ -513,12 +513,45 @@ Need to also test
 \end_layout
 
 \begin_layout Standard
-TODO: is this good?
+\begin_inset Formula $\phantom{A}$
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
 d.
- TODO
+ At each iteration, we fix a single 
+\begin_inset Formula $\alpha$
+\end_inset
+
+ and perform 
+\begin_inset Formula $m$
+\end_inset
+
+ dot products.
+ therefore the time complexity 
+\begin_inset Formula $O(md)$
+\end_inset
+
+.
+ (
+\begin_inset Formula $d$
+\end_inset
+
+ is the dimension of 
+\begin_inset Formula $x_{i}$
+\end_inset
+
+).
+\end_layout
+
+\begin_layout Standard
+Space complexity is 
+\begin_inset Formula $O(1)$
+\end_inset
+
+, since we only sum a list of products and dot products, and divide.
 \end_layout
 
 \begin_layout Standard
