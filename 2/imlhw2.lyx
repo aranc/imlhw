@@ -1252,6 +1252,62 @@ e.g.
 
 \begin_layout Standard
 2.
+ a.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Graphics
+	filename pics/2a_1.png
+	lyxscale 20
+	scale 30
+
+\end_inset
+
+
+\begin_inset Graphics
+	filename pics/2a_2.png
+	lyxscale 20
+	scale 30
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Box ovalbox
+position "t"
+hor_pos "c"
+has_inner_box 1
+inner_pos "t"
+use_parbox 0
+use_makebox 0
+width "100col%"
+special "none"
+height "1in"
+height_special "totalheight"
+thickness "0.4pt"
+separation "3pt"
+shadowsize "4pt"
+framecolor "black"
+backgroundcolor "none"
+status open
+
+\begin_layout Plain Layout
+How to run:
+\end_layout
+
+\begin_layout Plain Layout
+python 
+\begin_inset Formula $\sim$
+\end_inset
+
+arancarmon/imlhw/2/submit/q2.py a <from> <to> <step> <image output location>
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
@@ -1259,6 +1315,32 @@ e.g.
 \end_inset
 
 
+\end_layout
+
+\begin_layout Standard
+b.
+ The training error decreases as we increase 
+\begin_inset Formula $C$
+\end_inset
+
+.
+ This is because 
+\begin_inset Formula $C$
+\end_inset
+
+ is the coefficient of the tolerance for errors on the training set.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $\phantom{A}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+c.
+ 
 \end_layout
 
 \begin_layout Standard
