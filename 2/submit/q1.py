@@ -2,7 +2,7 @@ import sys
 import time
 import numpy as np
 import matplotlib
-matplotlib.use('Agg')
+#matplotlib.use('Agg')
 import matplotlib.pyplot as plt
 from hw2 import *
 
@@ -47,17 +47,25 @@ def q1a():
     for n in [5, 10, 50, 100, 500, 1000, 5000]:
         print n, q1a_helper(n)
 
+def _q1b(output=None):
+    w=build_perceptron(train_data, train_labels)
+    plt.imshow(w.reshape(28,28))
+    if output == None:
+        plt.show()
+    else:
+        plt.savefig(output)
+
+def q1b():
+    w=build_perceptron(train_data, train_labels)
+    plt.imshow(w.reshape(28,28))
+    plt.show()
+
 if True:
     #Get subquestion from first argument
     if sys.argv[1] == 'a':
         q1a()
     elif sys.argv[1] == 'b':
-        #get _from, _to, _step, and plot output filename from remaining arguments
-        _from = float(sys.argv[2])
-        _to = float(sys.argv[3])
-        _step = float(sys.argv[4])
-        output = sys.argv[5]
-        q3b(_from, _to, _step, output)
+        q1b()
     if sys.argv[1] == 'c':
         output = sys.argv[2]
         q3c(output)
