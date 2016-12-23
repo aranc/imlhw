@@ -601,8 +601,8 @@ Space complexity is
 
 \begin_layout Standard
 b.
- Since we want to use kernels, we want on classification to use the dot-product
- of the new sample with the training samples.
+ Since we want to use kernels, on each classification we want to use the
+ dot-product of the new sample with the training samples.
 \end_layout
 
 \begin_layout Standard
