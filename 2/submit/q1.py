@@ -63,7 +63,19 @@ def q1b(output=None):
 #Print accuracy for question 1c
 def q1c():
     w = build_perceptron(train_data, train_labels)
-    print measure(w, test_data, test_labels)
+    return measure(w, test_data, test_labels)
+
+#Save miscalssified images as output1.png, output2.png, ...
+def q1d(num_images, output):
+    indx = 1
+    w=build_perceptron(train_data, train_labels)
+    for img in range(len(test_data)):
+        if test_labels[img] != classify(w, test_data[img]):
+            plt.imshow(test_data[img].reshape(28,28))
+            plt.savefig(output+str(indx)+".png")
+            indx += 1
+            if indx >= num_images:
+                return
 
 
 if True:
@@ -75,8 +87,10 @@ if True:
         output = sys.argv[2]
         q1b(output)
     elif sys.argv[1] == 'c':
-        q3c()
+        print q1c()
     elif sys.argv[1] == 'd':
-        print q3d()
+        num_images = int(sys.argv[2])
+        output = sys.argv[3]
+        print q1d(num_images, output)
     else:
         print "Error: please choose subquestion (a,b,c,d)"
