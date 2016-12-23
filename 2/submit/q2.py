@@ -11,7 +11,7 @@ from hw2 import *
 def measure(classifier, data, labels):
     errors = 0
     for i in range(len(data)):
-        predicted = S.predict(data[i].reshape(1, -1))
+        predicted = classifier.predict(data[i].reshape(1, -1))
         if predicted != labels[i]:
             errors += 1
     return 1 - float(errors)/float(len(data))
@@ -22,7 +22,7 @@ def q2a(_from, _to, _step, output=None):
     def measure_for_C(C):
         S=sklearn.svm.LinearSVC(loss='hinge', fit_intercept=False, C=C)
         S.fit(train_data, train_labels)
-        return measure(S, train_data, train_labels), measure(S, train_data, validation_labels)
+        return measure(S, train_data, train_labels), measure(S, validation_data, validation_labels)
 
     p_range = np.arange(_from, _to, _step)
     training_accuracy = {}
