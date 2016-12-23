@@ -194,6 +194,14 @@ Now let us consider the solution
 \end_layout
 
 \begin_layout Standard
+Therefore 
+\begin_inset Formula $v_{1}=v_{2}$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
 \begin_inset Formula $\phantom{A}$
 \end_inset
 
@@ -205,7 +213,7 @@ b.
  
 \begin_inset Formula 
 \[
-\lag(x,\alpha)=\frac{1}{2}w^{T}w+\frac{C}{2}\sum_{i=1}^{m}\xi_{i}^{2}+\sum_{i=1}^{m}\alpha_{i}\left(1-\xi_{i}-y_{i}\left(w^{T}x_{i}+b\right)\right)
+\lag(w,b,\xi,\alpha)=\frac{1}{2}w^{T}w+\frac{C}{2}\sum_{i=1}^{m}\xi_{i}^{2}+\sum_{i=1}^{m}\alpha_{i}\left(1-\xi_{i}-y_{i}\left(w^{T}x_{i}+b\right)\right)
 \]
 
 \end_inset
