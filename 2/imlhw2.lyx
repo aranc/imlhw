@@ -319,12 +319,12 @@ d.
 \begin_layout Standard
 \begin_inset Formula 
 \begin{align*}
-\max_{\alpha}\lag(w,b,\xi,\alpha) & =\max_{\alpha}\frac{1}{2}w^{T}w+\frac{C}{2}\sum_{i=1}^{m}\xi_{i}^{2}+\sum_{i=1}^{m}\alpha_{i}\left(1-\xi_{i}-y_{i}\left(w^{T}x_{i}+b\right)\right)\\
- & =\max_{\alpha}\frac{1}{2}\sum_{i=1}^{m}\sum_{j=1}^{m}\alpha_{i}\alpha_{j}y_{i}y_{j}x_{i}^{T}x_{j}+\frac{1}{2}\sum_{n=1}^{N}\alpha_{n}^{2}+\\
+\max_{\alpha}\min_{w,b,\xi}\lag(w,b,\xi,\alpha) & =\max_{\alpha}\min_{w,b,\xi}\frac{1}{2}w^{T}w+\frac{C}{2}\sum_{i=1}^{m}\xi_{i}^{2}+\sum_{i=1}^{m}\alpha_{i}\left(1-\xi_{i}-y_{i}\left(w^{T}x_{i}+b\right)\right)\\
+ & =\max_{\alpha}\min_{w,b,\xi}\frac{1}{2}\sum_{i=1}^{m}\sum_{j=1}^{m}\alpha_{i}\alpha_{j}y_{i}y_{j}x_{i}^{T}x_{j}+\frac{1}{2}\sum_{n=1}^{N}\alpha_{n}^{2}+\\
  & +\sum_{i=1}^{m}\alpha_{i}-\sum_{i=1}^{m}\alpha_{i}\xi_{i}-\sum_{i=1}^{m}\alpha_{i}y_{i}w^{T}x_{i}-\sum_{i=1}^{m}\alpha_{i}y_{i}b\\
- & =\max_{\alpha}\frac{1}{2}\sum_{i=1}^{m}\sum_{j=1}^{m}\alpha_{i}\alpha_{j}y_{i}y_{j}x_{i}^{T}x_{j}+\sum_{i=1}^{m}\alpha_{i}+\left(\frac{1}{2}-\frac{1}{C}\right)\sum_{i=1}^{m}\alpha_{i}^{2}-\\
+ & =\max_{\alpha}\min_{w,b,\xi}\frac{1}{2}\sum_{i=1}^{m}\sum_{j=1}^{m}\alpha_{i}\alpha_{j}y_{i}y_{j}x_{i}^{T}x_{j}+\sum_{i=1}^{m}\alpha_{i}+\left(\frac{1}{2}-\frac{1}{C}\right)\sum_{i=1}^{m}\alpha_{i}^{2}-\\
  & -\sum_{i=1}^{m}\alpha_{i}y_{i}\left(\sum_{j=1}^{m}\alpha_{j}y_{j}x_{j}\right)^{T}x_{i}\\
- & =\max_{\alpha}\mbox{-}\frac{1}{2}\sum_{i=1}^{m}\sum_{j=1}^{m}\alpha_{i}\alpha_{j}y_{i}y_{j}x_{i}^{T}x_{j}+\sum_{i=1}^{m}\alpha_{i}+\left(\frac{1}{2}-\frac{1}{C}\right)\sum_{i=1}^{m}\alpha_{i}^{2}
+ & =\max_{\alpha}\min_{w,b,\xi}\mbox{-}\frac{1}{2}\sum_{i=1}^{m}\sum_{j=1}^{m}\alpha_{i}\alpha_{j}y_{i}y_{j}x_{i}^{T}x_{j}+\sum_{i=1}^{m}\alpha_{i}+\left(\frac{1}{2}-\frac{1}{C}\right)\sum_{i=1}^{m}\alpha_{i}^{2}
 \end{align*}
 
 \end_inset
