@@ -103,7 +103,7 @@ HW2
 \[
 \begin{array}{ccc}
 \text{Aran Carmon} & \text{<aran.carmon@gmail.com>} & \text{038847588}\\
-\text{Danny Vainstein} & \text{<dannyvainstein@gmail.com>} & \text{201040763}
+\text{Inbal Joffe} & \text{<	inbaljoffe@mail.tau.ac.il>} & \text{302868898}
 \end{array}
 \]
 
@@ -135,12 +135,12 @@ Theory Questions
 1.
  a.
  Let 
-\begin_inset Formula $\{w_{1},b_{1},\xi_{1}\}$
+\begin_inset Formula $p_{1}=\{w_{1},b_{1},\xi_{1}\}$
 \end_inset
 
  be the solution with the additional constraint.
  Let 
-\begin_inset Formula $\{w_{2},b_{2},\xi_{2}\}$
+\begin_inset Formula $p_{2}=\{w_{2},b_{2},\xi_{2}\}$
 \end_inset
 
  be the solution without the additional constraint.
@@ -169,18 +169,25 @@ When considering an optimal solution without the additional constraints,
 \end_layout
 
 \begin_layout Standard
-On the otherhand, when considering an optimal solution with the additional
- constraint, 
-\begin_inset Formula $P=\{w_{2},b_{2},\left|\xi_{2}\right|\}$
+Now let us consider the solution 
+\begin_inset Formula $p=\{w_{2},b_{2},\left|\xi_{2}\right|\}$
 \end_inset
 
- is considered, and it has the same value as 
-\begin_inset Formula $\{w_{2},b_{2},\xi_{2}\}$
+ with value 
+\begin_inset Formula $v$
+\end_inset
+
+, and we shall notice that 
+\begin_inset Formula $v=v_{2}$
 \end_inset
 
 .
- Therefore 
-\begin_inset Formula $v_{1}\le v_{2}$
+ 
+\begin_inset Formula $p$
+\end_inset
+
+ also satisfies the additional constraint, therefore 
+\begin_inset Formula $v_{1}\le v=v_{2}$
 \end_inset
 
 .
@@ -891,7 +898,7 @@ HW1: Programming Assignment
 \[
 \begin{array}{ccc}
 \text{Aran Carmon} & \text{<aran.carmon@gmail.com>} & \text{038847588}\\
-\text{Inbal Joffe} & \text{<	inbaljoffe@mail.tau.ac.il>} & \text{Your ID here}
+\text{Inbal Joffe} & \text{<	inbaljoffe@mail.tau.ac.il>} & \text{302868898}
 \end{array}
 \]
 
