@@ -44,10 +44,12 @@ def q1a_helper(n):
     #return mean, 5 precentile, and 95 precentile
     return np.mean(res), res[5], res[95]
 
+#Print table for question 1a
 def q1a():
-    print "List of n, mean accuracy, 5 & 95 precentiles"
+    print "List of n, mean accuracy, 5 precentile, and 95 precentile"
     for n in [5, 10, 50, 100, 500, 1000, 5000]:
-        print n, q1a_helper(n)
+        mean, p5, p95 = q1a_helper(n)
+        print n, mean, p5, p95
 
 def _q1b(output=None):
     w=build_perceptron(train_data, train_labels)
