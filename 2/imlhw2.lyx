@@ -555,44 +555,7 @@ Space complexity is
 \end_layout
 
 \begin_layout Standard
-\begin_inset Formula $\phantom{A}$
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
-4.
-\end_layout
-
-\begin_layout Standard
-a.
- counter example: 
-\begin_inset Formula $K_{2}=2K_{1}$
-\end_inset
-
-,
-\end_layout
-
-\begin_layout Standard
-\begin_inset Formula 
-\begin{align*}
-K(x,x) & =K_{1}(x,x)-2K_{1}(x,x)\\
- & =-K_{1}(x,x)\le0
-\end{align*}
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
-b.
- 
-\end_layout
-
-\begin_layout Standard
-\begin_inset Formula $\phantom{A}$
+\begin_inset Newpage pagebreak
 \end_inset
 
 
