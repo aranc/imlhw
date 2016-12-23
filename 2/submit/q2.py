@@ -41,6 +41,23 @@ def q2a(_from, _to, _step, output=None):
     else:
         plt.savefig(output)
 
+#Plot w for question 2c
+def q2c(output=None):
+    S=sklearn.svm.LinearSVC(loss='hinge', fit_intercept=False, C=pow(10,-6.6))
+    S.fit(train_data, train_labels)
+    w=S.coeff_
+    plt.imshow(w.reshape(28,28), interpolation='nearest')
+    if output == None:
+        plt.show()
+    else:
+        plt.savefig(output)
+
+#Print accuracy for question 2d
+def q2d():
+    S=sklearn.svm.LinearSVC(loss='hinge', fit_intercept=False, C=pow(10,-6.6))
+    S.fit(train_data, train_labels)
+    return measure(w, test_data, test_labels)
+
 
 if True:
     #Get subquestion from first argument
@@ -51,5 +68,10 @@ if True:
         _step = float(sys.argv[4])
         output = sys.argv[5]
         q2a(_from, _to, _step, output)
+    elif sys.argv[1] == 'c':
+        output = sys.argv[2]
+        q2c(output)
+    elif sys.argv[1] == 'd':
+        print q2d()
     else:
         print "Error: please choose subquestion (a,b,c,d)"
