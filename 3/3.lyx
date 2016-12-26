@@ -132,6 +132,14 @@ Theory Questions
 \end_layout
 
 \begin_layout Standard
+\begin_inset FormulaMacro
+\newcommand{\hag}{\mathcal{H}}
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
 1.
  Let's look on the inputs set 
 \begin_inset Formula $S=x_{1},...,x_{d}\in R^{d}$
@@ -218,6 +226,182 @@ The first layer will only accept inputs from
 \end_inset
 
 .
+\end_layout
+
+\begin_layout Part*
+\begin_inset Formula $\phantom{A}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+2.
+ a.
+ We have seen in the recitation that 
+\begin_inset Formula $\pi_{\hag}(m)\le\left(\frac{em}{d+1}\right)^{d+1}$
+\end_inset
+
+, since 
+\begin_inset Formula $\hag$
+\end_inset
+
+ are the hyperplane separators in 
+\begin_inset Formula $R^{d}$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $\phantom{A}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+b.
+ 
+\begin_inset Formula $C$
+\end_inset
+
+ has 
+\begin_inset Formula $L$
+\end_inset
+
+ layers, each layer is a product of 
+\begin_inset Formula $d$
+\end_inset
+
+ compositions of networks with 
+\begin_inset Formula $L-1$
+\end_inset
+
+ layers.
+ For simplicity we will ignore the fact that the last layer is only a single
+ composition.
+\end_layout
+
+\begin_layout Standard
+So if a network with 
+\begin_inset Formula $L$
+\end_inset
+
+ layers has a growth function 
+\begin_inset Formula $\pi_{C_{L}}$
+\end_inset
+
+ , we have 
+\begin_inset Formula $\pi_{C_{L}}(m)\le\left(\left(\frac{em}{d+1}\right)^{d+1}\pi_{C_{L-1}}(m)\right)^{d}$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+Applying the above recursively...
+ TODO: complete this.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $\phantom{A}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+c.
+ Ignoring the fact that the last layer is only a single composition, the
+ parameters are 
+\begin_inset Formula $L$
+\end_inset
+
+ matrices 
+\begin_inset Formula $W^{(t)}\in\text{Mat}(d,d)$
+\end_inset
+
+ and vectors 
+\begin_inset Formula $b^{(t)}\in R^{d}$
+\end_inset
+
+.
+ all in all 
+\begin_inset Formula $Ld^{3}$
+\end_inset
+
+ parameters.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $\phantom{A}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+d/e: TODO
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $\phantom{A}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+5.
+ If at each level 
+\begin_inset Formula $i$
+\end_inset
+
+ of the tree, we will ask 
+\begin_inset Formula $x_{i}=0$
+\end_inset
+
+, then after 
+\begin_inset Formula $d$
+\end_inset
+
+ questions, any leaf will contain only one members.
+ That is, one-to-one correspondence between leafs and vectors 
+\begin_inset Formula $\{0,1\}^{d}$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+To implement an arbitrary classifier using this tree, classify every leaf
+ according to what the arbitrary classifier would do.
+\end_layout
+
+\begin_layout Standard
+Since we can classify any subset we wish as 
+\begin_inset Formula $1$
+\end_inset
+
+, we have 
+\begin_inset Formula $2^{d}$
+\end_inset
+
+ possible classes.
+ That is also the maximum possible numbers of classes using 
+\begin_inset Formula $2^{d}$
+\end_inset
+
+ inputs, therefore the VCdim is 
+\begin_inset Formula $2^{d}.$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+TODO: verify
 \end_layout
 
 \begin_layout Part*
