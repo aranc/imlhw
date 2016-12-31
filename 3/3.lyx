@@ -18,6 +18,7 @@
 \usepackage{culmus}
 \def\L{\protect\pL}
 \usepackage{minted}
+\usepackage{bbold}
 \end_preamble
 \use_default_options true
 \maintain_unincluded_children false
@@ -379,7 +380,7 @@ b.
 \begin_layout Standard
 4.
  a.
-  When 
+ When 
 \begin_inset Formula $k=2$
 \end_inset
 
@@ -408,7 +409,7 @@ Since we classify to either label
 \end_inset
 
 .
- (TODO: proving this will be nice).
+ (TODO: proving this would be nice).
 \end_layout
 
 \begin_layout Standard
@@ -427,33 +428,24 @@ f & =\left\Vert w_{1}\right\Vert ^{2}+\frac{C}{2}\sum_{i=1}^{m}\max(0,1-2w_{y_{i
 \end_layout
 
 \begin_layout Standard
-If we redefine the label 
-\begin_inset Formula $y_{i}=1$
-\end_inset
-
- to be 
-\begin_inset Formula $1$
-\end_inset
-
- and the label 
-\begin_inset Formula $y_{i}=2$
-\end_inset
-
- to be 
-\begin_inset Formula $-1$
+Define 
+\begin_inset Formula $y'_{i}=\begin{cases}
+1 & y_{i}=1\\
+-1 & y_{i}=2
+\end{cases}$
 \end_inset
 
 , and define 
 \begin_inset Formula $w=w_{1}$
 \end_inset
 
-, the above turns to,
+,
 \end_layout
 
 \begin_layout Standard
 \begin_inset Formula 
 \begin{align*}
-f & =\left\Vert w\right\Vert ^{2}+\frac{C}{2}\sum_{i=1}^{m}\max(0,1-2y_{i}wx_{i})
+f & =\left\Vert w\right\Vert ^{2}+\frac{C}{2}\sum_{i=1}^{m}\max(0,1-2y'_{i}wx_{i})
 \end{align*}
 
 \end_inset
@@ -462,8 +454,162 @@ f & =\left\Vert w\right\Vert ^{2}+\frac{C}{2}\sum_{i=1}^{m}\max(0,1-2y_{i}wx_{i}
 \end_layout
 
 \begin_layout Standard
+TODO: complete the equivalence
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $\phantom{A}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset FormulaMacro
+\newcommand{\one}{\mathbb{1}}
+{1}
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
 b.
- 
+ Derive with respect to 
+\begin_inset Formula $w_{j}$
+\end_inset
+
+:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+\frac{\partial f}{\partial w_{j}}=w_{j}+\frac{C}{m}\sum_{i=1}^{m}x_{i}\left(\one(j\ne y_{i})\one(w_{y_{i}}x-w_{j}x\le1)-\one(j=y_{i})\sum_{p\ne j}\one(w_{y_{k}}x-w_{j}x\le1)\right)
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+So an SGD version, would be to sample a random point at each step, and to
+ update all 
+\begin_inset Formula $w_{j}$
+\end_inset
+
+s according to the following rule,
+\end_layout
+
+\begin_layout Standard
+If 
+\begin_inset Formula $j=y_{i}$
+\end_inset
+
+: Wrong! depends on 
+\begin_inset Formula $w_{j}\cdot x_{i}$
+\end_inset
+
+....
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+w_{j,t+1}=(1-\eta)w_{j,t}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+If 
+\begin_inset Formula $j\ne y_{i}$
+\end_inset
+
+:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+w_{t+1}=(1-\eta)w_{t}-\eta Cx_{i}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $\phantom{A}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset FormulaMacro
+\newcommand{\pluseq}{\mathrel{+}=}
+{+=}
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+c.
+ We notice that 
+\begin_inset Formula $w_{j}$
+\end_inset
+
+ is a linear combination of 
+\begin_inset Formula $x_{i}$
+\end_inset
+
+s.
+ Instead of keeping 
+\begin_inset Formula $w_{j}$
+\end_inset
+
+ explicitly, we can keep track of the coefficients of 
+\begin_inset Formula $x_{i}$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+Define 
+\begin_inset Formula $w_{j}=\sum_{i=1}^{m}M_{j,i}x_{i}$
+\end_inset
+
+.
+ We begin by initializing 
+\begin_inset Formula $M$
+\end_inset
+
+ to zeros.
+ On each step we do 
+\begin_inset Formula $M=(1-\eta)M$
+\end_inset
+
+, and then for any row 
+\begin_inset Formula $j$
+\end_inset
+
+ where 
+\begin_inset Formula $j\ne y_{i}$
+\end_inset
+
+ we also do 
+\begin_inset Formula $M_{j}\pluseq-Cx_{i}$
+\end_inset
+
+.
 \end_layout
 
 \begin_layout Standard
