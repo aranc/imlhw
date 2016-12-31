@@ -616,19 +616,35 @@ Define
 \begin_inset Formula $M=(1-\eta)M$
 \end_inset
 
-, and then for any row 
-\begin_inset Formula $j$
+, and then add 
+\begin_inset Formula $\eta C$
 \end_inset
 
- where 
-\begin_inset Formula $j\ne y_{i}$
+ or 
+\begin_inset Formula $-\eta C$
 \end_inset
 
- we also do 
-\begin_inset Formula $M_{j}\pluseq-Cx_{i}$
+ as needed to the rows of 
+\begin_inset Formula $M$
 \end_inset
 
 .
+ See pseudo code below.
+\end_layout
+
+\begin_layout Standard
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $\phantom{A}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+TODO: add pseudo-code similar to previous homework assignment
 \end_layout
 
 \begin_layout Standard
