@@ -379,7 +379,91 @@ b.
 \begin_layout Standard
 4.
  a.
-  
+  When 
+\begin_inset Formula $k=2$
+\end_inset
+
+, the multiclass SVM problem is:
+\begin_inset Formula 
+\[
+f=\frac{1}{2}\left\Vert w_{1}\right\Vert ^{2}+\frac{1}{2}\left\Vert w_{2}\right\Vert ^{2}+\frac{C}{2}\sum_{i=1}^{m}\max(0,\left(w_{3-y_{i}}-w_{y_{i}}\right)x_{i}+1)
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Since we classify to either label 
+\begin_inset Formula $1$
+\end_inset
+
+ or label 
+\begin_inset Formula $2$
+\end_inset
+
+, it is reasonable to expect 
+\begin_inset Formula $w_{1}^{*}=-w_{2}^{*}$
+\end_inset
+
+.
+ (TODO: proving this will be nice).
+\end_layout
+
+\begin_layout Standard
+In that case the above turns to,
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{align*}
+f & =\left\Vert w_{1}\right\Vert ^{2}+\frac{C}{2}\sum_{i=1}^{m}\max(0,1-2w_{y_{i}}x_{i})
+\end{align*}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+If we redefine the label 
+\begin_inset Formula $y_{i}=1$
+\end_inset
+
+ to be 
+\begin_inset Formula $1$
+\end_inset
+
+ and the label 
+\begin_inset Formula $y_{i}=2$
+\end_inset
+
+ to be 
+\begin_inset Formula $-1$
+\end_inset
+
+, and define 
+\begin_inset Formula $w=w_{1}$
+\end_inset
+
+, the above turns to,
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{align*}
+f & =\left\Vert w\right\Vert ^{2}+\frac{C}{2}\sum_{i=1}^{m}\max(0,1-2y_{i}wx_{i})
+\end{align*}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+b.
+ 
 \end_layout
 
 \begin_layout Standard
