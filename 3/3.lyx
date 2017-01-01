@@ -768,8 +768,8 @@ choose a random point
 \begin_inset space ~
 \end_inset
 
-
-\begin_inset Formula $M=(1-\eta)M$
+find 
+\begin_inset Formula $j*=\text{arg}\max_{j}(\sum_{t=1}^{m}M_{j,t}K(x_{t},x_{i}))$
 \end_inset
 
 
@@ -791,8 +791,8 @@ choose a random point
 \begin_inset space ~
 \end_inset
 
-find 
-\begin_inset Formula $j*=\text{arg}\max_{j}(\sum_{i=1}^{m}M_{j,i}K(x_{i},x))$
+
+\begin_inset Formula $M=(1-\eta)M$
 \end_inset
 
 
