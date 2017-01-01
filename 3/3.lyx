@@ -929,7 +929,7 @@ if
 \end_inset
 
 
-\begin_inset Formula $\forall i\in\left[m\right]\,\,M_{j,i}=M_{j,i}-\eta C$
+\begin_inset Formula $M_{j,i}=M_{j,i}-\eta C$
 \end_inset
 
 
@@ -1043,7 +1043,7 @@ if
 \end_inset
 
 
-\begin_inset Formula $\forall i\in\left[m\right]\,\,M_{j,i}=M_{j,i}+\eta C$
+\begin_inset Formula $M_{j,i}=M_{j,i}+\eta C$
 \end_inset
 
 
