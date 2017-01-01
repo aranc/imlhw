@@ -38,15 +38,23 @@ def svm_sgd_train(train_data, train_labels, T, C, eta):
         w *= (1 - eta)
         update_vector = np.multiply(indicator_pos[yi], indicator_neg[j_max])
         update_vector -= np.multiply(indicator_neg[yi], indicator_pos[j_max])
-        w += xi * np.asmatrix(update_vector) * C * eta
+        w += np.asmatrix(update_vector).T * xi.T * C * eta
 
     #Output weights matrix
     return w
 
 
 #Classify for question 7
-def svm_kernel_classify(K, training_data, M, x):
-    pass
+def svm_kernel_classify(K, training_set, M, x):
+    #Constant number of labels
+    k=10
+
+    #Return argmax(\sum{i=1}{m} M_ji*K(xi, x))
+    kernel_vector = np.fromfunction(lambda i: K(training_set[i], x), training_set.shape[0])
+    #Use matrix notation
+    kernel_vector = np.asmatrix(kernel_vector).T
+    #Return argmax as specified
+    return np.argmax(M*kernel_vector)
 
 #Train for question 7
 def svm_kernel_train():
