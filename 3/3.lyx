@@ -607,7 +607,467 @@ Define
 \end_inset
 
 .
- We begin by initializing 
+ Classifying a new point 
+\begin_inset Formula $x$
+\end_inset
+
+ would be 
+\begin_inset Formula $y=\text{arg}\max_{j}(\sum_{i=1}^{m}M_{j,i}K(x_{i},x))$
+\end_inset
+
+.
+ Where 
+\begin_inset Formula $K$
+\end_inset
+
+ is the kernel function used.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $\phantom{A}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Pseudo-code for training:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Box Boxed
+position "t"
+hor_pos "c"
+has_inner_box 1
+inner_pos "t"
+use_parbox 0
+use_makebox 0
+width "100col%"
+special "none"
+height "1in"
+height_special "totalheight"
+thickness "0.4pt"
+separation "3pt"
+shadowsize "4pt"
+framecolor "black"
+backgroundcolor "none"
+status open
+
+\begin_layout Plain Layout
+Input:
+\end_layout
+
+\begin_layout Itemize
+kernel function 
+\begin_inset Formula $K$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+list 
+\begin_inset Formula $\left\langle x_{i},y_{i}\right\rangle $
+\end_inset
+
+ of 
+\begin_inset Formula $m$
+\end_inset
+
+ training samples
+\end_layout
+
+\begin_layout Itemize
+\begin_inset Formula $T$
+\end_inset
+
+ number of iterations
+\end_layout
+
+\begin_layout Itemize
+\begin_inset Formula $\eta$
+\end_inset
+
+ step size
+\end_layout
+
+\begin_layout Itemize
+\begin_inset Formula $C$
+\end_inset
+
+ penalty coefficient
+\end_layout
+
+\begin_layout Plain Layout
+Output: A matrix 
+\begin_inset Formula $M\in\text{Mat}(k,m)$
+\end_inset
+
+ to be used for classifying new points
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Formula $\phantom{A}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+Initialize 
+\begin_inset Formula $M\in\text{Mat}(k,m)$
+\end_inset
+
+ to be zeroes
+\end_layout
+
+\begin_layout Plain Layout
+for 
+\begin_inset Formula $T$
+\end_inset
+
+ iterations:
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+choose a random point 
+\begin_inset Formula $x_{i},y_{i}$
+\end_inset
+
+ from the training set
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset Formula $M=(1-\eta)M$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+find 
+\begin_inset Formula $j*=\text{arg}\max_{j}(\sum_{i=1}^{m}M_{j,i}K(x_{i},x))$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+for each 
+\begin_inset Formula $j\in\left[k\right]$
+\end_inset
+
+:
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+if 
+\begin_inset Formula $j\ne y_{i}$
+\end_inset
+
+ and 
+\begin_inset Formula $j=j*$
+\end_inset
+
+:
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset Formula $\forall i\in\left[m\right]\,\,M_{j,i}=M_{j,i}-\eta C$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+if 
+\begin_inset Formula $j=y_{i}$
+\end_inset
+
+ and 
+\begin_inset Formula $j\ne j*$
+\end_inset
+
+:
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset Formula $\forall i\in\left[m\right]\,\,M_{j,i}=M_{j,i}+\eta C$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+return 
+\begin_inset Formula $M$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+We present the pseudo-code for training:
+\end_layout
+
+\begin_layout Standard
+We begin by initializing 
 \begin_inset Formula $M$
 \end_inset
 
@@ -630,21 +1090,6 @@ Define
 
 .
  See pseudo code below.
-\end_layout
-
-\begin_layout Standard
-
-\end_layout
-
-\begin_layout Standard
-\begin_inset Formula $\phantom{A}$
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
-TODO: add pseudo-code similar to previous homework assignment
 \end_layout
 
 \begin_layout Standard
