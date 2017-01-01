@@ -59,7 +59,7 @@ def svm_kernel_train(K, train_data, train_labels, T, eta, C):
     #Constant number of labels
     k=10
 
-    kernel_matrix = np.fromfunction(lambda i, j: K(train_data[i], train_data[j]), (m, m))
+    kernel_matrix = np.fromfunction(np.vectorize(lambda i, j: K(train_data[int(i)], train_data[int(j)])), (m, m))
 
     #TODO: dont precalculate, too limiting
 
@@ -96,11 +96,11 @@ def go1():
     print 1 - float(errors)/float(len(test_data))
 def go2():
     K = lambda x1, x2: np.dot(x1,x2)
-    w=svm_kernel_train(K, train_data[:5000], train_labels[:5000], 1000, 10**-4, .001)
+    M=svm_kernel_train(K, train_data[:5000], train_labels[:5000], 1000, 10**-4, .001)
     print "done building"
     errors = 0
     for i in range(len(test_data)):
-        predicted = svm_sgd_classify(w, test_data[i])
+        predicted = svm_kernel_classify(K, train_data[:5000], M, test_data[i])
         if predicted != int(test_labels[i]):
             errors += 1
     print 1 - float(errors)/float(len(test_data))
