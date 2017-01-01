@@ -59,6 +59,9 @@ def svm_kernel_train(K, train_data, train_labels, T, eta, C):
     #Constant number of labels
     k=10
 
+    #Precalculate kernel matrix
+    kernel_matrix = np.fromfunction(lambda i, j: K(train_data[i], train_data[j]), (m, m))
+
     #Init M to zeroes
     M = np.asmatrix(np.zeros((k, m)))
 
@@ -67,4 +70,17 @@ def svm_kernel_train(K, train_data, train_labels, T, eta, C):
         i = np.random.randint(0, m)
         xi = train_data[i]
         yi = train_label[i]
+        #Find argmax(\sum{t=1}{m} M_jt*K(xt, xi))
+        kernel_vector = kernel_matrix[i]
+        j_max = argmax(M*np.asmatrix(kernel_vector).T)
+        #update M
+        M *= (1 - eta)
+        for j in range(k):
+            if j != yi and j == j_max:
+                M[j,i] -= eta*C
+            if j == yi and j != j_max:
+                M[j,i] += eta*C
+
+    #Output M matrix
+    return M
         
