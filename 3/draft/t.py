@@ -2,7 +2,7 @@ import sys
 import time
 import numpy as np
 import matplotlib
-#matplotlib.use('Agg')
+matplotlib.use('Agg')
 import matplotlib.pyplot as plt
 from hw3 import *
 
@@ -23,7 +23,9 @@ def svm_sgd_train(train_data, train_labels, T, C, eta):
     k = 10
 
     #Column p has 1s in all places except p
-    indicator = np.ones((k,k)) - np.eye(k)
+    indicator_neg = np.ones((k,k)) - np.eye(k)
+    #Column p has 0s in all places except p
+    indicator_pos = np.eye(k)
 
     #Init a new weights matrix
     w = np.asmatrix(np.zeroes((k, d)))
@@ -33,10 +35,13 @@ def svm_sgd_train(train_data, train_labels, T, C, eta):
         i = np.random.randint(0, m)
         xi = np.asmatrix(train_data[i]).T
         yi = train_label[i]
-        #w = (1-eta)w
-        w *= (1 - eta)
         #Find argmax(w_p*x - w_yi*x + 1(p!=yi))
-        j_max = np.argmax(w*xi - w[yi]*xi + indicator(yi))
+        j_max = np.argmax(w*xi - w[yi]*xi + indicator_neg(:,yi))
+        #Update weights
+        w *= (1 - eta)
+        update_vector = np.multiply(indicator_pos(yi), indicator_neg(j_max))
+        update_vector -= np.multiply(indicator_neg(yi), indicator_pos(j_max))
+        w += xi.T * update_vector.T
 
     #Output weights matrix
     return w
