@@ -1063,36 +1063,6 @@ return
 \end_layout
 
 \begin_layout Standard
-We present the pseudo-code for training:
-\end_layout
-
-\begin_layout Standard
-We begin by initializing 
-\begin_inset Formula $M$
-\end_inset
-
- to zeros.
- On each step we do 
-\begin_inset Formula $M=(1-\eta)M$
-\end_inset
-
-, and then add 
-\begin_inset Formula $\eta C$
-\end_inset
-
- or 
-\begin_inset Formula $-\eta C$
-\end_inset
-
- as needed to the rows of 
-\begin_inset Formula $M$
-\end_inset
-
-.
- See pseudo code below.
-\end_layout
-
-\begin_layout Standard
 \begin_inset Formula $\phantom{A}$
 \end_inset
 
