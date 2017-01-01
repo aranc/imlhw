@@ -84,8 +84,8 @@ def svm_kernel_train(K, train_data, train_labels, T, eta, C):
     #Output M matrix
     return M
         
-def go():
-    w=svm_sgd_train(train_data, train_labels, 1000, 10**-4, 1)
+def go1():
+    w=svm_sgd_train(train_data, train_labels, 1000, 10**-4, .001)
     print "done building"
     errors = 0
     for i in range(len(test_data)):
@@ -93,4 +93,14 @@ def go():
         if predicted != int(test_labels[i]):
             errors += 1
     print 1 - float(errors)/float(len(test_data))
-go()
+def go2():
+    K = lambda x1, x2: np.dot(x1,x2)
+    w=svm_kernel_train(K, train_data, train_labels, 1000, 10**-4, .001)
+    print "done building"
+    errors = 0
+    for i in range(len(test_data)):
+        predicted = svm_sgd_classify(w, test_data[i])
+        if predicted != int(test_labels[i]):
+            errors += 1
+    print 1 - float(errors)/float(len(test_data))
+go2()
