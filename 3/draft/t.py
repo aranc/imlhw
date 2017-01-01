@@ -47,7 +47,7 @@ def svm_sgd_train(train_data, train_labels, T, C, eta):
 #Classify for question 7
 def svm_kernel_classify(K, train_data, M, x):
     #Return argmax(\sum{i=1}{m} M_ji*K(xi, x))
-    kernel_vector = np.fromfunction(lambda i: K(train_data[i], x), train_data.shape[0])
+    kernel_vector = np.fromfunction(np.vectorize(lambda i: K(train_data[i], x)), (train_data.shape[0],))
     #Use matrix notation
     kernel_vector = np.asmatrix(kernel_vector).T
     #Return argmax as specified
@@ -95,7 +95,7 @@ def go1():
     print 1 - float(errors)/float(len(test_data))
 def go2():
     K = lambda x1, x2: np.dot(x1,x2)
-    M=svm_kernel_train(K, train_data, train_labels, 1000, 10**-4, .001)
+    M=svm_kernel_train(K, train_data, train_labels, 100, 10**-4, .001)
     print "done building"
     errors = 0
     for i in range(len(test_data)):
