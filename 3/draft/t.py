@@ -31,7 +31,7 @@ def svm_sgd_train(train_data, train_labels, T, C, eta):
         #Sample a random point
         i = np.random.randint(0, m)
         xi = np.asmatrix(train_data[i]).T
-        yi = train_labels[i]
+        yi = int(train_labels[i])
         #Find argmax(w_p*x - w_yi*x + 1(p!=yi))
         j_max = np.argmax(w*xi - w[yi]*xi + indicator_neg[:,yi])
         #Update weights
@@ -69,7 +69,7 @@ def svm_kernel_train(K, train_data, train_labels, T, eta, C):
         #Sample a random point
         i = np.random.randint(0, m)
         xi = train_data[i]
-        yi = train_label[i]
+        yi = int(train_label[i])
         #Find argmax(\sum{t=1}{m} M_jt*K(xt, xi))
         kernel_vector = kernel_matrix[i]
         j_max = argmax(M*np.asmatrix(kernel_vector).T)
@@ -90,7 +90,7 @@ def go():
     errors = 0
     for i in range(len(test_data)):
         predicted = svm_sgd_classify(w, test_data[i])
-        if predicted != test_labels[i]:
+        if predicted != int(test_labels[i]):
             errors += 1
     print 1 - float(errors)/float(len(test_data))
 go()
