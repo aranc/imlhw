@@ -41,7 +41,7 @@ def svm_sgd_train(train_data, train_labels, T, C, eta):
         w *= (1 - eta)
         update_vector = np.multiply(indicator_pos(yi), indicator_neg(j_max))
         update_vector -= np.multiply(indicator_neg(yi), indicator_pos(j_max))
-        w += xi.T * update_vector.T
+        w += xi.T * update_vector.T * C * eta
 
     #Output weights matrix
     return w
