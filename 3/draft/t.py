@@ -25,13 +25,13 @@ def svm_sgd_train(train_data, train_labels, T, C, eta):
     indicator_pos = np.eye(k)
 
     #Init a new weights matrix
-    w = np.asmatrix(np.zeroes((k, d)))
+    w = np.asmatrix(np.zeros((k, d)))
 
     for iteration in range(T):
         #Sample a random point
         i = np.random.randint(0, m)
         xi = np.asmatrix(train_data[i]).T
-        yi = train_label[i]
+        yi = train_labels[i]
         #Find argmax(w_p*x - w_yi*x + 1(p!=yi))
         j_max = np.argmax(w*xi - w[yi]*xi + indicator_neg[yi])
         #Update weights
