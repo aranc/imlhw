@@ -33,12 +33,12 @@ def svm_sgd_train(train_data, train_labels, T, C, eta):
         xi = np.asmatrix(train_data[i]).T
         yi = train_label[i]
         #Find argmax(w_p*x - w_yi*x + 1(p!=yi))
-        j_max = np.argmax(w*xi - w[yi]*xi + indicator_neg[:,yi])
+        j_max = np.argmax(w*xi - w[yi]*xi + indicator_neg[yi])
         #Update weights
         w *= (1 - eta)
-        update_vector = np.multiply(indicator_pos[:yi], indicator_neg[:j_max])
-        update_vector -= np.multiply(indicator_neg[:yi], indicator_pos[:j_max])
-        w += xi.T * update_vector.T * C * eta
+        update_vector = np.multiply(indicator_pos[yi], indicator_neg[j_max])
+        update_vector -= np.multiply(indicator_neg[yi], indicator_pos[j_max])
+        w += xi * np.asmatrix(update_vector) * C * eta
 
     #Output weights matrix
     return w
