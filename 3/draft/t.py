@@ -20,9 +20,9 @@ def svm_sgd_train(train_data, train_labels, T, C, eta):
     k = 10
 
     #Column p has 1s in all places except p
-    indicator_neg = np.ones((k,k)) - np.eye(k)
+    indicator_neg = np.asmatrix(np.ones((k,k)) - np.eye(k))
     #Column p has 0s in all places except p
-    indicator_pos = np.eye(k)
+    indicator_pos = np.asmatrix(np.eye(k))
 
     #Init a new weights matrix
     w = np.asmatrix(np.zeros((k, d)))
@@ -33,12 +33,12 @@ def svm_sgd_train(train_data, train_labels, T, C, eta):
         xi = np.asmatrix(train_data[i]).T
         yi = train_labels[i]
         #Find argmax(w_p*x - w_yi*x + 1(p!=yi))
-        j_max = np.argmax(w*xi - w[yi]*xi + indicator_neg[yi])
+        j_max = np.argmax(w*xi - w[yi]*xi + indicator_neg[:,yi])
         #Update weights
         w *= (1 - eta)
-        update_vector = np.multiply(indicator_pos[yi], indicator_neg[j_max])
-        update_vector -= np.multiply(indicator_neg[yi], indicator_pos[j_max])
-        w += np.asmatrix(update_vector).T * xi.T * C * eta
+        update_vector = np.multiply(indicator_pos[:,yi], indicator_neg[:,j_max])
+        update_vector -= np.multiply(indicator_neg[:,yi], indicator_pos[:,j_max])
+        w += update_vector * xi.T * C * eta
 
     #Output weights matrix
     return w
@@ -84,3 +84,6 @@ def svm_kernel_train(K, train_data, train_labels, T, eta, C):
     #Output M matrix
     return M
         
+def go():
+    w=svm_sgd_train(train_data, train_labels, 100000, 10**-4, 1)
+go()
