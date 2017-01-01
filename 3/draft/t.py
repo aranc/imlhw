@@ -85,5 +85,12 @@ def svm_kernel_train(K, train_data, train_labels, T, eta, C):
     return M
         
 def go():
-    w=svm_sgd_train(train_data, train_labels, 100000, 10**-4, 1)
+    w=svm_sgd_train(train_data, train_labels, 1000, 10**-4, 1)
+    print "done building"
+    errors = 0
+    for i in range(len(test_data)):
+        predicted = svm_sgd_classify(w, test_data[i])
+        if predicted != test_labels[i]:
+            errors += 1
+    print 1 - float(errors)/float(len(test_data))
 go()
