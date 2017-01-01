@@ -92,15 +92,16 @@ def go1():
         predicted = svm_sgd_classify(w, test_data[i])
         if predicted != int(test_labels[i]):
             errors += 1
-    print 1 - float(errors)/float(len(test_data))
+    print "1:", 1 - float(errors)/float(len(test_data))
 def go2():
     K = lambda x1, x2: np.dot(x1,x2)
-    M=svm_kernel_train(K, train_data, train_labels, 100, 10**-4, .001)
+    M=svm_kernel_train(K, train_data, train_labels, 1000, 10**-4, .001)
     print "done building"
     errors = 0
     for i in range(len(test_data)):
         predicted = svm_kernel_classify(K, train_data, M, test_data[i])
         if predicted != int(test_labels[i]):
             errors += 1
-    print 1 - float(errors)/float(len(test_data))
+    print "2:", 1 - float(errors)/float(len(test_data))
+go1()
 go2()
