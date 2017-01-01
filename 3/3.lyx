@@ -746,7 +746,7 @@ for
 \end_inset
 
 choose a random point 
-\begin_inset Formula $x_{i},y_{i}$
+\begin_inset Formula $i\in\left[m\right]:\,x_{i},y_{i}$
 \end_inset
 
  from the training set
