@@ -85,7 +85,7 @@ def svm_kernel_train(K, train_data, train_labels, T, eta, C):
     return M
         
 def go1():
-    w=svm_sgd_train(train_data, train_labels, 1000, 10**-4, .001)
+    w=svm_sgd_train(train_data, train_labels, 10000, 10**-4, .001)
     print "done building"
     errors = 0
     for i in range(len(test_data)):
@@ -95,13 +95,16 @@ def go1():
     print "1:", 1 - float(errors)/float(len(test_data))
 def go2():
     K = lambda x1, x2: np.dot(x1,x2)
-    M=svm_kernel_train(K, train_data, train_labels, 1000, 10**-4, .001)
-    print "done building"
+    start = time.time()
+    M=svm_kernel_train(K, train_data, train_labels, 10000, 10**-4, .001)
+    print "done building:", time.time() - start
     errors = 0
+    start = time.time()
     for i in range(len(test_data)):
         predicted = svm_kernel_classify(K, train_data, M, test_data[i])
         if predicted != int(test_labels[i]):
             errors += 1
+    print "done testing:", time.time() - start
     print "2:", 1 - float(errors)/float(len(test_data))
 go1()
 go2()
