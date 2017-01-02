@@ -350,6 +350,37 @@ Therefore,
 \end_layout
 
 \begin_layout Standard
+c.
+ Each neuron has 
+\begin_inset Formula $2d$
+\end_inset
+
+ parameters (
+\begin_inset Formula $w_{i,:}^{(t)}$
+\end_inset
+
+ and 
+\begin_inset Formula $\left(b_{t+1}\right)_{i}$
+\end_inset
+
+).
+ For each of the first 
+\begin_inset Formula $L-1$
+\end_inset
+
+layers, we have 
+\begin_inset Formula $d$
+\end_inset
+
+ neurons per layer, and an additional single neuron in the last layer; all
+ in all, 
+\begin_inset Formula $2d$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
 ..........................................................
 \end_layout
 
