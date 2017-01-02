@@ -142,7 +142,7 @@ Theory Questions
 
 \begin_layout Standard
 1.
- Let's look on the inputs set 
+ Let's look at the inputs set 
 \begin_inset Formula $S=x_{1},...,x_{d}\in R^{d}$
 \end_inset
 
@@ -172,7 +172,7 @@ The size of the set is
 
 .
  And for every subset 
-\begin_inset Formula $s$
+\begin_inset Formula $A$
 \end_inset
 
  of 
@@ -184,10 +184,10 @@ The size of the set is
 \end_inset
 
  only on inputs in 
-\begin_inset Formula $s$
+\begin_inset Formula $A$
 \end_inset
 
-.
+:
 \end_layout
 
 \begin_layout Standard
@@ -212,12 +212,12 @@ All layers except the first will simply pass through the previous layer:
 
 \begin_layout Standard
 The first layer will only accept inputs from 
-\begin_inset Formula $s$
+\begin_inset Formula $A$
 \end_inset
 
 : 
 \begin_inset Formula $W_{ij}^{(1)}=\begin{cases}
-1 & x_{i}\in s\\
+1 & x_{i}\in A\\
 0 & \text{otherwise}
 \end{cases}$
 \end_inset
