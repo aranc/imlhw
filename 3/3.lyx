@@ -240,7 +240,7 @@ The first layer will only accept inputs from
 2.
  a.
  The hypothesis class is of the form: 
-\begin_inset Formula $\left\{ \left.h_{1}\times...\times h_{d}\right|h_{1},...,h_{d}\in\mathcal{H}\right\} $
+\begin_inset Formula $B=\left\{ \left.h_{1}\times...\times h_{d}\right|h_{1},...,h_{d}\in\mathcal{H}\right\} $
 \end_inset
 
  
@@ -264,7 +264,7 @@ We have seen in the recitation that for
 
 \begin_layout Standard
 Also, we saw in class that 
-\begin_inset Formula $\pi_{f_{1}\times f_{2}}(m)\le\pi_{f_{1}}(m)\cdot\pi_{f_{2}}(m)$
+\begin_inset Formula $\pi_{F_{1}\times F_{2}}(m)\le\pi_{F_{1}}(m)\cdot\pi_{F_{2}}(m)$
 \end_inset
 
  (and inductively we can deduce for all 
@@ -272,7 +272,7 @@ Also, we saw in class that
 \end_inset
 
 : 
-\begin_inset Formula $\pi_{f_{1}\times...\times f_{n}}(m)\le\pi_{f_{1}}(m)\cdot...\cdot\pi_{f_{n}}(m))$
+\begin_inset Formula $\pi_{F_{1}\times...\times F_{n}}(m)\le\pi_{F_{1}}(m)\cdot...\cdot\pi_{F_{n}}(m))$
 \end_inset
 
 .
@@ -287,14 +287,10 @@ Also, we saw in class that
 
 \begin_layout Standard
 Therefore, 
-\begin_inset Formula $\pi_{t}(m)\le\left(\frac{em}{d+1}\right)^{d\left(d+1\right)}$
+\begin_inset Formula $\pi_{B}(m)\le\left(\frac{em}{d+1}\right)^{d\left(d+1\right)}$
 \end_inset
 
- for every layer 
-\begin_inset Formula $t$
-\end_inset
-
-.
+ 
 \end_layout
 
 \begin_layout Standard
@@ -302,6 +298,59 @@ Therefore,
 \end_inset
 
 
+\end_layout
+
+\begin_layout Standard
+b.
+ The hypothesis class 
+\begin_inset Formula $C$
+\end_inset
+
+ is of the form 
+\begin_inset Formula $\left\{ \left.b_{1}\circ...\circ b_{l}\right|b_{1},...,b_{l}\in B\right\} $
+\end_inset
+
+ where 
+\begin_inset Formula $B$
+\end_inset
+
+ is as defined above.
+ 
+\end_layout
+
+\begin_layout Standard
+We saw in class that 
+\begin_inset Formula $\pi_{F_{1}\circ F_{2}}(m)\le\pi_{F_{1}}(m)\cdot\pi_{F_{2}}(m)$
+\end_inset
+
+ (and inductively we can deduce for all 
+\begin_inset Formula $n\in\mathbb{N}$
+\end_inset
+
+: 
+\begin_inset Formula $\pi_{F_{1}\circ...\circ F_{n}}(m)\le\pi_{F_{1}}(m)\cdot...\cdot\pi_{F_{n}}(m))$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+Therefore, 
+\begin_inset Formula $\pi_{C}(m)\le\left(\frac{em}{d+1}\right)^{ld\left(d+1\right)}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $\phantom{A}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+..........................................................
 \end_layout
 
 \begin_layout Standard
