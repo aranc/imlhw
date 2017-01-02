@@ -287,10 +287,14 @@ Also, we saw in class that
 
 \begin_layout Standard
 Therefore, 
-\begin_inset Formula $\pi_{\text{Layer}}(m)\le\left(\frac{em}{d+1}\right)^{d\left(d+1\right)}$
+\begin_inset Formula $\pi_{t}(m)\le\left(\frac{em}{d+1}\right)^{d\left(d+1\right)}$
 \end_inset
 
+ for every layer 
+\begin_inset Formula $t$
+\end_inset
 
+.
 \end_layout
 
 \begin_layout Standard
