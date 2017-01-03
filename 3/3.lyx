@@ -552,7 +552,20 @@ Notice that we can assign
 \begin_layout Standard
 3.
  a.
- TODO
+ In order to project, we first test if 
+\begin_inset Formula $\left\Vert x\right\Vert \le R$
+\end_inset
+
+.
+ If it is, we return 
+\begin_inset Formula $x$
+\end_inset
+
+; else, we return 
+\begin_inset Formula $\frac{R}{\left\Vert x\right\Vert }x$
+\end_inset
+
+.
 \end_layout
 
 \begin_layout Standard
