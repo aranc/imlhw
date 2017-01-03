@@ -432,11 +432,19 @@ The last inequality holds since
 \end_layout
 
 \begin_layout Standard
-TODO: show that 
-\begin_inset Formula $\pi_{C}(m)\le(em)^{N}$
+We know from subquestion b that 
+\begin_inset Formula $\pi_{C}(m)\le(\frac{em}{d+1})^{Ld(d+1)}\le(em)^{Ld(d+1)}\le(em)^{2d^{2(L-1)+2d}}=(em)^{N}$
 \end_inset
 
-.
+ (for 
+\begin_inset Formula $l>2$
+\end_inset
+
+, 
+\begin_inset Formula $d>1).$
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
