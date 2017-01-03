@@ -440,19 +440,23 @@ We notice that always
 \begin_inset Formula $d\ge1$
 \end_inset
 
-, Therefore: 
-\begin_inset Formula $Ld(d+1)\le2d^{2}(L-1)+2d$
+, so 
+\begin_inset Formula $0\le d(d-1)(L-2)$
 \end_inset
 
-.
-\end_layout
-
-\begin_layout Standard
-We know from subquestion b that 
-\begin_inset Formula $\pi_{C}(m)\le(\frac{em}{d+1})^{Ld(d+1)}\le(em)^{Ld(d+1)}\le(em)^{2d^{2}(L-1)+2d}=(em)^{N}$
+ and therefore 
+\begin_inset Formula $Ld(d+1)\le2d^{2}(L-1)+2d=N$
 \end_inset
 
-.
+; and from subquestion b we get: 
+\begin_inset Formula 
+\[
+\pi_{C}(m)\le(\frac{em}{d+1})^{Ld(d+1)}\le(em)^{Ld(d+1)}\le(em)^{N}
+\]
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
@@ -471,7 +475,7 @@ Therefore, when
 \begin_inset Formula $2^{m}=\pi_{C}(m)\le(em)^{N}$
 \end_inset
 
-, and we can apply the previous subquestion to have,
+, and we can apply the previous subquestion to get:
 \begin_inset Formula 
 \[
 \text{VCdim}(C)=m\le2N\log_{2}(eN)
