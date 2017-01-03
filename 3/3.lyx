@@ -229,7 +229,27 @@ The first layer will only accept inputs from
 .
 \end_layout
 
-\begin_layout Part*
+\begin_layout Standard
+\begin_inset Formula $\phantom{A}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Notice that we can get a better lower bound by looking at the network that
+ connects all the inputs to the first neuron, and that only passes the output
+ of the first neuron all the way to the final output.
+ This network is essentially only the first neuron, and we know that it's
+ VCdim equals 
+\begin_inset Formula $d+1$
+\end_inset
+
+.
+ We will use this result in the next question.
+\end_layout
+
+\begin_layout Standard
 \begin_inset Formula $\phantom{A}$
 \end_inset
 
@@ -451,7 +471,7 @@ We notice that always
 ; and from subquestion b we get: 
 \begin_inset Formula 
 \[
-\pi_{C}(m)\le(\frac{em}{d+1})^{Ld(d+1)}\le(em)^{Ld(d+1)}\le(em)^{N}
+\pi_{C}(m)\le(\frac{em}{d+1})^{Ld(d+1)}\le(em)^{Ld(d+1)}\le(em)^{N}\text{\,\,\,\,\ensuremath{\text{(for \ensuremath{m\ge d+1\text{)}}}}}
 \]
 
 \end_inset
@@ -484,6 +504,18 @@ Therefore, when
 \end_inset
 
 
+\end_layout
+
+\begin_layout Standard
+Notice that we can assign 
+\begin_inset Formula $m=\text{VCdim}(C)$
+\end_inset
+
+, since VCdim
+\begin_inset Formula $(C)\ge d+1$
+\end_inset
+
+ as we noticed in the previous question.
 \end_layout
 
 \begin_layout Standard
