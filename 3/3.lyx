@@ -368,15 +368,26 @@ c.
 \begin_inset Formula $L-1$
 \end_inset
 
-layers, we have 
+ layers, we have 
 \begin_inset Formula $d$
 \end_inset
 
  neurons per layer, and an additional single neuron in the last layer; all
  in all, 
-\begin_inset Formula $2d$
+\begin_inset Formula $N=2d^{2}(L-1)+2d$
 \end_inset
 
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $\phantom{A}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
 
 \end_layout
 
