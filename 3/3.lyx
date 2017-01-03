@@ -388,7 +388,82 @@ c.
 \end_layout
 
 \begin_layout Standard
-e: TODO
+d.
+ TODO
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $\phantom{A}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+e.
+ For every 
+\begin_inset Formula $m\in\mathbb{N},$
+\end_inset
+
+ we have,
+\begin_inset Formula 
+\[
+\pi_{C}(m)=\max_{\left|S\right|=m}\left|\Pi_{C}(S)\right|=\max_{\left|S\right|=m}\left|\left\{ \left.\left\langle h(s_{1}),...,h(s_{m})\right\rangle \right|h\in C\right\} \right|\le2^{m}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+The last inequality holds since 
+\begin_inset Formula $\left\{ \left.\left\langle h(s_{1}),...,h(s_{m})\right\rangle \right|h\in C\right\} \subseteq\left\{ -1,1\right\} ^{m}$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $\phantom{A}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+TODO: show that 
+\begin_inset Formula $\pi_{C}(m)\le(em)^{N}$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $\phantom{A}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Therefore, when 
+\begin_inset Formula $m=\text{VCdim}(C)$
+\end_inset
+
+, we have 
+\begin_inset Formula $2^{m}=\pi_{C}(m)\le(em)^{N}$
+\end_inset
+
+, and we can apply the previous subquestion to have,
+\begin_inset Formula 
+\[
+\text{VCdim}(C)=m\le2N\log_{2}(eN)
+\]
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
