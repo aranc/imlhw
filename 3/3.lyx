@@ -589,11 +589,90 @@ b.
 \begin_layout Standard
 4.
  a.
- When 
+ Let 
+\begin_inset Formula $w_{1}$
+\end_inset
+
+ and 
+\begin_inset Formula $w_{2}$
+\end_inset
+
+ be the weights of a multiclass classifier with 
 \begin_inset Formula $k=2$
 \end_inset
 
-, the multiclass SVM problem is:
+.
+ We classify a new point 
+\begin_inset Formula $x$
+\end_inset
+
+ as 
+\begin_inset Formula $1$
+\end_inset
+
+ iff 
+\begin_inset Formula $w_{1}x>w_{2}x$
+\end_inset
+
+, that is 
+\begin_inset Formula $(w_{1}-w_{2})x>0$
+\end_inset
+
+ which is the same as using a single class classifier with weights 
+\begin_inset Formula $w=w_{1}-w_{2}$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+On the other hand, if we have a single class classifier with weights 
+\begin_inset Formula $w$
+\end_inset
+
+, we can build a multiclass classifier with 
+\begin_inset Formula $w_{1}=w$
+\end_inset
+
+ and 
+\begin_inset Formula $w_{2}=-w$
+\end_inset
+
+.
+ The new classifier will classify a new point as 
+\begin_inset Formula $1$
+\end_inset
+
+ iff,
+\begin_inset Formula 
+\begin{align*}
+w_{1}x & >w_{2}x\\
+wx & >-wx\\
+2wx & >0\\
+wx & >0
+\end{align*}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+which is the same as the original single class classifier.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $\phantom{A}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Furthermore, let's look on the optimization of the multiclass classifier,
+\end_layout
+
+\begin_layout Standard
 \begin_inset Formula 
 \[
 f=\frac{1}{2}\left\Vert w_{1}\right\Vert ^{2}+\frac{1}{2}\left\Vert w_{2}\right\Vert ^{2}+\frac{C}{2}\sum_{i=1}^{m}\max(0,\left(w_{3-y_{i}}-w_{y_{i}}\right)x_{i}+1)
@@ -645,7 +724,7 @@ Define
 \end_inset
 
 , and define 
-\begin_inset Formula $w=w_{1}$
+\begin_inset Formula $w=\frac{1}{2}w_{1}$
 \end_inset
 
 ,
@@ -654,7 +733,7 @@ Define
 \begin_layout Standard
 \begin_inset Formula 
 \begin{align*}
-f & =\left\Vert w\right\Vert ^{2}+\frac{C}{2}\sum_{i=1}^{m}\max(0,1-2y'_{i}wx_{i})
+f & =2^{d}\left\Vert w\right\Vert ^{2}+\frac{C}{2}\sum_{i=1}^{m}\max(0,1-y'_{i}wx_{i})
 \end{align*}
 
 \end_inset
@@ -663,7 +742,26 @@ f & =\left\Vert w\right\Vert ^{2}+\frac{C}{2}\sum_{i=1}^{m}\max(0,1-2y'_{i}wx_{i
 \end_layout
 
 \begin_layout Standard
-TODO: complete the equivalence
+We can define 
+\begin_inset Formula $c'=2^{d+2}C$
+\end_inset
+
+ and get,
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+f=\frac{1}{2}\left\Vert w\right\Vert ^{2}+C\sum_{i=1}^{m}\max(0,1-y'_{i}wx_{i})
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+which is the same optimization problem as in the SVM we learned.
 \end_layout
 
 \begin_layout Standard
