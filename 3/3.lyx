@@ -648,7 +648,7 @@ We continue to rearrange equation 13 to
 \begin_layout Standard
 \begin_inset Formula 
 \[
-v_{t}\left(w_{t}-w^{*}\right)\le\frac{\left\Vert w_{t}-w^{*}\right\Vert _{2}^{2}-\left\Vert w_{t+1}-w^{*}\right\Vert _{2}^{2}}{2\eta}+0.5\eta\left(w_{t}=w^{*}\right)v_{t}
+v_{t}\left(w_{t}-w^{*}\right)\le\frac{\left\Vert w_{t}-w^{*}\right\Vert _{2}^{2}-\left\Vert w_{t+1}-w^{*}\right\Vert _{2}^{2}}{2\eta}+0.5\eta\left\Vert v_{t}\right\Vert _{2}^{2}
 \]
 
 \end_inset
