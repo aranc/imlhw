@@ -702,6 +702,15 @@ The rest of the proof continues without other modifications.
 \end_inset
 
 .
+ And 
+\begin_inset Formula $wx>0$
+\end_inset
+
+ iff 
+\begin_inset Formula $(w_{1}-w_{2})x\ge0$
+\end_inset
+
+.
 \end_layout
 
 \begin_layout Standard
@@ -748,7 +757,7 @@ which is the same as the original single class classifier.
 \end_layout
 
 \begin_layout Standard
-Furthermore, let's look on the optimization of the multiclass classifier,
+Furthermore, let us consider the optimization of the multiclass classifier,
 \end_layout
 
 \begin_layout Standard
