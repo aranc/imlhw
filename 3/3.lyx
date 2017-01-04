@@ -589,19 +589,17 @@ b.
 
 \begin_layout Standard
 c.
- The modification to the proof is that now instead of 
-\begin_inset Formula $w_{t+1}=w_{t}-\eta v_{t}$
-\end_inset
-
-, we have 
+ The proof is exactly the same as the proof mentioned in the question, until
+ equation (12).
+ In our case, we use 
 \begin_inset Formula $w_{t+1}=\Pi_{K}\left(w_{t}-\eta v_{t}\right)$
 \end_inset
 
-.
-\end_layout
+ instead of 
+\begin_inset Formula $w_{t+1}=w_{t}-\eta v_{t}$
+\end_inset
 
-\begin_layout Standard
-This changes the equation after equation (12) from 
+, and it changes the equation after equation (12) from 
 \begin_inset Formula 
 \begin{align*}
 \left\Vert w_{t+1}-w^{*}\right\Vert _{2}^{2} & =\left\Vert w_{t}-\eta v_{t}-w^{*}\right\Vert _{2}^{2}\\
