@@ -792,6 +792,17 @@ b.
 \begin_layout Standard
 \begin_inset Formula 
 \[
+\frac{\partial\ell}{\partial w_{j}}=x_{i}\left(\one(j\ne y_{i})\one(w_{y_{i}}x_{i}-w_{j}x_{i}\le1)-\one(j=y_{i})\one(\exists p:\ w_{p}x_{i}-w_{j}x_{i}>-1)\right)
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
 \frac{\partial f}{\partial w_{j}}=w_{j}+\frac{C}{m}\sum_{i=1}^{m}x_{i}\left(\one(j\ne y_{i})\one(w_{y_{i}}x_{i}-w_{j}x_{i}\le1)-\one(j=y_{i})\one(\exists p:\ w_{p}x_{i}-w_{j}x_{i}>-1)\right)
 \]
 
