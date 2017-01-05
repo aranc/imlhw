@@ -110,6 +110,7 @@ def svm_sgd_find_eta(_from, _to, _step, C, T, output=None):
         training_accuracy[value] = svm_sgd_measure(w, train_data, train_labels)
         validation_accuracy[value] = svm_sgd_measure(w, validation_data, validation_labels)
         print "value:", value, "training accuracy:", training_accuracy[value], "validation accuracy:", validation_accuracy[value]
+    plt.title("Find eta. Use C="+str(C)+" and T="+str(T))
     plt.gca().set_xlabel("log10(eta)")
     plt.gca().set_ylabel("Accuracy")
     plt.plot(values_range, [validation_accuracy[value] for value in values_range], 'ko', label="validation")
@@ -131,6 +132,7 @@ def svm_sgd_find_C(_from, _to, _step, eta, T, output=None):
         training_accuracy[value] = svm_sgd_measure(w, train_data, train_labels)
         validation_accuracy[value] = svm_sgd_measure(w, validation_data, validation_labels)
         print "value:", value, "training accuracy:", training_accuracy[value], "validation accuracy:", validation_accuracy[value]
+    plt.title("Find C. Use eta="+str(eta)+" and T="+str(T))
     plt.gca().set_xlabel("log10(C)")
     plt.gca().set_ylabel("Accuracy")
     plt.plot(values_range, [validation_accuracy[value] for value in values_range], 'ko', label="validation")
