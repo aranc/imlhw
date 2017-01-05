@@ -133,8 +133,8 @@ def svm_sgd_find_C(_from, _to, _step, eta, T, output=None):
         print "value:", value, "training accuracy:", training_accuracy[value], "validation accuracy:", validation_accuracy[value]
     plt.gca().set_xlabel("log10(C)")
     plt.gca().set_ylabel("Accuracy")
-    plt.plot(p_range, [validation_accuracy[p] for p in p_range], 'ko', label="validation")
-    plt.plot(p_range, [training_accuracy[p] for p in p_range], 'k*', label="training")
+    plt.plot(value_range, [validation_accuracy[value] for value in value_range], 'ko', label="validation")
+    plt.plot(value_range, [training_accuracy[value] for value in value_range], 'k*', label="training")
     plt.legend()
     if output == None:
         plt.show()
@@ -151,7 +151,7 @@ if True:
             C = float(sys.argv[6])
             T = int(sys.argv[7])
             filename = sys.argv[8]
-            svm_sgd_find_eta(_from, _to, _stepC, T, filename)
+            svm_sgd_find_eta(_from, _to, _step, C, T, filename)
         elif sys.argv[2] == 'find_C':
             _from = float(sys.argv[3])
             _to = float(sys.argv[4])
