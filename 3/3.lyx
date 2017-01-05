@@ -1694,15 +1694,11 @@ python
 \begin_inset Formula $\sim$
 \end_inset
 
-arancarmon/imlhw/3/submit/q.py 6 find_C <from> <to> <C> <T> <filename>
+arancarmon/imlhw/3/submit/q.py 6 find_C <from> <to> <eta> <T> <filename>
 \end_layout
 
 \end_inset
 
-
-\end_layout
-
-\begin_layout Standard
 
 \end_layout
 

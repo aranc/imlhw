@@ -83,7 +83,10 @@ def svm_kernel_train(K, train_data, train_labels, T, eta, C):
 
     #Output M matrix
     return M
-        
+
+
+
+
 def go1():
     w=svm_sgd_train(train_data, train_labels, 500000, 1, 10**-6)
     print "done building"
@@ -106,5 +109,27 @@ def go2():
             errors += 1
     print "done testing:", time.time() - start
     print "2:", 1 - float(errors)/float(len(test_data))
-go1()
-go2()
+
+if True:
+    #Get subquestion from first argument
+    if sys.argv[1] == '6':
+        if sys.argv[2] == 'find_eta':
+            _from = float(sys.argv[3])
+            _to = float(sys.argv[4])
+            C = float(sys.argv[5])
+            T = int(sys.argv[6])
+            output = sys.argv[7]
+            svm_sgd_find_eta(_from, _to, C, T, output)
+        elif sys.argv[2] == 'find_C':
+            _from = float(sys.argv[3])
+            _to = float(sys.argv[4])
+            eta = float(sys.argv[5])
+            T = int(sys.argv[6])
+            output = sys.argv[7]
+            svm_sgd_find_C(_from, _to, eta, T, output)
+        else:
+            print "Error: please choose a valid command"
+    elif sys.argv[1] == '7':
+        pass
+    else:
+        print "Error: please choose a valid command"
