@@ -1636,5 +1636,75 @@ arancarmon/imlhw/3/submit
 
 \end_layout
 
+\begin_layout Standard
+\begin_inset Formula $\phantom{A}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+6.
+ a.
+ We created 2 functions to plot the training and validation errors for various
+ 
+\begin_inset Formula $\eta$
+\end_inset
+
+ and 
+\begin_inset Formula $C$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Box ovalbox
+position "t"
+hor_pos "c"
+has_inner_box 1
+inner_pos "t"
+use_parbox 0
+use_makebox 0
+width "100col%"
+special "none"
+height "1in"
+height_special "totalheight"
+thickness "0.4pt"
+separation "3pt"
+shadowsize "4pt"
+framecolor "black"
+backgroundcolor "none"
+status open
+
+\begin_layout Plain Layout
+How to run:
+\end_layout
+
+\begin_layout Plain Layout
+python 
+\begin_inset Formula $\sim$
+\end_inset
+
+arancarmon/imlhw/3/submit/q.py 6 find_eta <from> <to> <C> <T> <filename>
+\end_layout
+
+\begin_layout Plain Layout
+python 
+\begin_inset Formula $\sim$
+\end_inset
+
+arancarmon/imlhw/3/submit/q.py 6 find_C <from> <to> <C> <T> <filename>
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\end_layout
+
 \end_body
 \end_document
