@@ -1686,7 +1686,7 @@ python
 \begin_inset Formula $\sim$
 \end_inset
 
-arancarmon/imlhw/3/submit/q.py 6 find_eta <from> <to> <C> <T> <filename>
+arancarmon/imlhw/3/submit/q.py 6 find_eta <from> <to> <step> <C> <T> <filename>
 \end_layout
 
 \begin_layout Plain Layout
@@ -1694,7 +1694,11 @@ python
 \begin_inset Formula $\sim$
 \end_inset
 
-arancarmon/imlhw/3/submit/q.py 6 find_C <from> <to> <eta> <T> <filename>
+arancarmon/imlhw/3/submit/q.py 6 find_C <from> <to> <step> <eta> <T> <filename>
+\end_layout
+
+\begin_layout Plain Layout
+range is on a logarithmic scale
 \end_layout
 
 \end_inset

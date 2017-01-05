@@ -54,13 +54,10 @@ def svm_kernel_classify(K, train_data, M, x):
     return np.argmax(M*kernel_vector)
 
 #Train for question 7
-def svm_kernel_train(K, train_data, train_labels, T, eta, C):
+def svm_kernel_train(K, train_data, train_labels, T, C, eta):
     m = train_data.shape[0]
     #Constant number of labels
     k=10
-
-    #kernel_matrix = np.fromfunction(np.vectorize(lambda i, j: K(train_data[int(i)], train_data[int(j)])), (m, m))
-    #TODO: dont precalculate, too limiting
 
     #Init M to zeroes
     M = np.asmatrix(np.zeros((k, m)))
@@ -84,31 +81,65 @@ def svm_kernel_train(K, train_data, train_labels, T, eta, C):
     #Output M matrix
     return M
 
-
-
-
-def go1():
-    w=svm_sgd_train(train_data, train_labels, 500000, 1, 10**-6)
-    print "done building"
+#Take a classifier for question 6, and measure it on a given set
+def svm_sgd_measure(w, data, labels):
     errors = 0
-    for i in range(len(test_data)):
-        predicted = svm_sgd_classify(w, test_data[i])
-        if predicted != int(test_labels[i]):
+    for i in range(len(data)):
+        predicted = svm_sgd_classify(w, data[i])
+        if predicted != int(labels[i]):
             errors += 1
-    print "1:", 1 - float(errors)/float(len(test_data))
-def go2():
-    K = lambda x1, x2: np.dot(x1,x2)
-    start = time.time()
-    M=svm_kernel_train(K, train_data, train_labels, 10000, 1, 10**-6)
-    print "done building:", time.time() - start
+    return 1 - float(errors)/float(len(data))
+
+#Take a classifier for question 7, and measure it on a given set
+def svm_kernel_measure(K, M, xi, data, labels):
     errors = 0
-    start = time.time()
-    for i in range(len(test_data)):
-        predicted = svm_kernel_classify(K, train_data, M, test_data[i])
-        if predicted != int(test_labels[i]):
+    for i in range(len(data)):
+        predicted = svm_kernel_classify(K, xi, M, data[i])
+        if predicted != int(labels[i]):
             errors += 1
-    print "done testing:", time.time() - start
-    print "2:", 1 - float(errors)/float(len(test_data))
+    return 1 - float(errors)/float(len(data))
+
+#Plot the training and the validation errors for various values of eta
+def svm_sgd_find_eta(_from, _to, _step, C, T, output=None):
+    values_range = np.arange(_from, _to, _step)
+    training_accuracy = {}
+    validation_accuracy = {}
+    for value in values_range:
+        eta = 10**value
+        w = svm_sgd_train(train_data, train_labels, T, C, eta)
+        training_accuracy[value] = svm_sgd_measure(w, train_data, train_labels)
+        validation_accuracy[value] = svm_sgd_measure(w, validation_data, validation_labels)
+        print "value:", value, "training accuracy:", training_accuracy[value], "validation accuracy:", validation_accuracy[value]
+    plt.gca().set_xlabel("log10(eta)")
+    plt.gca().set_ylabel("Accuracy")
+    plt.plot(p_range, [validation_accuracy[p] for p in p_range], 'ko', label="validation")
+    plt.plot(p_range, [training_accuracy[p] for p in p_range], 'k*', label="training")
+    plt.legend()
+    if output == None:
+        plt.show()
+    else:
+        plt.savefig(output)
+
+#Plot the training and the validation errors for various values of eta
+def svm_sgd_find_C(_from, _to, _step, eta, T, output=None):
+    values_range = np.arange(_from, _to, _step)
+    training_accuracy = {}
+    validation_accuracy = {}
+    for value in values_range:
+        C = 10**value
+        w = svm_sgd_train(train_data, train_labels, T, C, eta)
+        training_accuracy[value] = svm_sgd_measure(w, train_data, train_labels)
+        validation_accuracy[value] = svm_sgd_measure(w, validation_data, validation_labels)
+        print "value:", value, "training accuracy:", training_accuracy[value], "validation accuracy:", validation_accuracy[value]
+    plt.gca().set_xlabel("log10(C)")
+    plt.gca().set_ylabel("Accuracy")
+    plt.plot(p_range, [validation_accuracy[p] for p in p_range], 'ko', label="validation")
+    plt.plot(p_range, [training_accuracy[p] for p in p_range], 'k*', label="training")
+    plt.legend()
+    if output == None:
+        plt.show()
+    else:
+        plt.savefig(output)
 
 if True:
     #Get subquestion from first argument
@@ -116,17 +147,19 @@ if True:
         if sys.argv[2] == 'find_eta':
             _from = float(sys.argv[3])
             _to = float(sys.argv[4])
-            C = float(sys.argv[5])
-            T = int(sys.argv[6])
-            output = sys.argv[7]
-            svm_sgd_find_eta(_from, _to, C, T, output)
+            _step = float(sys.argv[5])
+            C = float(sys.argv[6])
+            T = int(sys.argv[7])
+            filename = sys.argv[8]
+            svm_sgd_find_eta(_from, _to, _stepC, T, filename)
         elif sys.argv[2] == 'find_C':
             _from = float(sys.argv[3])
             _to = float(sys.argv[4])
-            eta = float(sys.argv[5])
-            T = int(sys.argv[6])
-            output = sys.argv[7]
-            svm_sgd_find_C(_from, _to, eta, T, output)
+            _step = float(sys.argv[5])
+            eta = float(sys.argv[6])
+            T = int(sys.argv[7])
+            filename = sys.argv[8]
+            svm_sgd_find_C(_from, _to, _step, eta, T, filename)
         else:
             print "Error: please choose a valid command"
     elif sys.argv[1] == '7':
