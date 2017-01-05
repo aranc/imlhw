@@ -1706,5 +1706,28 @@ range is on a logarithmic scale
 
 \end_layout
 
+\begin_layout Standard
+We first started with scanning for 
+\begin_inset Formula $\eta$
+\end_inset
+
+ along a logarithmic scale, with 
+\begin_inset Formula $T=1000,$
+\end_inset
+
+ and various 
+\begin_inset Formula $C$
+\end_inset
+
+ values.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $C=1$
+\end_inset
+
+:
+\end_layout
+
 \end_body
 \end_document

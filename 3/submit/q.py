@@ -112,8 +112,8 @@ def svm_sgd_find_eta(_from, _to, _step, C, T, output=None):
         print "value:", value, "training accuracy:", training_accuracy[value], "validation accuracy:", validation_accuracy[value]
     plt.gca().set_xlabel("log10(eta)")
     plt.gca().set_ylabel("Accuracy")
-    plt.plot(value_range, [validation_accuracy[value] for value in value_range], 'ko', label="validation")
-    plt.plot(value_range, [training_accuracy[value] for value in value_range], 'k*', label="training")
+    plt.plot(values_range, [validation_accuracy[value] for value in values_range], 'ko', label="validation")
+    plt.plot(values_range, [training_accuracy[value] for value in values_range], 'k*', label="training")
     plt.legend()
     if output == None:
         plt.show()
@@ -133,8 +133,8 @@ def svm_sgd_find_C(_from, _to, _step, eta, T, output=None):
         print "value:", value, "training accuracy:", training_accuracy[value], "validation accuracy:", validation_accuracy[value]
     plt.gca().set_xlabel("log10(C)")
     plt.gca().set_ylabel("Accuracy")
-    plt.plot(value_range, [validation_accuracy[value] for value in value_range], 'ko', label="validation")
-    plt.plot(value_range, [training_accuracy[value] for value in value_range], 'k*', label="training")
+    plt.plot(values_range, [validation_accuracy[value] for value in values_range], 'ko', label="validation")
+    plt.plot(values_range, [training_accuracy[value] for value in values_range], 'k*', label="training")
     plt.legend()
     if output == None:
         plt.show()
