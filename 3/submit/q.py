@@ -153,7 +153,7 @@ def svm_sgd_find_C(_from, _to, _step, eta, T, output=None):
     print_best_10(validation_accuracy)
 
 #Plot weights for a specific digit
-def svm_sgd_show_digit(C, eta, T, output=None):
+def svm_sgd_show_digit(C, eta, T, digit, output=None):
     w = svm_sgd_train(train_data, train_labels, T, C, eta)
     plt.imshow(w[digit].reshape(28,28), interpolation='nearest')
     plt.title(str(digit))
@@ -182,6 +182,13 @@ if True:
             filename = sys.argv[8]
             svm_sgd_find_C(_from, _to, _step, eta, T, filename)
         elif sys.argv[2] == 'show_digit':
+            C = 10**float(sys.argv[3])
+            eta = 10**float(sys.argv[4])
+            T = int(sys.argv[5])
+            digit = int(sys.argv[6])
+            filename = sys.argv[7]
+            svm_sgd_show_digit(C, eta, T, digit, filename)
+        elif sys.argv[2] == 'calc_accuracy':
             C = 10**float(sys.argv[3])
             eta = 10**float(sys.argv[4])
             T = int(sys.argv[5])

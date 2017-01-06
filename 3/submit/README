@@ -12,6 +12,8 @@ Question 6a:
     Search for C. Output plot to filename.
   python ~arancarmon/imlhw/3/submit/q.py 6 show_digit <C> <eta> <T> <digit> <filename>
     Plot weights for a specific digit.
+  python ~arancarmon/imlhw/3/submit/q.py 6 calc_accuracy <C> <eta> <T>
+    Cacluclate accuracy on the test data
 
 
 Note: C, eta parameters are given in a logarithmic scale.
