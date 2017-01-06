@@ -169,6 +169,16 @@ def svm_sgd_calc_accuracy(C, eta, T):
     return svm_sgd_measure(w, validation_data, validation_labels)
     return svm_sgd_measure(w, test_data, test_labels)
 
+#Linear kernel
+linear_kernel = lambda x1, x2: np.dot(x1,x2)
+
+#Quadratic kernel
+quadratic_kernel = lambda x1, x2: (1 + np.dot(x1,x2))**2
+
+#RBF kernel
+def generate_RBF_kernel(sigma):
+    return lambda x1, x2: e**((-np.dot(x1-x2,x1-x2))/(2*(sigma**2)))
+
 if True:
     #Get subquestion from first argument
     if sys.argv[1] == '6':
