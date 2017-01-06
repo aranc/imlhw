@@ -179,6 +179,16 @@ quadratic_kernel = lambda x1, x2: (1 + np.dot(x1,x2))**2
 def generate_RBF_kernel(sigma):
     return lambda x1, x2: e**((-np.dot(x1-x2,x1-x2))/(2*(sigma**2)))
 
+#Parse kernel parameter
+def parse_kernel_parameter(param):
+    if param == "l":
+        return linear_kernel
+    elif param == "q":
+        return quadratic_kernel
+    else:
+        assert param[0] == 's'
+        return generate_RBF_kernel(int(param[1:]))
+
 if True:
     #Get subquestion from first argument
     if sys.argv[1] == '6':
