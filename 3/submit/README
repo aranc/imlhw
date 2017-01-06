@@ -7,6 +7,6 @@ q.py code for questions 6 and 6
 Usage:
 Question 6a:
   python ~arancarmon/imlhw/3/submit/q.py 6 find_eta <from> <to> <step> <C> <T> <filename>
-    Search for eta. Output plot to filename. (range is on a logarithmic scale).
+    Search for eta. Output plot to filename. (parameters are in a logarithmic scale).
   python ~arancarmon/imlhw/3/submit/q.py 6 find_C <from> <to> <step> <eta> <T> <filename>
-    Search for C. Output plot to filename. (range is on a logarithmic scale).
+    Search for C. Output plot to filename. (parameters are in a logarithmic scale).

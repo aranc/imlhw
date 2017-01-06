@@ -159,7 +159,7 @@ if True:
             _from = float(sys.argv[3])
             _to = float(sys.argv[4])
             _step = float(sys.argv[5])
-            C = float(sys.argv[6])
+            C = 10**float(sys.argv[6])
             T = int(sys.argv[7])
             filename = sys.argv[8]
             svm_sgd_find_eta(_from, _to, _step, C, T, filename)
@@ -167,7 +167,7 @@ if True:
             _from = float(sys.argv[3])
             _to = float(sys.argv[4])
             _step = float(sys.argv[5])
-            eta = float(sys.argv[6])
+            eta = 10**float(sys.argv[6])
             T = int(sys.argv[7])
             filename = sys.argv[8]
             svm_sgd_find_C(_from, _to, _step, eta, T, filename)
