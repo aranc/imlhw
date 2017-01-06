@@ -5,7 +5,7 @@ Files:
 q.py code for questions 6 and 6
 
 Usage:
-Question 6a:
+Question 6:
   python ~arancarmon/imlhw/3/submit/q.py 6 find_eta <from> <to> <step> <C> <T> <filename>
     Search for eta. Output plot to filename.
   python ~arancarmon/imlhw/3/submit/q.py 6 find_C <from> <to> <step> <eta> <T> <filename>
@@ -15,5 +15,15 @@ Question 6a:
   python ~arancarmon/imlhw/3/submit/q.py 6 calc_accuracy <C> <eta> <T>
     Cacluclate accuracy on the test data
 
+Question 7:
+  python ~arancarmon/imlhw/3/submit/q.py 7 find_eta <kernel> <training size> <from> <to> <step> <C> <T> <filename>
+    Search for eta. Output plot to filename.
+  python ~arancarmon/imlhw/3/submit/q.py 7 find_C <kernel> <training size> <from> <to> <step> <eta> <T> <filename>
+    Search for C. Output plot to filename.
+  python ~arancarmon/imlhw/3/submit/q.py 7 calc_accuracy <C> <eta> <T>
+    Cacluclate accuracy on the test data
 
-Note: C, eta parameters are given in a logarithmic scale.
+
+Note: C and eta parameters are given in a logarithmic scale.
+Note: kernel prameter is either l for linear, q for quadratic, or r<s> for RBF
+with sigma s (e.g. r1 for sigma 1).
