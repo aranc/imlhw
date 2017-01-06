@@ -2009,5 +2009,26 @@ arancarmon/imlhw/3/submit/q.py 6 calc_accuracy <C> <eta> <T>
 
 \end_layout
 
+\begin_layout Standard
+\begin_inset Formula $\phantom{A}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+7.
+ a.
+ For a quicker tuning of parameters, we used a training set of only 
+\begin_inset Formula $1000$
+\end_inset
+
+ points, sampled randomly each time from the training set.
+\end_layout
+
+\begin_layout Standard
+
+\end_layout
+
 \end_body
 \end_document
