@@ -85,26 +85,32 @@ def svm_kernel_train(K, train_data, train_labels, T, eta, C):
     return M
         
 def go1():
+    start = time.time()
     w=svm_sgd_train(train_data, train_labels, 500000, 1, 10**-6)
-    print "done building"
+    print "done building:", time.time() - start
+    start = time.time()
     errors = 0
     for i in range(len(test_data)):
         predicted = svm_sgd_classify(w, test_data[i])
         if predicted != int(test_labels[i]):
             errors += 1
+    print "done testing:", time.time() - start
     print "1:", 1 - float(errors)/float(len(test_data))
-def go2():
+def go2(n):
+    print "using n:", n
+    idx = random.permutation(len(train_data))[:n]
     K = lambda x1, x2: np.dot(x1,x2)
     start = time.time()
-    M=svm_kernel_train(K, train_data, train_labels, 10000, 1, 10**-6)
+    M=svm_kernel_train(K, train_data[idx], train_labels[idx], 10000, 10**-6, 1)
     print "done building:", time.time() - start
     errors = 0
     start = time.time()
     for i in range(len(test_data)):
-        predicted = svm_kernel_classify(K, train_data, M, test_data[i])
+        predicted = svm_kernel_classify(K, train_data[idx], M, test_data[i])
         if predicted != int(test_labels[i]):
             errors += 1
     print "done testing:", time.time() - start
     print "2:", 1 - float(errors)/float(len(test_data))
 go1()
-go2()
+for n in [10, 100, 1000, 10000, len(test_data)]:
+    go2(n)
