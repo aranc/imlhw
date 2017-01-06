@@ -1900,8 +1900,7 @@ b.
 \end_layout
 
 \begin_layout Standard
-We see that some of the weights looks very much like the digits they classify
- for.
+We see that some of the weights looks very much like the digits they classify.
  e.g.
  3, 4, and 5.
  Other weights look more like a mix of other digits.
