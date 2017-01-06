@@ -1,0 +1,33 @@
+echo "starting batch" | ~/scripts/send.py "batch1"
+
+echo "python ~arancarmon/imlhw/3/submit/q.py 7 calc_accuracy l -.5 -6.7 200000" > tmp.txt
+python ~arancarmon/imlhw/3/submit/q.py 7 calc_accuracy l -.5 -6.7 200000 >> tmp.txt
+cat tmp.txt | ~/scripts/send.py "batch1"
+
+echo "python ~arancarmon/imlhw/3/submit/q.py 7 calc_accuracy q -.5 -6.7 200000" > tmp.txt
+python ~arancarmon/imlhw/3/submit/q.py 7 calc_accuracy q -.5 -6.7 200000 >> tmp.txt
+cat tmp.txt | ~/scripts/send.py "batch1"
+
+echo "python ~arancarmon/imlhw/3/submit/q.py 7 calc_accuracy s1 -.5 -6.7 200000" > tmp.txt
+python ~arancarmon/imlhw/3/submit/q.py 7 calc_accuracy s1 -.5 -6.7 200000 >> tmp.txt
+cat tmp.txt | ~/scripts/send.py "batch1"
+
+echo "python ~arancarmon/imlhw/3/submit/q.py 7 calc_accuracy s.1 -.5 -6.7 200000" > tmp.txt
+python ~arancarmon/imlhw/3/submit/q.py 7 calc_accuracy s.1 -.5 -6.7 200000 >> tmp.txt
+cat tmp.txt | ~/scripts/send.py "batch1"
+
+echo "python ~arancarmon/imlhw/3/submit/q.py 7 calc_accuracy s10 -.5 -6.7 200000" > tmp.txt
+python ~arancarmon/imlhw/3/submit/q.py 7 calc_accuracy s10 -.5 -6.7 200000 >> tmp.txt
+cat tmp.txt | ~/scripts/send.py "batch1"
+
+
+echo "starting batch" | ~/scripts/send.py "batch2"
+
+echo "python ~arancarmon/imlhw/3/submit/q.py 7 find_eta q 1000 -9 .1 .05  1000 find_eta_q.png" > tmp.txt
+python ~arancarmon/imlhw/3/submit/q.py 7 find_eta q 1000 -9 .1 .05 1 1000 find_eta_q.png >> tmp.txt
+cat tmp.txt | ~/scripts/send.py "batch2"
+
+echo "python ~arancarmon/imlhw/3/submit/q.py 7 find_eta s1 1000 -9 .1 .05  1000 find_eta_s1.png" > tmp.txt
+python ~arancarmon/imlhw/3/submit/q.py 7 find_eta s1 1000 -9 .1 .05 1 1000 find_eta_s1.png >> tmp.txt
+cat tmp.txt | ~/scripts/send.py "batch2"
+
