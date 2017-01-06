@@ -16,6 +16,7 @@ def svm_sgd_classify(w, x):
 
 #Train for question 6
 def svm_sgd_train(train_data, train_labels, T, C, eta):
+    print "T:",T,"C:",C,"eta:",eta
     m = train_data.shape[0]
     d = train_data.shape[1]
     k = 10

@@ -1782,11 +1782,11 @@ We zoom in, and use
 
 \begin_layout Standard
 We choose the parameters 
-\begin_inset Formula $c=10^{-6.7}$
+\begin_inset Formula $\eta=10^{-6.7}$
 \end_inset
 
  and 
-\begin_inset Formula $\eta=10^{-0.5}$
+\begin_inset Formula $C=10^{-0.5}$
 \end_inset
 
 
@@ -1900,9 +1900,9 @@ b.
 \end_layout
 
 \begin_layout Standard
-We see that some of the weights looks very much like the digits they classify.
+We see that some of the weights resemble the digits they classify.
  e.g.
- 3, 4, and 5.
+ 2, 3, and 9.
  Other weights look more like a mix of other digits.
 \end_layout
 
@@ -1966,7 +1966,11 @@ len(train_data)=
 \end_layout
 
 \begin_layout Standard
-We measure an accuracy of 
+We measured an accuracy of 
+\begin_inset Formula $0.9116$
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
