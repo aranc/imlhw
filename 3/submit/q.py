@@ -1,5 +1,6 @@
 import sys
 import time
+import operator
 import numpy as np
 import matplotlib
 matplotlib.use('Agg')
@@ -42,7 +43,6 @@ def svm_sgd_train(train_data, train_labels, T, C, eta):
 
     #Output weights matrix
     return w
-
 
 #Classify for question 7
 def svm_kernel_classify(K, train_data, M, x):
@@ -99,6 +99,13 @@ def svm_kernel_measure(K, M, xi, data, labels):
             errors += 1
     return 1 - float(errors)/float(len(data))
 
+#Utility function, prints max 10 elements in a hash
+def print_best_10(_dict):
+    print "max 10 values:"
+    sorted_dict = sorted(dict.items(), key=operator.itemgetter(1))
+    for k, v in sorted_dict[-10:]
+        print k,v
+
 #Plot the training and the validation errors for various values of eta
 def svm_sgd_find_eta(_from, _to, _step, C, T, output=None):
     values_range = np.arange(_from, _to, _step)
@@ -120,6 +127,7 @@ def svm_sgd_find_eta(_from, _to, _step, C, T, output=None):
         plt.show()
     else:
         plt.savefig(output)
+    print_best_10(validation_accuracy)
 
 #Plot the training and the validation errors for various values of eta
 def svm_sgd_find_C(_from, _to, _step, eta, T, output=None):
@@ -142,6 +150,7 @@ def svm_sgd_find_C(_from, _to, _step, eta, T, output=None):
         plt.show()
     else:
         plt.savefig(output)
+    print_best_10(validation_accuracy)
 
 if True:
     #Get subquestion from first argument

@@ -1716,11 +1716,11 @@ We first start with scanning for
 \end_inset
 
 .
- and with various 
-\begin_inset Formula $C$
+ and with 
+\begin_inset Formula $c=1$
 \end_inset
 
- values:
+:
 \end_layout
 
 \begin_layout Standard
@@ -1732,80 +1732,6 @@ We first start with scanning for
 \end_inset
 
 
-\begin_inset Graphics
-	filename pics/q6a_find_eta__T_1000_C_.1.png
-	lyxscale 20
-	scale 30
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
-\begin_inset Graphics
-	filename pics/q6a_find_eta__T_1000_C_.01.png
-	lyxscale 20
-	scale 30
-
-\end_inset
-
-
-\begin_inset Graphics
-	filename pics/q6a_find_eta__T_1000_C_.001.png
-	lyxscale 20
-	scale 30
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
-\begin_inset Graphics
-	filename pics/q6a_find_eta__T_1000_C_10.png
-	lyxscale 20
-	scale 30
-
-\end_inset
-
-
-\begin_inset Graphics
-	filename pics/q6a_find_eta__T_1000_C_100.png
-	lyxscale 20
-	scale 30
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
-\begin_inset Graphics
-	filename pics/q6a_find_eta__T_1000_C_1000.png
-	lyxscale 20
-	scale 30
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
-(The 
-\begin_inset Formula $C$
-\end_inset
-
- value used in each plot is written in the title)
-\end_layout
-
-\begin_layout Standard
-We see that the training accuracy and the validation accuracy are very similar.
- The length of the training data is 
-\begin_inset Formula $50000$
-\end_inset
-
-.
 \end_layout
 
 \end_body
