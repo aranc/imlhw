@@ -83,10 +83,14 @@ def svm_kernel_train(K, train_data, train_labels, T, eta, C):
 
     #Output M matrix
     return M
+
+eta=10**(-6.7)
+C=10**(-0.5)
+T=1000
         
 def go1():
     start = time.time()
-    w=svm_sgd_train(train_data, train_labels, 500000, 1, 10**-6)
+    w=svm_sgd_train(train_data, train_labels, T, C, eta)
     print "done building:", time.time() - start
     start = time.time()
     errors = 0
@@ -101,7 +105,7 @@ def go2(n):
     idx = random.permutation(len(train_data))[:n]
     K = lambda x1, x2: np.dot(x1,x2)
     start = time.time()
-    M=svm_kernel_train(K, train_data[idx], train_labels[idx], 10000, 10**-6, 1)
+    M=svm_kernel_train(K, train_data[idx], train_labels[idx], T, eta, C)
     print "done building:", time.time() - start
     errors = 0
     start = time.time()
