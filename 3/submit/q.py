@@ -185,7 +185,7 @@ if True:
             C = 10**float(sys.argv[3])
             eta = 10**float(sys.argv[4])
             T = int(sys.argv[5])
-            digit = float(sys.argv[6])
+            digit = int(sys.argv[6])
             filename = sys.argv[7]
             svm_sgd_show_digit(C, eta, T, filename)
         else:
