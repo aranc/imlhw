@@ -165,6 +165,7 @@ def svm_sgd_show_digit(C, eta, T, digit, output=None):
 #Calc accuracy for question 6 on the test data
 def svm_sgd_calc_accuracy(C, eta, T):
     w = svm_sgd_train(train_data, train_labels, T, C, eta)
+    return svm_sgd_measure(w, validation_data, validation_labels)
     return svm_sgd_measure(w, test_data, test_labels)
 
 if True:
