@@ -116,5 +116,5 @@ def go2(n):
     print "done testing:", time.time() - start
     print "2:", 1 - float(errors)/float(len(test_data))
 go1()
-for n in [10, 100, 1000, 10000, len(test_data)]:
+for n in [10, 100, 1000, 10000, len(train_data)]:
     go2(n)
