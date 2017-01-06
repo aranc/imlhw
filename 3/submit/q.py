@@ -102,7 +102,7 @@ def svm_kernel_measure(K, M, xi, data, labels):
 #Utility function, prints max 10 elements in a hash
 def print_best_10(_dict):
     print "max 10 values:"
-    sorted_dict = sorted(dict.items(), key=operator.itemgetter(1))
+    sorted_dict = sorted(_dict.items(), key=operator.itemgetter(1))
     for k, v in sorted_dict[-10:]:
         print k,v
 
