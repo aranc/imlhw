@@ -16,7 +16,6 @@ def svm_sgd_classify(w, x):
 
 #Train for question 6
 def svm_sgd_train(train_data, train_labels, T, C, eta):
-    print "T:",T,"C:",C,"eta:",eta
     m = train_data.shape[0]
     d = train_data.shape[1]
     k = 10
@@ -166,8 +165,63 @@ def svm_sgd_show_digit(C, eta, T, digit, output=None):
 #Calc accuracy for question 6 on the test data
 def svm_sgd_calc_accuracy(C, eta, T):
     w = svm_sgd_train(train_data, train_labels, T, C, eta)
-    return svm_sgd_measure(w, validation_data, validation_labels)
     return svm_sgd_measure(w, test_data, test_labels)
+
+#Plot the training and the validation errors for various values of eta
+def svm_kernel_find_eta(kernel, training_size, _from, _to, _step, C, T, output=None):
+    values_range = np.arange(_from, _to, _step)
+    training_accuracy = {}
+    validation_accuracy = {}
+    for value in values_range:
+        eta = 10**value
+        #Use only a subset of the training set
+        idx = random.permutation(len(train_data))[:training_size]
+        M = svm_kernel_train(kernel, train_data[idx], train_labels[idx], T, C, eta)
+        training_accuracy[value] = svm_kernel_measure(kernel, M, train_data[idx], train_data, train_labels)
+        validation_accuracy[value] = svm_kernel_measure(kernel, M, train_data[idx], validation_data, validation_labels)
+        print "value:", value, "training accuracy:", training_accuracy[value], "validation accuracy:", validation_accuracy[value]
+    plt.title("Find eta. Use C="+str(C)+" and T="+str(T))
+    plt.gca().set_xlabel("log10(eta)")
+    plt.gca().set_ylabel("Accuracy")
+    plt.plot(values_range, [validation_accuracy[value] for value in values_range], 'ko', label="validation")
+    plt.plot(values_range, [training_accuracy[value] for value in values_range], 'k*', label="training")
+    plt.legend()
+    if output == None:
+        plt.show()
+    else:
+        plt.savefig(output)
+    print_best_10(validation_accuracy)
+
+#Plot the training and the validation errors for various values of eta
+def svm_kernel_find_C(kernel, training_size, _from, _to, _step, eta, T, output=None):
+    values_range = np.arange(_from, _to, _step)
+    training_accuracy = {}
+    validation_accuracy = {}
+    for value in values_range:
+        C = 10**value
+        #Use only a subset of the training set
+        idx = random.permutation(len(train_data))[:training_size]
+        M = svm_kernel_train(kernel, train_data[idx], train_labels[idx], T, C, eta)
+        training_accuracy[value] = svm_kernel_measure(kernel, M, train_data[idx], train_data[idx], train_labels[idx])
+        validation_accuracy[value] = svm_kernel_measure(kernel, M, train_data[idx], validation_data, validation_labels)
+        print "value:", value, "training accuracy:", training_accuracy[value], "validation accuracy:", validation_accuracy[value]
+    plt.title("Find C. Use eta="+str(eta)+" and T="+str(T))
+    plt.gca().set_xlabel("log10(C)")
+    plt.gca().set_ylabel("Accuracy")
+    plt.plot(values_range, [validation_accuracy[value] for value in values_range], 'ko', label="validation")
+    plt.plot(values_range, [training_accuracy[value] for value in values_range], 'k*', label="training")
+    plt.legend()
+    if output == None:
+        plt.show()
+    else:
+        plt.savefig(output)
+    print_best_10(validation_accuracy)
+
+#Calc accuracy for question 7 on the test data
+def svm_kernel_calc_accuracy(kernel, C, eta, T):
+    M = svm_kernel_train(kernel, train_data, train_labels, T, C, eta)
+    return svm_kernel_measure(kernel, M, train_data, test_data, test_labels)
+
 
 #Linear kernel
 linear_kernel = lambda x1, x2: np.dot(x1,x2)
