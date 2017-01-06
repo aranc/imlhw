@@ -176,8 +176,10 @@ def svm_kernel_find_eta(kernel, training_size, _from, _to, _step, C, T, output=N
         eta = 10**value
         #Use only a subset of the training set
         idx = random.permutation(len(train_data))[:training_size]
+        print "train: C:",C,"eta:",eta,"T:",T,"len(idx):",len(idx)
         M = svm_kernel_train(kernel, train_data[idx], train_labels[idx], T, C, eta)
-        training_accuracy[value] = svm_kernel_measure(kernel, M, train_data[idx], train_data, train_labels)
+        print "measure"
+        training_accuracy[value] = svm_kernel_measure(kernel, M, train_data[idx], train_data, train_data[idx], train_labels[idx])
         validation_accuracy[value] = svm_kernel_measure(kernel, M, train_data[idx], validation_data, validation_labels)
         print "value:", value, "training accuracy:", training_accuracy[value], "validation accuracy:", validation_accuracy[value]
     plt.title("Find eta. Use C="+str(C)+" and T="+str(T))
