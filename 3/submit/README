@@ -25,5 +25,5 @@ Question 7:
 
 
 Note: C and eta parameters are given in a logarithmic scale.
-Note: kernel prameter is either l for linear, q for quadratic, or r<s> for RBF
+Note: kernel parameter is either l for linear, q for quadratic, or r<s> for RBF
 with sigma s (e.g. r1 for sigma 1).
