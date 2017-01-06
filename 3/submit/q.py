@@ -103,7 +103,7 @@ def svm_kernel_measure(K, M, xi, data, labels):
 def print_best_10(_dict):
     print "max 10 values:"
     sorted_dict = sorted(dict.items(), key=operator.itemgetter(1))
-    for k, v in sorted_dict[-10:]
+    for k, v in sorted_dict[-10:]:
         print k,v
 
 #Plot the training and the validation errors for various values of eta
