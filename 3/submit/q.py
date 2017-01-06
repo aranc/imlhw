@@ -162,6 +162,11 @@ def svm_sgd_show_digit(C, eta, T, digit, output=None):
     else:
         plt.savefig(output)
 
+#Calc accuracy for question 6 on the test data
+def svm_sgd_calc_accuracy(C, eta, T):
+    w = svm_sgd_train(train_data, train_labels, T, C, eta)
+    return svm_sgd_measure(w, test_data, test_labels)
+
 if True:
     #Get subquestion from first argument
     if sys.argv[1] == '6':
@@ -192,9 +197,7 @@ if True:
             C = 10**float(sys.argv[3])
             eta = 10**float(sys.argv[4])
             T = int(sys.argv[5])
-            digit = int(sys.argv[6])
-            filename = sys.argv[7]
-            svm_sgd_show_digit(C, eta, T, filename)
+            print svm_sgd_calc_accuracy(C, eta, T)
         else:
             print "Error: please choose a valid command"
     elif sys.argv[1] == '7':
