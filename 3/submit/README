@@ -20,7 +20,7 @@ Question 7:
     Search for eta. Output plot to filename.
   python ~arancarmon/imlhw/3/submit/q.py 7 find_C <kernel> <training size> <from> <to> <step> <eta> <T> <filename>
     Search for C. Output plot to filename.
-  python ~arancarmon/imlhw/3/submit/q.py 7 calc_accuracy <C> <eta> <T>
+  python ~arancarmon/imlhw/3/submit/q.py 7 calc_accuracy <kernel> <C> <eta> <T>
     Cacluclate accuracy on the test data
 
 

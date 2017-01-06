@@ -223,6 +223,33 @@ if True:
         else:
             print "Error: please choose a valid command"
     elif sys.argv[1] == '7':
-        pass
+        if sys.argv[2] == 'find_eta':
+            kernel = parse_kernel_parameter(sys.argv[3])
+            training_size = int(sys.argv[4])
+            _from = float(sys.argv[5])
+            _to = float(sys.argv[6])
+            _step = float(sys.argv[7])
+            C = 10**float(sys.argv[8])
+            T = int(sys.argv[9])
+            filename = sys.argv[10]
+            svm_kernel_find_eta(kernel, training_size, _from, _to, _step, C, T, filename)
+        elif sys.argv[2] == 'find_C':
+            kernel = parse_kernel_parameter(sys.argv[3])
+            training_size = int(sys.argv[4])
+            _from = float(sys.argv[5])
+            _to = float(sys.argv[6])
+            _step = float(sys.argv[7])
+            eta = 10**float(sys.argv[8])
+            T = int(sys.argv[9])
+            filename = sys.argv[10]
+            svm_kernel_find_C(kernel, training_size, _from, _to, _step, eta, T, filename)
+        elif sys.argv[2] == 'calc_accuracy':
+            kernel = parse_kernel_parameter(sys.argv[3])
+            C = 10**float(sys.argv[4])
+            eta = 10**float(sys.argv[5])
+            T = int(sys.argv[6])
+            print svm_kernel_calc_accuracy(kernel, C, eta, T)
+        else:
+            print "Error: please choose a valid command"
     else:
         print "Error: please choose a valid command"
