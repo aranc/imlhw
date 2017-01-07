@@ -396,7 +396,7 @@ Therefore,
 \begin_layout Standard
 c.
  Each neuron has 
-\begin_inset Formula $2d$
+\begin_inset Formula $d+1$
 \end_inset
 
  parameters (
@@ -418,7 +418,7 @@ c.
 
  neurons per layer, and an additional single neuron in the last layer; all
  in all, 
-\begin_inset Formula $N=2d^{2}(L-1)+2d$
+\begin_inset Formula $N=(d+1)d(L-1)+(d+1)$
 \end_inset
 
 
