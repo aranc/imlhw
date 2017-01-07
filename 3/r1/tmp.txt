@@ -1,0 +1,2 @@
+python ~/imlhw/3/submit/q.py 7 find_eta r1 1000 -1.6 .1 .3 0 1000 find_eta_r1__c0_oneC_4.png
+g
