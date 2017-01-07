@@ -2130,6 +2130,86 @@ The accuracy is mostly uniform at the lower part of the plot, we continue
 \end_layout
 
 \begin_layout Standard
+\begin_inset Graphics
+	filename pics/find_C__1.png
+	lyxscale 20
+	scale 30
+
+\end_inset
+
+
+\begin_inset Graphics
+	filename pics/find_C__2.png
+	lyxscale 20
+	scale 30
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+The accuracy of 
+\begin_inset Formula $C$
+\end_inset
+
+ values seems uniform, so we will choose 
+\begin_inset Formula $C=1$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+b.
+ With 
+\begin_inset Formula $C=1$
+\end_inset
+
+,
+\begin_inset Formula $\eta=10^{-6},$
+\end_inset
+
+ and 
+\begin_inset Formula $T=10000$
+\end_inset
+
+, we measured on the test set an accuracy of: 
+\end_layout
+
+\begin_layout Standard
+\begin_inset Box ovalbox
+position "t"
+hor_pos "c"
+has_inner_box 1
+inner_pos "t"
+use_parbox 0
+use_makebox 0
+width "100col%"
+special "none"
+height "1in"
+height_special "totalheight"
+thickness "0.4pt"
+separation "3pt"
+shadowsize "4pt"
+framecolor "black"
+backgroundcolor "none"
+status open
+
+\begin_layout Plain Layout
+How to run:
+\end_layout
+
+\begin_layout Plain Layout
+python 
+\begin_inset Formula $\sim$
+\end_inset
+
+arancarmon/imlhw/3/submit/q.py 7 calc_accuracy <kernel> <C> <eta> <T>
+\end_layout
+
+\end_inset
+
 
 \end_layout
 
