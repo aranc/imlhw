@@ -240,7 +240,7 @@ def parse_kernel_parameter(param):
     elif param == "q":
         return quadratic_kernel
     else:
-        assert param[0] == 's'
+        assert param[0] == 'r'
         return generate_RBF_kernel(float(param[1:]))
 
 if True:

@@ -1,0 +1,13 @@
+echo "python ~/imlhw/3/submit/q.py 7 find_eta r1 1000 -9 .1 .3 0 1000 find_eta_r1__c0_oneC.png" > tmp.txt
+python ~/imlhw/3/submit/q.py 7 find_eta r1 1000 -9 .1 .3 0 1000 find_eta_r1__c0_oneC.png >> tmp.txt
+cat tmp.txt | ~/scripts/send.py "r1"
+
+echo "python ~/imlhw/3/submit/q.py 7 find_eta r1 1000 -9 .1 .3 -2 1000 find_eta_r1__c0_smallC.png" > tmp.txt
+python ~/imlhw/3/submit/q.py 7 find_eta r1 1000 -9 .1 .3 -2 1000 find_eta_r1__c0_smallC.png >> tmp.txt
+cat tmp.txt | ~/scripts/send.py "r1"
+
+git add *.png
+git commit -am "pics"
+git fetch
+git rebase
+git push
