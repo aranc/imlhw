@@ -2019,11 +2019,118 @@ arancarmon/imlhw/3/submit/q.py 6 calc_accuracy <C> <eta> <T>
 \begin_layout Standard
 7.
  a.
- For a quicker tuning of parameters, we used a training set of only 
+ 
+\end_layout
+
+\begin_layout Standard
+We created 2 functions to plot the training and validation errors for various
+ 
+\begin_inset Formula $\eta$
+\end_inset
+
+ and 
+\begin_inset Formula $C$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Box ovalbox
+position "t"
+hor_pos "c"
+has_inner_box 1
+inner_pos "t"
+use_parbox 0
+use_makebox 0
+width "100col%"
+special "none"
+height "1in"
+height_special "totalheight"
+thickness "0.4pt"
+separation "3pt"
+shadowsize "4pt"
+framecolor "black"
+backgroundcolor "none"
+status open
+
+\begin_layout Plain Layout
+How to run:
+\end_layout
+
+\begin_layout Plain Layout
+python 
+\begin_inset Formula $\sim$
+\end_inset
+
+arancarmon/imlhw/3/submit/q.py 7 find_eta <kernel> <training size> <from>
+ <to> <step> <C> <T> <filename>
+\end_layout
+
+\begin_layout Plain Layout
+python 
+\begin_inset Formula $\sim$
+\end_inset
+
+arancarmon/imlhw/3/submit/q.py 7 find_C <kernel> <training size> <from> <to>
+ <step> <eta> <T> <filename>
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+For a quicker tuning of parameters, we used a training set of only 
 \begin_inset Formula $1000$
 \end_inset
 
  points, sampled randomly each time from the training set.
+\end_layout
+
+\begin_layout Standard
+We started by scanning for an 
+\begin_inset Formula $\eta$
+\end_inset
+
+ value, with 
+\begin_inset Formula $T=1000$
+\end_inset
+
+ and 
+\begin_inset Formula $C=1$
+\end_inset
+
+:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Graphics
+	filename pics/find_eta_q__c0.png
+	lyxscale 20
+	scale 30
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+The accuracy is mostly uniform at the lower part of the plot, we continue
+ to scan for 
+\begin_inset Formula $C$
+\end_inset
+
+ value with 
+\begin_inset Formula $\eta=10^{-6}:$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
 \end_layout
 
 \end_body
