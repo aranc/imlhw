@@ -476,28 +476,35 @@ The last inequality holds since
 \end_layout
 
 \begin_layout Standard
-We notice that always 
-\begin_inset Formula $L\ge2$
-\end_inset
-
- and 
-\begin_inset Formula $d\ge1$
-\end_inset
-
-, so 
-\begin_inset Formula $0\le d(d-1)(L-2)$
-\end_inset
-
- and therefore 
-\begin_inset Formula $Ld(d+1)\le2d^{2}(L-1)+2d=N$
-\end_inset
-
-; and from subquestion b we get: 
+We need to show:
 \begin_inset Formula 
 \[
-\pi_{C}(m)\le(\frac{em}{d+1})^{Ld(d+1)}\le(em)^{Ld(d+1)}\le(em)^{N}\text{\,\,\,\,\ensuremath{\text{(for \ensuremath{m\ge d+1\text{)}}}}}
+\pi_{C}(m)\le(\frac{em}{d+1})^{Ld(d+1)}\overset{?}{\le}(em)^{(d+1)d(L-1)+d+1}=(em)^{N}\text{\,\,\,\,\ensuremath{\text{(for \ensuremath{m\ge d+1\text{)}}}}}
 \]
 
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{align*}
+(\frac{em}{d+1})^{Ld(d+1)} & \overset{?}{\le}(em)^{(d+1)d(L-1)+d+1}\\
+\left(em\right)^{Ld^{2}+Ld} & \overset{?}{\le}\left(d+1\right)^{Ld(d+1)}\left(em\right)^{Ld^{2}+Ld-d^{2}-d+d+1}\\
+\left(em\right)^{d^{2}-1} & \overset{?}{\le}\left(d+1\right)^{Ld(d+1)}\\
+\left(em\right)^{(d-1)(d+1)} & \overset{?}{\le}\left(d+1\right)^{Ld(d+1)}\\
+\left(em\right)^{d-1} & \overset{?}{\le}\left(d+1\right)^{Ld}
+\end{align*}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+And we get 
+\begin_inset Formula $\pi_{C}(m)\le(em)^{N}\text{\,\,\,\,\ensuremath{\text{(for \ensuremath{m\ge d+1\text{)}}}}}$
 \end_inset
 
 
@@ -2175,6 +2182,10 @@ b.
 \end_inset
 
 , we measured on the test set an accuracy of: 
+\begin_inset Formula $0.9352$
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
