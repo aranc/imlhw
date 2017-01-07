@@ -1,8 +1,9 @@
-echo "starting batch" | ~/scripts/send.py "batch4"
+
+#echo "starting batch" | ~/scripts/send.py "batch4"
 
 
-echo "python ~/imlhw/3/submit/q.py 7 find_C q 1000 -9 -9 .3 -6 1000 find_C__1.png" > tmp.txt
-python ~/imlhw/3/submit/q.py 7 find_C q 1000 -9 -9 .3 -6 1000 find_C__1.png >> tmp.txt
+echo "python ~/imlhw/3/submit/q.py 7 find_C q 1000 -9 9 .3 -6 1000 find_C__1.png" > tmp.txt
+python ~/imlhw/3/submit/q.py 7 find_C q 1000 -9 9 .3 -6 1000 find_C__1.png >> tmp.txt
 cat tmp.txt | ~/scripts/send.py "batch4"
 
 
