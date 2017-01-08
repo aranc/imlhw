@@ -617,7 +617,133 @@ Notice that we can assign
 
 \begin_layout Standard
 b.
- TODO
+\end_layout
+
+\begin_layout Standard
+\begin_inset Graphics
+	filename pics/i1.png
+	lyxscale 20
+	scale 30
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Let 
+\begin_inset Formula $z\in K$
+\end_inset
+
+, and denote by 
+\begin_inset Formula $a,b,c$
+\end_inset
+
+ the edges of the triangle between 
+\begin_inset Formula $x,y,z$
+\end_inset
+
+ as in the picture.
+ From the definition of 
+\begin_inset Formula $x$
+\end_inset
+
+ we know that 
+\begin_inset Formula $a\le b$
+\end_inset
+
+, and we need to show that 
+\begin_inset Formula $c\le b$
+\end_inset
+
+.
+ It is sufficient to show that 
+\begin_inset Formula $90^{o}\le\beta$
+\end_inset
+
+ for that matter.
+\end_layout
+
+\begin_layout Standard
+Notice that for every 
+\begin_inset Formula $z=\epsilon x+\left(1-\epsilon\right)z$
+\end_inset
+
+ (for 
+\begin_inset Formula $0<\epsilon<1),$
+\end_inset
+
+ the equivalent triangle 
+\begin_inset Formula $\triangle xyz'$
+\end_inset
+
+ also upholds 
+\begin_inset Formula $a'\le b'$
+\end_inset
+
+; in addition 
+\begin_inset Formula $\beta'=\beta$
+\end_inset
+
+, so 
+\begin_inset Formula $\alpha'\le\beta$
+\end_inset
+
+ for every 
+\begin_inset Formula $\triangle xyz'$
+\end_inset
+
+.
+ Assume by way of contradiction that 
+\begin_inset Formula $\beta<90^{o};$
+\end_inset
+
+then 
+\begin_inset Formula $\alpha'<90^{o}$
+\end_inset
+
+ for every 
+\begin_inset Formula $\triangle xyz'$
+\end_inset
+
+ 
+\begin_inset Formula $\Rightarrow$
+\end_inset
+
+ there exists 
+\begin_inset Formula $\gamma'>0$
+\end_inset
+
+ small enough such that 
+\begin_inset Formula $\alpha'+\beta+\gamma'<180^{o}$
+\end_inset
+
+; a contradiction.
+ we then deduce 
+\begin_inset Formula $\beta\ge90^{o}$
+\end_inset
+
+ 
+\begin_inset Formula $\Rightarrow$
+\end_inset
+
+
+\begin_inset Formula $b$
+\end_inset
+
+ is the largest edge in 
+\begin_inset Formula $\triangle xyz$
+\end_inset
+
+ 
+\begin_inset Formula $\Rightarrow$
+\end_inset
+
+
+\begin_inset Formula $c\le b$
+\end_inset
+
+.
 \end_layout
 
 \begin_layout Standard
@@ -825,7 +951,6 @@ Since we classify to either label
 \end_inset
 
 .
- (TODO: proving this would be nice).
 \end_layout
 
 \begin_layout Standard
