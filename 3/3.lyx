@@ -208,6 +208,7 @@ All layers except the first will simply pass through the previous layer:
 \end_inset
 
 .
+ (The last layer will pass the first neuron).
 \end_layout
 
 \begin_layout Standard
