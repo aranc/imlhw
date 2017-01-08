@@ -433,7 +433,131 @@ c.
 
 \begin_layout Standard
 d.
- TODO
+ Assume 
+\begin_inset Formula $2^{m}\le\left(em\right)^{N}$
+\end_inset
+
+; then 
+\begin_inset Formula $m\le N\log_{2}\left(em\right)\iff em\le eN\log_{2}(em)\overset{(*)}{\Rightarrow}em\le2eN\log_{2}\left(eN\right)\iff m\le2N\log_{2}(eN)$
+\end_inset
+
+, as required.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Box Boxed
+position "t"
+hor_pos "c"
+has_inner_box 1
+inner_pos "t"
+use_parbox 0
+use_makebox 0
+width "100col%"
+special "none"
+height "1in"
+height_special "totalheight"
+thickness "0.4pt"
+separation "3pt"
+shadowsize "4pt"
+framecolor "black"
+backgroundcolor "none"
+status open
+
+\begin_layout Plain Layout
+(*) Lemma: 
+\begin_inset Formula $\forall a>0$
+\end_inset
+
+, 
+\begin_inset Formula $x\le a\log_{2}(x)\Rightarrow x\le2a\log_{2}(a)$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+Proof: Let 
+\begin_inset Formula $a>0$
+\end_inset
+
+, and assume 
+\begin_inset Formula $x>2a\log_{2}(a)$
+\end_inset
+
+; we need to show that 
+\begin_inset Formula $x>a\log_{2}(x)$
+\end_inset
+
+.
+ Notice that for 
+\begin_inset Formula $a\le\sqrt{e}$
+\end_inset
+
+ it holds that 
+\begin_inset Formula $x>a\log_{2}(x)$
+\end_inset
+
+ (for x
+\begin_inset Formula $\le1$
+\end_inset
+
+it is trivial, else 
+\begin_inset Formula $0<x-\sqrt{e}\log_{2}(x)\le x-a\log_{2}(x)).$
+\end_inset
+
+ Now, for 
+\begin_inset Formula $a>\sqrt{e}$
+\end_inset
+
+ we get 
+\begin_inset Formula $x>2a\log_{2}(A)>\frac{2a}{2\ln(2)}\Rightarrow x>\frac{a}{\ln(2)}$
+\end_inset
+
+ (#).
+\end_layout
+
+\begin_layout Plain Layout
+Let us look at the function 
+\begin_inset Formula $f(x)=x-a\log_{2}(x);$
+\end_inset
+
+ its derivative is 
+\begin_inset Formula $f'(x)=1-\frac{a}{x\ln(2)}\overset{(\#)}{\ge}0$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+At last, since 
+\begin_inset Formula $a-2\log_{2}(a)>0$
+\end_inset
+
+ for all 
+\begin_inset Formula $a>0$
+\end_inset
+
+, it follows that: 
+\begin_inset Formula $f(x)=x-a\log_{2}(x)\ge2a\log_{2}(a)$
+\end_inset
+
+-
+\begin_inset Formula $a\log_{2}(2a\log_{2}(a))=2a\log_{2}(a)-a\log_{2}(a)-a\log_{2}(2\log_{2}(a))=a\log_{2}(a)-a\log_{2}(2\log_{2}(a))\ge0$
+\end_inset
+
+ 
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Formula $\Rightarrow x>a\log_{2}(x)$
+\end_inset
+
+, as required.
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
@@ -506,9 +630,26 @@ Using
 \begin_layout Standard
 \begin_inset Formula 
 \begin{align*}
--Ld^{2}-Ld & \le-d^{2}+1\\
-\left(em\right)^{-Ld^{2}-Ld} & \le\left(em\right)^{-d^{2}+1}
+-Ld^{2}-Ld & \le-d^{2}+1
 \end{align*}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $\iff$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+\left(em\right)^{-Ld^{2}-Ld}\le\left(em\right)^{-d^{2}+1}
+\]
 
 \end_inset
 
@@ -525,10 +666,44 @@ Using
 \begin_layout Standard
 \begin_inset Formula 
 \begin{align*}
-\left(d+1\right)^{-Ld^{2}-Ld} & \le\left(em\right)^{-d^{2}+1}\\
-\left(em\right)^{Ld^{2}+Ld}\left(d+1\right)^{-Ld^{2}-Ld} & \le\left(em\right)^{Ld^{2}+Ld-d^{2}+1}\\
-\left(\frac{em}{d+1}\right)^{Ld^{2}+Ld} & \le\left(em\right)^{N}
+\left(d+1\right)^{-Ld^{2}-Ld} & \le\left(em\right)^{-d^{2}+1}
 \end{align*}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $\iff$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+\left(em\right)^{Ld^{2}+Ld}\left(d+1\right)^{-Ld^{2}-Ld}\le\left(em\right)^{Ld^{2}+Ld-d^{2}+1}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $\iff$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+\left(\frac{em}{d+1}\right)^{Ld^{2}+Ld}\le\left(em\right)^{N}
+\]
 
 \end_inset
 
