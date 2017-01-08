@@ -2224,5 +2224,38 @@ arancarmon/imlhw/3/submit/q.py 7 calc_accuracy <kernel> <C> <eta> <T>
 
 \end_layout
 
+\begin_layout Standard
+\begin_inset Formula $\phantom{A}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+c.
+ We measured an accuracy of 
+\begin_inset Formula $0.932$
+\end_inset
+
+ with RBF 
+\begin_inset Formula $\sigma=1000$
+\end_inset
+
+, 
+\begin_inset Formula $T=10000$
+\end_inset
+
+, 
+\begin_inset Formula $C=1$
+\end_inset
+
+, 
+\begin_inset Formula $\eta=10^{-6}$
+\end_inset
+
+ which is comparable to the quadratic kernel.
+ Due to time constraints, we did not investigate it further.
+\end_layout
+
 \end_body
 \end_document
