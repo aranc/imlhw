@@ -72,5 +72,10 @@ if True:
         filenames[5] = sys.argv[7]
         filenames[6] = sys.argv[8]
         subquestion_c(filenames)
+    elif len(sys.argv) > 1 and sys.argv[1] == 'debug':
+        for i in range(20):
+            if train_labels[i] == 1:
+                plt.imshow(train_data[i].reshape(28,28), interpolation='nearest')
+                plt.savefig("tmp/p"+str(i)+".png")
     else:
         print "Error: please choose a valid command"
