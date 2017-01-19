@@ -106,7 +106,7 @@ def answer_subquestions(T, plot_a, plot_b):
 
     #Run T iterations
     for t in range(T):
-        a_t, h_t = adaboost_iteration(train_data, train_labels)
+        a_t, h_t = adaboost_iteration(train_data, train_labels, distribution)
         a.append(a_t)
         h.append(h_t)
         classifier = build_linear_classifier(a, h)
