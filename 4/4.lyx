@@ -203,7 +203,10 @@ b.
 \begin{align*}
 \Pr_{x\sim D_{t+1}}\left[h_{t}(x)\ne y\right] & =\sum_{i=1}^{m}D_{t+1}(x_{i})\one\left(h_{t}(x_{i})\ne y_{i}\right)\\
  & =\sum_{i=1}^{m}\frac{D_{t}(x_{i})e^{\alpha_{t}}}{Z_{t}}\one\left(h_{t}(x_{i})\ne y_{i}\right)\\
- & =
+ & =\frac{e^{\alpha_{t}}}{Z_{t}}\sum_{i=1}^{m}D_{t}(x_{i})\one\left(h_{t}(x_{i})\ne y_{i}\right)\\
+ & =\frac{e^{\alpha_{t}}}{Z_{t}}\epsilon_{t}\\
+ & =\frac{\sqrt{\epsilon_{t}\left(1-\epsilon_{t}\right)}}{2\sqrt{\epsilon_{t}\left(1-\epsilon_{t}\right)}}\\
+ & =\frac{1}{2}
 \end{align*}
 
 \end_inset
