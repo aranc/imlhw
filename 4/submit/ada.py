@@ -45,7 +45,7 @@ def find_best_weak_learner(data, labels, distribution):
 
     #Find argmin error
     start = time.time()
-    for pixel in range(pixels):
+    for pixel in range(pixels*pixels):
         possible_thetas = np.unique(data[:,pixel])
         for theta in possible_thetas:
             for direction in (True, False):
