@@ -20,11 +20,13 @@ def subquestions_abc(filnames, data):
 
     #Plot 5 first eigenvectors
     for i in range(5):
+        plt.clf()
         plt.imshow(v[i].reshape(28,28), interpolation='nearest')
         plt.savefig(filenames[1+i])
 
     #Plot eigenvalues
-    plt.plot(range(1,101), np.diag(s[:100]), '*-')
+    plt.clf()
+    plt.plot(range(1,101), s[:100], '*-')
     plt.savefig(filenames[6])
 
 
