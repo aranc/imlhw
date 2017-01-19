@@ -95,5 +95,10 @@ if True:
             plt.clf()
             plt.imshow(mean.reshape(28,28), interpolation='nearest')
             plt.savefig("mean.png")
+        if int(sys.argv[2]) == 4:
+            plt.clf()
+            mean2 = np.mean(np.vstack((mean8, mean0)), 0)
+            plt.imshow(mean2.reshape(28,28), interpolation='nearest')
+            plt.savefig("mean2.png")
     else:
         print "Error: please choose a valid command"
