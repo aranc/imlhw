@@ -1,4 +1,4 @@
 echo "staring:" `date` | ~/scripts/send.py "5mail"
-python ../submit ada.py 75 ~/html/plota.png ~/html/plotb.png | tee tmp.txt
+python ../submit/ada.py 75 ~/html/plota.png ~/html/plotb.png | tee tmp.txt
 cat tmp.txt | ~/scripts/send.py "5mail"
 
