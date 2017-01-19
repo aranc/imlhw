@@ -141,6 +141,32 @@ Theory Questions
 \end_layout
 
 \begin_layout Standard
+\begin_inset FormulaMacro
+\newcommand{\pr}{\text{Pr}}
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset FormulaMacro
+\newcommand{\one}{\mathbb{1}}
+{1}
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset FormulaMacro
+\newcommand{\pluseq}{\mathrel{+}=}
+{+=}
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
 \begin_inset Formula $\phantom{A}$
 \end_inset
 
@@ -173,6 +199,16 @@ b.
 
 \begin_layout Standard
 b.
+\begin_inset Formula 
+\begin{align*}
+\Pr_{x\sim D_{t+1}}\left[h_{t}(x)\ne y\right] & =\sum_{i=1}^{m}D_{t+1}(x_{i})\one\left(h_{t}(x_{i})\ne y_{i}\right)\\
+ & =\sum_{i=1}^{m}\frac{D_{t}(x_{i})e^{\alpha_{t}}}{Z_{t}}\one\left(h_{t}(x_{i})\ne y_{i}\right)\\
+ & =
+\end{align*}
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard

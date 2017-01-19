@@ -153,7 +153,7 @@ def answer_subquestions(T, plot_a, plot_b):
     plt.plot(range(1,T+1), ael_test_errors, 'ko', label="Test AEL")
     plt.plot(range(1,T+1), ael_training_errors, 'k*', label="Training AEL")
     plt.legend()
-    plt.savefig(plot_a)
+    plt.savefig(plot_b)
 
 if True:
     T = int(sys.argv[1])
