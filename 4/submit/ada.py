@@ -7,7 +7,7 @@ matplotlib.use('Agg')
 import matplotlib.pyplot as plt
 from hw4 import *
 
-if True:
+if False:
     if len(sys.argv) > 1 and sys.argv[1] == 'bla':
         _from = float(sys.argv[3])
         _to = float(sys.argv[4])

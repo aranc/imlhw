@@ -5,16 +5,60 @@ import numpy as np
 import matplotlib
 matplotlib.use('Agg')
 import matplotlib.pyplot as plt
+from numpy.linalg import svd
 from hw4 import *
 
+#Shared code that answers subquestions a,b,c
+def subquestions_abc(filnames, data):
+
+#Answers subquestion a
+def subquestion_a(filenames):
+    subquestions_abc(filenames, train_data[train_labels == pos])
+
+#Answers subquestion b
+def subquestion_b(filenames):
+    subquestions_abc(filenames, train_data[train_labels == neg])
+
+#Answers subquestion c
+def subquestion_c(filenames):
+    subquestions_abc(filenames, train_data)
+
 if True:
-    if len(sys.argv) > 1 and sys.argv[1] == 'bla':
-        _from = float(sys.argv[3])
-        _to = float(sys.argv[4])
-        _step = float(sys.argv[5])
-        C = 10**float(sys.argv[6])
-        T = int(sys.argv[7])
-        filename = sys.argv[8]
-        svm_sgd_find_eta(_from, _to, _step, C, T, filename)
+    if len(sys.argv) > 1 and sys.argv[1] == 'a':
+        #We output 7 plots for subquestions a,b, and c.
+        #Plot the mea, plot 5 eigenvectors, and plot the eigenvalues
+        filenames = [None] * 7
+        filenames[0] = sys.argv[2]
+        filenames[1] = sys.argv[3]
+        filenames[2] = sys.argv[4]
+        filenames[3] = sys.argv[5]
+        filenames[4] = sys.argv[6]
+        filenames[5] = sys.argv[7]
+        filenames[6] = sys.argv[8]
+        subquestion_a(filenames)
+    elif len(sys.argv) > 1 and sys.argv[1] == 'b':
+        #We output 7 plots for subquestions a,b, and c.
+        #Plot the mea, plot 5 eigenvectors, and plot the eigenvalues
+        filenames = [None] * 7
+        filenames[0] = sys.argv[2]
+        filenames[1] = sys.argv[3]
+        filenames[2] = sys.argv[4]
+        filenames[3] = sys.argv[5]
+        filenames[4] = sys.argv[6]
+        filenames[5] = sys.argv[7]
+        filenames[6] = sys.argv[8]
+        subquestion_c(filenames)
+    elif len(sys.argv) > 1 and sys.argv[1] == 'c':
+        #We output 7 plots for subquestions a,b, and c.
+        #Plot the mea, plot 5 eigenvectors, and plot the eigenvalues
+        filenames = [None] * 7
+        filenames[0] = sys.argv[2]
+        filenames[1] = sys.argv[3]
+        filenames[2] = sys.argv[4]
+        filenames[3] = sys.argv[5]
+        filenames[4] = sys.argv[6]
+        filenames[5] = sys.argv[7]
+        filenames[6] = sys.argv[8]
+        subquestion_c(filenames)
     else:
         print "Error: please choose a valid command"

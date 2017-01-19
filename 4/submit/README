@@ -2,6 +2,13 @@ Aran Carmon aran.carmon@gmail.com 038847588
 Inbal Joffe inbaljoffe@mail.tau.ac.il 302868898
 
 Files:
-
+  ada.py Answers question 5 about adaboost
+  pca.py Answers question 6 about PCA
 
 Usage:
+  python pca.py a <Mean plot> <Eigenvector 1> <Eigenvector 2> <Eigenvector 3>  <Eigenvector 4>  <Eigenvector 5>  <Eigenvalues plot>
+    Answers subquestion a. All parameters are filenames of the output plots.
+  python pca.py b <Mean plot> <Eigenvector 1> <Eigenvector 2> <Eigenvector 3>  <Eigenvector 4>  <Eigenvector 5>  <Eigenvalues plot>
+    Answers subquestion b. All parameters are filenames of the output plots.
+  python pca.py c <Mean plot> <Eigenvector 1> <Eigenvector 2> <Eigenvector 3>  <Eigenvector 4>  <Eigenvector 5>  <Eigenvalues plot>
+    Answers subquestion c. All parameters are filenames of the output plots.
