@@ -24,6 +24,14 @@ def measure(classifier, data, labels):
             errors += 1
     return float(errors) / float(len(data))
 
+#Measure error of classifier, with a given distribution
+def measure_with_distribution(classifier, data, labels, distribution):
+    errors = 0.0
+    for i in range(len(data)):
+        if labels[i] != classifier(data[i]):
+            errors += distribution[i]
+    return errors
+
 #Return the best weak learner for the given distribution
 def find_best_weak_learner(data, labels, distribution):
     #Consts
@@ -42,7 +50,7 @@ def find_best_weak_learner(data, labels, distribution):
         for theta in possible_thetas:
             for direction in (True, False):
                 learner = build_weak_learner(pixel, theta, direction)
-                error = measure(learner, data, labels)
+                error = measure_with_distribution(learner, data, labels, distribution)
                 if error < best_error:
                     best_error = error
                     best_direction = direction
@@ -61,17 +69,19 @@ def adaboost_iteration(data, labels, distribution):
     h_t = find_best_weak_learner(data, labels, distribution)
     
     #Define error and alpha
-    e_t = measure(h_t, data, labels)
+    e_t = measure_with_distribution(h_t, data, labels, distribution)
     a_t = (1.0 / 2.0) * math.log( (1 - e_t) / e_t)
 
     #Define D_t+1
     for i in range(len(distribution)):
-        distribution[i] *= e**(-a_t) if labels[i] == h_t(data[i]) else e**(a_t)
+        distribution[i] *= (e**(-a_t) if labels[i] == h_t(data[i]) else e**(a_t))
 
     #Normalize
     z_t = np.sum(distribution)
+    print "z_t:", z_t
     distribution /= z_t
 
+    #return a_t, h_t
 
 if False:
     if len(sys.argv) > 1 and sys.argv[1] == 'bla':
