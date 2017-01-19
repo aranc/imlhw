@@ -94,6 +94,8 @@ def build_linear_classifier(a, h):
 
 #Calculate average exponential loss
 def calc_average_exponential_loss(a, h, data, labels):
+    x = data
+    y = labels
     m = len(data)
     T = len(h)
 
@@ -131,7 +133,7 @@ def answer_subquestions(T, plot_a, plot_b):
         classifier = build_linear_classifier(a, h)
         training_errors.append(measure(classifier, train_data, train_labels))
         test_errors.append(measure(classifier, test_data, test_labels))
-        ael_training_errors.append(calc_average_exponential_loss(a, h, training_data, training_labels))
+        ael_training_errors.append(calc_average_exponential_loss(a, h, train_data, train_labels))
         ael_test_errors.append(calc_average_exponential_loss(a, h, test_data, test_labels))
         print "t:", t, "training error:", training_errors[-1], "testing_error:", test_errors[-1]
 
