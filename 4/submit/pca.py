@@ -66,7 +66,7 @@ if True:
         filenames[4] = sys.argv[6]
         filenames[5] = sys.argv[7]
         filenames[6] = sys.argv[8]
-        subquestion_c(filenames)
+        subquestion_b(filenames)
     elif len(sys.argv) > 1 and sys.argv[1] == 'c':
         #We output 7 plots for subquestions a,b, and c.
         #Plot the mea, plot 5 eigenvectors, and plot the eigenvalues
@@ -80,9 +80,20 @@ if True:
         filenames[6] = sys.argv[8]
         subquestion_c(filenames)
     elif len(sys.argv) > 1 and sys.argv[1] == 'debug':
-        for i in range(20):
-            if train_labels[i] == 1:
-                plt.imshow(train_data[i].reshape(28,28), interpolation='nearest')
-                plt.savefig("tmp/p"+str(i)+".png")
+        mean8 = np.mean(train_data[train_labels == 1], 0)
+        mean0 = np.mean(train_data[train_labels == -1], 0)
+        mean = mean0/2 + mean8/2
+        if int(sys.argv[2]) == 1:
+            plt.clf()
+            plt.imshow(mean8.reshape(28,28), interpolation='nearest')
+            plt.savefig("mean8.png")
+        if int(sys.argv[2]) == 2:
+            plt.clf()
+            plt.imshow(mean0.reshape(28,28), interpolation='nearest')
+            plt.savefig("mean0.png")
+        if int(sys.argv[2]) == 3:
+            plt.clf()
+            plt.imshow(mean.reshape(28,28), interpolation='nearest')
+            plt.savefig("mean.png")
     else:
         print "Error: please choose a valid command"
