@@ -24,7 +24,7 @@ def subquestions_abc(filnames, data):
         plt.savefig(filenames[1+i])
 
     #Plot eigenvalues
-    plt.plot(np.diag(s[:100]), range(1,101), '*')
+    plt.plot(range(1,101), np.diag(s[:100]), '*-')
     plt.savefig(filenames[6])
 
 
