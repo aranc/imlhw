@@ -25,11 +25,11 @@ def subquestions_abc(filnames, data):
 
 #Answers subquestion a
 def subquestion_a(filenames):
-    subquestions_abc(filenames, train_data[train_labels == pos])
+    subquestions_abc(filenames, train_data[train_labels == 1])
 
 #Answers subquestion b
 def subquestion_b(filenames):
-    subquestions_abc(filenames, train_data[train_labels == neg])
+    subquestions_abc(filenames, train_data[train_labels == -1])
 
 #Answers subquestion c
 def subquestion_c(filenames):
