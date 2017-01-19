@@ -78,7 +78,6 @@ def adaboost_iteration(data, labels, distribution):
 
     #Normalize
     z_t = np.sum(distribution)
-    print "z_t:", z_t
     distribution /= z_t
 
     #return a_t, h_t
