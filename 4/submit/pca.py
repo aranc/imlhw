@@ -3,7 +3,7 @@ import time
 import operator
 import numpy as np
 import matplotlib
-matplotlib.use('Agg')
+#matplotlib.use('Agg')
 import matplotlib.pyplot as plt
 from numpy.linalg import svd
 from hw4 import *
@@ -80,25 +80,17 @@ if True:
         filenames[6] = sys.argv[8]
         subquestion_c(filenames)
     elif len(sys.argv) > 1 and sys.argv[1] == 'debug':
-        mean8 = np.mean(train_data[train_labels == 1], 0)
-        mean0 = np.mean(train_data[train_labels == -1], 0)
-        mean = mean0/2 + mean8/2
-        if int(sys.argv[2]) == 1:
-            plt.clf()
-            plt.imshow(mean8.reshape(28,28), interpolation='nearest')
-            plt.savefig("mean8.png")
-        if int(sys.argv[2]) == 2:
-            plt.clf()
-            plt.imshow(mean0.reshape(28,28), interpolation='nearest')
-            plt.savefig("mean0.png")
-        if int(sys.argv[2]) == 3:
-            plt.clf()
-            plt.imshow(mean.reshape(28,28), interpolation='nearest')
-            plt.savefig("mean.png")
-        if int(sys.argv[2]) == 4:
-            plt.clf()
-            mean2 = np.mean(np.vstack((mean8, mean0)), 0)
-            plt.imshow(mean2.reshape(28,28), interpolation='nearest')
-            plt.savefig("mean2.png")
+        data1 = train_data[train_labels==-1][0]
+        data2 = train_data[train_labels==-1][1]
+        mean = np.mean(np.vstack((data1, data2)), 0)
+        plt.clf()
+        plt.imshow(data1.reshape(28,28), interpolation='nearest')
+        plt.show()
+        plt.clf()
+        plt.imshow(data2.reshape(28,28), interpolation='nearest')
+        plt.show()
+        plt.clf()
+        plt.imshow(mean.reshape(28,28), interpolation='nearest')
+        plt.show()
     else:
         print "Error: please choose a valid command"
