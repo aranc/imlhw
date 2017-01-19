@@ -26,7 +26,7 @@ def measure(classifier, data, labels):
 def find_best_weak_learner(data, labels, distribution):
     #Consts
     pixels = 28
-    
+
     #Parameters to argmin
     best_pixel = 0
     best_theta = 0
