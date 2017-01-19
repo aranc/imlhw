@@ -35,7 +35,7 @@ def measure_with_distribution(classifier, data, labels, distribution):
 #Return the best weak learner for the given distribution
 def find_best_weak_learner(data, labels, distribution):
     #Consts
-    pixels = 28
+    pixels = len(data[0])
 
     #Parameters to argmin
     best_pixel = 0
@@ -45,7 +45,7 @@ def find_best_weak_learner(data, labels, distribution):
 
     #Find argmin error
     start = time.time()
-    for pixel in range(pixels*pixels):
+    for pixel in range(pixels):
         possible_thetas = np.unique(data[:,pixel])
         for theta in possible_thetas:
             for direction in (True, False):
@@ -80,16 +80,41 @@ def adaboost_iteration(data, labels, distribution):
     z_t = np.sum(distribution)
     distribution /= z_t
 
-    #return a_t, h_t
+    return a_t, h_t
 
-if False:
-    if len(sys.argv) > 1 and sys.argv[1] == 'bla':
-        _from = float(sys.argv[3])
-        _to = float(sys.argv[4])
-        _step = float(sys.argv[5])
-        C = 10**float(sys.argv[6])
-        T = int(sys.argv[7])
-        filename = sys.argv[8]
-        svm_sgd_find_eta(_from, _to, _step, C, T, filename)
-    else:
-        print "Error: please choose a valid command"
+#Build linear classifier from lists of a_t and h_t
+def build_linear_classifier(a, h):
+    def classifier(x):
+        _sum = 0
+        for i in range(len(a)):
+            _sum += a[i] * h[i](x)
+        return -1 if _sum < 0 else 1
+    return classifier
+
+#Run T iterations of adaboost, prepare plots for subquestions a and b
+def answer_subquestions(T, plot_a, plot_b):
+    #Init uniform distribution
+    distribution = np.ones(len(train_data)) / len(train_data)
+
+    #List of h_t
+    h = []
+    #List of a_t
+    a = []
+    #List for the plots
+    training_errors = []
+    test_errors = []
+
+    #Run T iterations
+    for t in range(T):
+        a_t, h_t = adaboost_iteration(train_data, train_labels)
+        a.append(a_t)
+        h.append(h_t)
+        classifier = build_linear_classifier(a, h)
+        training_errors.append(measure(classifier, train_data, train_labels))
+        test_errors.append(measure(classifier, test_data, test_labels))
+
+if True:
+    T = int(sys.argv[1])
+    plot_a = sys.argv[2]
+    plot_b = sys.argv[3]
+    answer_subquestions(T, plot_a, plot_b)

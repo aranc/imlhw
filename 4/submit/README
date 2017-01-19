@@ -12,3 +12,6 @@ Usage:
     Answers subquestion b. All parameters are filenames of the output plots.
   python pca.py c <Mean plot> <Eigenvector 1> <Eigenvector 2> <Eigenvector 3>  <Eigenvector 4>  <Eigenvector 5>  <Eigenvalues plot>
     Answers subquestion c. All parameters are filenames of the output plots.
+
+  python ada.py <T> <plot a filename> <plot b filename>
+    Run adaboost for T iterations. Plot for subquestions a and b.
