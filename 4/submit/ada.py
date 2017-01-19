@@ -1,6 +1,8 @@
 import sys
 import time
 import operator
+import math
+from math import e
 import numpy as np
 import matplotlib
 matplotlib.use('Agg')
@@ -53,8 +55,23 @@ def find_best_weak_learner(data, labels, distribution):
 
 
 #Perform an additional iteration of adaboost
+#Modifies distribution, and returns h_t and a_t
 def adaboost_iteration(data, labels, distribution):
-    pass
+    #Recive h_t
+    h_t = find_best_weak_learner(data, labels, distribution)
+    
+    #Define error and alpha
+    e_t = measure(h_t, data, labels)
+    a_t = (1.0 / 2.0) * math.log( (1 - e_t) / e_t)
+
+    #Define D_t+1
+    for i in range(len(distribution)):
+        distribution[i] *= e**(-a_t) if labels[i] == h_t(data[i]) else e**(a_t)
+
+    #Normalize
+    z_t = np.sum(distribution)
+    distribution /= z_t
+
 
 if False:
     if len(sys.argv) > 1 and sys.argv[1] == 'bla':
