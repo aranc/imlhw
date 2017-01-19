@@ -10,6 +10,18 @@ from hw4 import *
 
 #Shared code that answers subquestions a,b,c
 def subquestions_abc(filnames, data):
+    #Plot the mean
+    mean = np.mean(data, 0)
+    plt.imshow(mean.reshape(28,28), interpolation='nearest')
+    plt.savefig(filenames[0])
+
+    #Call SVD
+    u, s, v = svd(data - mean)
+
+    #Plot 5 first eigenvectors
+    for i in range(5):
+        plt.imshow(v[i].reshape(28,28), interpolation='nearest')
+        plt.savefig(filenames[1+i])
 
 #Answers subquestion a
 def subquestion_a(filenames):
