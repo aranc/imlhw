@@ -23,6 +23,11 @@ def subquestions_abc(filnames, data):
         plt.imshow(v[i].reshape(28,28), interpolation='nearest')
         plt.savefig(filenames[1+i])
 
+    #Plot eigenvalues
+    plt.plot(np.diag(s[:100]), range(1,101), '*')
+    plt.savefig(filenames[6])
+
+
 #Answers subquestion a
 def subquestion_a(filenames):
     subquestions_abc(filenames, train_data[train_labels == 1])

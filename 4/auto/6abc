@@ -1,0 +1,1 @@
+for a in a b c; do python ../submit/./pca.py $a ${a}_mean.png ${a}_v1.png ${a}_v2.png ${a}_v3.png ${a}_v4.png ${a}_v5.png ${a}_eigenvalues.png; done
