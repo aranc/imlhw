@@ -112,6 +112,7 @@ def answer_subquestions(T, plot_a, plot_b):
         classifier = build_linear_classifier(a, h)
         training_errors.append(measure(classifier, train_data, train_labels))
         test_errors.append(measure(classifier, test_data, test_labels))
+        print "training error:", training_errors[-1], "testing_error:", test_errors[-1]
 
 if True:
     T = int(sys.argv[1])
