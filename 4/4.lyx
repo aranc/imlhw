@@ -357,6 +357,90 @@ c.
 \end_layout
 
 \begin_layout Standard
+a.
+ We will show how to build 
+\begin_inset Formula $\bar{K^{\prime}}$
+\end_inset
+
+ without using 
+\begin_inset Formula $\phi$
+\end_inset
+
+ explicitly, only using 
+\begin_inset Formula $\bar{K}$
+\end_inset
+
+:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{align*}
+\bar{K^{\prime}}_{i,j} & =\left\langle y_{i},y_{j}\right\rangle \\
+ & =\left\langle \phi\left(x_{i}\right)-\frac{1}{m}\sum_{t=1}^{m}\phi(x_{t}),\,\phi\left(x_{j}\right)-\frac{1}{m}\sum_{t=1}^{m}\phi(x_{t})\right\rangle \\
+ & =\left\langle \phi\left(x_{i}\right),\phi\left(x_{j}\right)\right\rangle -\frac{1}{m}\sum_{t=1}^{m}\left\langle \phi(x_{t}),\phi\left(x_{j}\right)\right\rangle -\frac{1}{m}\sum_{t=1}^{m}\left\langle \phi(x_{t}),\phi\left(x_{i}\right)\right\rangle +\frac{1}{m^{2}}\sum_{t=1}^{m}\sum_{s=1}^{m}\left\langle \phi(x_{t}),\phi\left(x_{s}\right)\right\rangle \\
+ & =\bar{K}_{i,j}-\frac{1}{m}\sum_{t=1}^{m}\bar{K}_{t,i}-\frac{1}{m}\sum_{t=1}^{m}\bar{K}_{t,j}+\frac{1}{m^{2}}\sum_{t=1}^{m}\sum_{s=1}^{m}\bar{K}_{t,s}
+\end{align*}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+The third item 
+\begin_inset Formula $\frac{1}{m^{2}}\sum_{t=1}^{m}\sum_{s=1}^{m}\bar{K}_{t,s}$
+\end_inset
+
+ is shared between all elements of 
+\begin_inset Formula $\bar{K}^{\prime}$
+\end_inset
+
+, and can be calculated once in 
+\begin_inset Formula $O(m^{2}).$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+The other item 
+\begin_inset Formula $\frac{1}{m}\sum_{t=1}^{m}\bar{K}_{t,i}$
+\end_inset
+
+ can be calculated for every 
+\begin_inset Formula $i$
+\end_inset
+
+, 
+\begin_inset Formula $m$
+\end_inset
+
+ times, in 
+\begin_inset Formula $O(m)$
+\end_inset
+
+ per time, and in total in 
+\begin_inset Formula $O(m^{2})$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+All in all, the complexity of this action is 
+\begin_inset Formula $O(m^{2})$
+\end_inset
+
+.
+ And we can't improve this bound, since we need to at least write 
+\begin_inset Formula $O(m^{2})$
+\end_inset
+
+ matrix elements.
+\end_layout
+
+\begin_layout Standard
 \begin_inset Formula $\phantom{A}$
 \end_inset
 
@@ -365,6 +449,42 @@ c.
 
 \begin_layout Standard
 4.
+ Let 
+\begin_inset Formula $w=VPU^{T}y$
+\end_inset
+
+, where 
+\begin_inset Formula $P$
+\end_inset
+
+ is a diagonal matrix where 
+\begin_inset Formula $P_{ii}=\begin{cases}
+\frac{1}{\Sigma_{ii}} & \Sigma_{ii}\ne0\\
+0 & \Sigma_{ii}=0
+\end{cases}$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+Verify that 
+\begin_inset Formula $w$
+\end_inset
+
+ satisfies the constraint:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{align*}
+X^{T}Xw & =X^{T}\left(U\Sigma V^{T}\right)\left(VPU^{T}y\right)\\
+ & =X^{T}U\Sigma PU^{T}y
+\end{align*}
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Part*
