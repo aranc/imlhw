@@ -1,0 +1,150 @@
+find_best_weak_learner: elapsed: 197.007117033 error: 0.043 pixel: 407 theta: -108.283 direction: True
+t: 0 training error: 0.043 testing_error: 0.50153531218
+find_best_weak_learner: elapsed: 189.367999077 error: 0.145853077689 pixel: 455 theta: -71.277 direction: False
+t: 1 training error: 0.043 testing_error: 0.50153531218
+find_best_weak_learner: elapsed: 201.949240923 error: 0.157690896945 pixel: 405 theta: -6.345 direction: True
+t: 2 training error: 0.0255 testing_error: 0.106960081883
+find_best_weak_learner: elapsed: 200.913357973 error: 0.247284782497 pixel: 597 theta: 90.1155 direction: False
+t: 3 training error: 0.0265 testing_error: 0.266120777892
+find_best_weak_learner: elapsed: 197.678431034 error: 0.239497923578 pixel: 522 theta: -101.304 direction: False
+t: 4 training error: 0.0255 testing_error: 0.154042988741
+find_best_weak_learner: elapsed: 191.6135602 error: 0.283746014492 pixel: 441 theta: -77.257 direction: False
+t: 5 training error: 0.021 testing_error: 0.182702149437
+find_best_weak_learner: elapsed: 186.085226059 error: 0.275511585356 pixel: 575 theta: -81.7635 direction: False
+t: 6 training error: 0.0185 testing_error: 0.151484135107
+find_best_weak_learner: elapsed: 184.994018793 error: 0.272515221068 pixel: 461 theta: -98.359 direction: True
+t: 7 training error: 0.0145 testing_error: 0.222108495394
+find_best_weak_learner: elapsed: 180.224447966 error: 0.254038533689 pixel: 240 theta: 100.987 direction: False
+t: 8 training error: 0.011 testing_error: 0.190890481064
+find_best_weak_learner: elapsed: 189.720580101 error: 0.321912433114 pixel: 300 theta: -132.664 direction: False
+t: 9 training error: 0.0145 testing_error: 0.212384851586
+find_best_weak_learner: elapsed: 187.529197931 error: 0.304926330917 pixel: 408 theta: -82.96 direction: True
+t: 10 training error: 0.012 testing_error: 0.168884339816
+find_best_weak_learner: elapsed: 186.435001135 error: 0.296616300642 pixel: 628 theta: 40.4895 direction: False
+t: 11 training error: 0.0145 testing_error: 0.157113613101
+find_best_weak_learner: elapsed: 186.795706987 error: 0.320827435642 pixel: 377 theta: 60.284 direction: True
+t: 12 training error: 0.0095 testing_error: 0.129989764585
+find_best_weak_learner: elapsed: 184.319209814 error: 0.274139717898 pixel: 294 theta: 180.5585 direction: False
+t: 13 training error: 0.0115 testing_error: 0.146878198567
+find_best_weak_learner: elapsed: 185.204578161 error: 0.320869914987 pixel: 273 theta: 99.027 direction: True
+t: 14 training error: 0.009 testing_error: 0.154042988741
+find_best_weak_learner: elapsed: 198.9748981 error: 0.30911847394 pixel: 432 theta: -101.266 direction: True
+t: 15 training error: 0.009 testing_error: 0.170419651996
+find_best_weak_learner: elapsed: 186.200273037 error: 0.321996711752 pixel: 512 theta: -29.6005 direction: False
+t: 16 training error: 0.0085 testing_error: 0.169907881269
+find_best_weak_learner: elapsed: 184.567018986 error: 0.296481370033 pixel: 178 theta: 8.9935 direction: True
+t: 17 training error: 0.007 testing_error: 0.150972364381
+find_best_weak_learner: elapsed: 184.804201841 error: 0.312182786516 pixel: 387 theta: 9.4335 direction: False
+t: 18 training error: 0.004 testing_error: 0.162743091095
+find_best_weak_learner: elapsed: 184.907936811 error: 0.300978031631 pixel: 568 theta: 115.159 direction: True
+t: 19 training error: 0.005 testing_error: 0.150460593654
+find_best_weak_learner: elapsed: 185.05521512 error: 0.341620983553 pixel: 571 theta: 103.192 direction: False
+t: 20 training error: 0.0045 testing_error: 0.158648925281
+find_best_weak_learner: elapsed: 183.186403036 error: 0.284063365052 pixel: 461 theta: -98.359 direction: True
+t: 21 training error: 0.004 testing_error: 0.201637666325
+find_best_weak_learner: elapsed: 185.862327099 error: 0.326744801802 pixel: 184 theta: 32.435 direction: False
+t: 22 training error: 0.003 testing_error: 0.190378710338
+find_best_weak_learner: elapsed: 186.475278139 error: 0.331136780611 pixel: 493 theta: -27.6795 direction: True
+t: 23 training error: 0.0035 testing_error: 0.188331627431
+find_best_weak_learner: elapsed: 186.637234211 error: 0.330368575301 pixel: 657 theta: -16.639 direction: True
+t: 24 training error: 0.0025 testing_error: 0.185772773797
+find_best_weak_learner: elapsed: 195.383972883 error: 0.31992128305 pixel: 379 theta: -51.5165 direction: True
+t: 25 training error: 0.0035 testing_error: 0.161207778915
+find_best_weak_learner: elapsed: 186.362112045 error: 0.297979045761 pixel: 298 theta: -88.2975 direction: False
+t: 26 training error: 0.0015 testing_error: 0.167349027636
+find_best_weak_learner: elapsed: 185.021257877 error: 0.293858301451 pixel: 386 theta: -15.155 direction: False
+t: 27 training error: 0.0025 testing_error: 0.168372569089
+find_best_weak_learner: elapsed: 193.989483118 error: 0.326870090629 pixel: 191 theta: 107.905 direction: True
+t: 28 training error: 0.0005 testing_error: 0.149948822927
+find_best_weak_learner: elapsed: 193.983663082 error: 0.329183954471 pixel: 481 theta: -8.8785 direction: False
+t: 29 training error: 0.001 testing_error: 0.155578300921
+find_best_weak_learner: elapsed: 198.109419823 error: 0.335213369298 pixel: 261 theta: 20.7905 direction: True
+t: 30 training error: 0.0005 testing_error: 0.156601842375
+find_best_weak_learner: elapsed: 216.27788496 error: 0.329697592309 pixel: 433 theta: -91.9125 direction: True
+t: 31 training error: 0.001 testing_error: 0.135107471853
+find_best_weak_learner: elapsed: 196.38586998 error: 0.324719104383 pixel: 514 theta: 142.2705 direction: False
+t: 32 training error: 0.0005 testing_error: 0.153531218014
+find_best_weak_learner: elapsed: 193.910441875 error: 0.336495633083 pixel: 484 theta: -56.1815 direction: False
+t: 33 training error: 0.0005 testing_error: 0.139201637666
+find_best_weak_learner: elapsed: 190.226917028 error: 0.297283501229 pixel: 379 theta: -51.5165 direction: True
+t: 34 training error: 0.001 testing_error: 0.121801432958
+find_best_weak_learner: elapsed: 192.2921381 error: 0.331705969585 pixel: 602 theta: -32.3945 direction: False
+t: 35 training error: 0.0005 testing_error: 0.114636642784
+find_best_weak_learner: elapsed: 198.43679595 error: 0.33095137267 pixel: 436 theta: -80.783 direction: True
+t: 36 training error: 0.0005 testing_error: 0.109518935517
+find_best_weak_learner: elapsed: 194.683398962 error: 0.327892688624 pixel: 269 theta: 113.8815 direction: False
+t: 37 training error: 0.0005 testing_error: 0.111054247697
+find_best_weak_learner: elapsed: 204.557544947 error: 0.328602389895 pixel: 376 theta: 35.7245 direction: True
+t: 38 training error: 0.0005 testing_error: 0.106448311157
+find_best_weak_learner: elapsed: 189.145196199 error: 0.325642769164 pixel: 293 theta: 37.824 direction: False
+t: 39 training error: 0.0005 testing_error: 0.106960081883
+find_best_weak_learner: elapsed: 191.576889038 error: 0.336451055033 pixel: 237 theta: 82.333 direction: True
+t: 40 training error: 0.0005 testing_error: 0.108495394063
+find_best_weak_learner: elapsed: 183.241788149 error: 0.365626783478 pixel: 489 theta: -70.1825 direction: True
+t: 41 training error: 0.0005 testing_error: 0.0957011258956
+find_best_weak_learner: elapsed: 185.937577009 error: 0.332630207887 pixel: 572 theta: 127.167 direction: False
+t: 42 training error: 0.0005 testing_error: 0.107983623337
+find_best_weak_learner: elapsed: 189.852553129 error: 0.338777888526 pixel: 126 theta: 170.369 direction: True
+t: 43 training error: 0.0 testing_error: 0.100307062436
+find_best_weak_learner: elapsed: 179.619763851 error: 0.31944136161 pixel: 426 theta: -30.231 direction: False
+t: 44 training error: 0.0005 testing_error: 0.10593654043
+find_best_weak_learner: elapsed: 180.03383708 error: 0.335490040653 pixel: 155 theta: -135.501 direction: False
+t: 45 training error: 0.0005 testing_error: 0.0957011258956
+find_best_weak_learner: elapsed: 189.039103031 error: 0.331715879817 pixel: 378 theta: -97.8715 direction: True
+t: 46 training error: 0.0005 testing_error: 0.11054247697
+find_best_weak_learner: elapsed: 202.703841925 error: 0.326706062816 pixel: 244 theta: 115.637 direction: False
+t: 47 training error: 0.0005 testing_error: 0.114124872057
+find_best_weak_learner: elapsed: 198.658252001 error: 0.33344266827 pixel: 652 theta: -27.157 direction: True
+t: 48 training error: 0.0 testing_error: 0.109518935517
+find_best_weak_learner: elapsed: 183.342723846 error: 0.349210326459 pixel: 495 theta: -62.0615 direction: False
+t: 49 training error: 0.0 testing_error: 0.107983623337
+find_best_weak_learner: elapsed: 185.055863142 error: 0.351696325157 pixel: 578 theta: 137.9705 direction: True
+t: 50 training error: 0.0 testing_error: 0.0977482088025
+find_best_weak_learner: elapsed: 186.043924093 error: 0.338493224651 pixel: 387 theta: -14.5665 direction: False
+t: 51 training error: 0.0005 testing_error: 0.10440122825
+find_best_weak_learner: elapsed: 186.782497883 error: 0.3502207511 pixel: 461 theta: -46.359 direction: True
+t: 52 training error: 0.0005 testing_error: 0.0936540429887
+find_best_weak_learner: elapsed: 186.196284056 error: 0.333940012774 pixel: 542 theta: 127.8785 direction: False
+t: 53 training error: 0.0 testing_error: 0.100307062436
+find_best_weak_learner: elapsed: 191.157381058 error: 0.353471943814 pixel: 178 theta: 7.9935 direction: True
+t: 54 training error: 0.0 testing_error: 0.0987717502559
+find_best_weak_learner: elapsed: 193.951136112 error: 0.358069643994 pixel: 512 theta: 2.3995 direction: False
+t: 55 training error: 0.0 testing_error: 0.0951893551689
+find_best_weak_learner: elapsed: 192.471369028 error: 0.332999557571 pixel: 408 theta: -82.96 direction: True
+t: 56 training error: 0.0 testing_error: 0.0870010235415
+find_best_weak_learner: elapsed: 202.998089075 error: 0.349340032103 pixel: 540 theta: 111.4815 direction: True
+t: 57 training error: 0.0 testing_error: 0.0839303991812
+find_best_weak_learner: elapsed: 192.371506929 error: 0.333155746588 pixel: 326 theta: 139.2955 direction: False
+t: 58 training error: 0.0 testing_error: 0.0916069600819
+find_best_weak_learner: elapsed: 185.328052998 error: 0.360999044695 pixel: 432 theta: 85.734 direction: True
+t: 59 training error: 0.0 testing_error: 0.0844421699079
+find_best_weak_learner: elapsed: 187.313227177 error: 0.33582985566 pixel: 267 theta: 144.067 direction: False
+t: 60 training error: 0.0 testing_error: 0.089559877175
+find_best_weak_learner: elapsed: 185.885407925 error: 0.358390378345 pixel: 489 theta: -70.1825 direction: True
+t: 61 training error: 0.0 testing_error: 0.0818833162743
+find_best_weak_learner: elapsed: 190.085846901 error: 0.361543484175 pixel: 213 theta: -85.5845 direction: False
+t: 62 training error: 0.0 testing_error: 0.0803480040942
+find_best_weak_learner: elapsed: 187.564894915 error: 0.335126317499 pixel: 386 theta: -7.155 direction: False
+t: 63 training error: 0.0 testing_error: 0.0793244626407
+find_best_weak_learner: elapsed: 183.663546085 error: 0.343515224335 pixel: 373 theta: 139.041 direction: True
+t: 64 training error: 0.0 testing_error: 0.0696008188332
+find_best_weak_learner: elapsed: 197.008716106 error: 0.342443618222 pixel: 378 theta: -97.8715 direction: True
+t: 65 training error: 0.0 testing_error: 0.0793244626407
+find_best_weak_learner: elapsed: 206.18514204 error: 0.318584365576 pixel: 297 theta: 164.4915 direction: False
+t: 66 training error: 0.0 testing_error: 0.0926305015353
+find_best_weak_learner: elapsed: 195.908405066 error: 0.367193754891 pixel: 434 theta: 27.3355 direction: True
+t: 67 training error: 0.0 testing_error: 0.0844421699079
+find_best_weak_learner: elapsed: 197.780192852 error: 0.343082884764 pixel: 655 theta: 75.8745 direction: False
+t: 68 training error: 0.0 testing_error: 0.0834186284545
+find_best_weak_learner: elapsed: 193.49571991 error: 0.35559302771 pixel: 684 theta: 50.236 direction: True
+t: 69 training error: 0.0 testing_error: 0.078812691914
+find_best_weak_learner: elapsed: 194.995378971 error: 0.342907796445 pixel: 414 theta: -57.2545 direction: False
+t: 70 training error: 0.0 testing_error: 0.0793244626407
+find_best_weak_learner: elapsed: 200.69390893 error: 0.365093398712 pixel: 242 theta: 106.8305 direction: True
+t: 71 training error: 0.0 testing_error: 0.0747185261003
+find_best_weak_learner: elapsed: 192.594336033 error: 0.354027709615 pixel: 327 theta: 133.4315 direction: False
+t: 72 training error: 0.0 testing_error: 0.0793244626407
+find_best_weak_learner: elapsed: 188.571340084 error: 0.328369170155 pixel: 406 theta: -90.863 direction: True
+t: 73 training error: 0.0 testing_error: 0.0696008188332
+find_best_weak_learner: elapsed: 183.985290051 error: 0.359232791437 pixel: 484 theta: -60.1815 direction: False
+t: 74 training error: 0.0 testing_error: 0.0665301944729
