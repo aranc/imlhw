@@ -176,14 +176,101 @@ Theory Questions
 \begin_layout Standard
 1.
  a.
- xx.
- x.x .xx
+ Divide the input space into 
+\begin_inset Formula $3$
+\end_inset
+
+ thirds.
+ Let 
+\begin_inset Formula $h_{i}$
+\end_inset
+
+ be a classifier that classifies correctly if and only if the input is from
+ the 
+\begin_inset Formula $i$
+\end_inset
+
+th third.
+ e.g.
+ 
+\begin_inset Formula $h_{2}$
+\end_inset
+
+ will classify correctly if and only if the input is from the 
+\begin_inset Formula $2$
+\end_inset
+
+nd third.
+\end_layout
+
+\begin_layout Standard
+Each of the 
+\begin_inset Formula $h_{i}$
+\end_inset
+
+ has an error of 
+\begin_inset Formula $\frac{2}{3}$
+\end_inset
+
+, but the majority 
+\begin_inset Formula $h$
+\end_inset
+
+ will always be wrong, with an error of 
+\begin_inset Formula $\frac{3}{3}$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $\phantom{A}$
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
 b.
- count how many misclassified points needed and how many misclassified points
- we can get
+ Let 
+\begin_inset Formula $S$
+\end_inset
+
+ be the size of the input space.
+ We are going to count how many mistakes are needed for the majority to
+ have an error greater 
+\begin_inset Formula $2\epsilon$
+\end_inset
+
+, and to count how many errors all the hypothesis can do together, and show
+ that it's impossible.
+\end_layout
+
+\begin_layout Standard
+If we want the majority of the classifiers to have an error greater than
+ 
+\begin_inset Formula $2\epsilon$
+\end_inset
+
+, we need more than half of the hypothesis to err on each input point that
+ the majority is erring on.
+ So we need 
+\begin_inset Formula $2\epsilon S\left(k+1\right)=2\epsilon sK+2\epsilon S$
+\end_inset
+
+ errors.
+\end_layout
+
+\begin_layout Standard
+However, since each hypothesis can only contribute 
+\begin_inset Formula $\epsilon S$
+\end_inset
+
+ errors at most, we can't accumulate more than 
+\begin_inset Formula $\left(2k+1\right)\epsilon S=2\epsilon kS+\epsilon S$
+\end_inset
+
+ errors.
 \end_layout
 
 \begin_layout Standard
