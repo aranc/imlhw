@@ -238,12 +238,12 @@ b.
 
  be the size of the input space.
  We are going to count how many mistakes are needed for the majority to
- have an error greater 
+ have an error greater than 
 \begin_inset Formula $2\epsilon$
 \end_inset
 
-, and to count how many errors all the hypothesis can do together, and show
- that it's impossible.
+, and to count how many errors all the hypothesis can contribute together,
+ and show that it's impossible.
 \end_layout
 
 \begin_layout Standard
