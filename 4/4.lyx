@@ -477,6 +477,15 @@ b.
 \end_inset
 
 .
+ Let 
+\begin_inset Formula $r$
+\end_inset
+
+ be the rank of 
+\begin_inset Formula $\Sigma$
+\end_inset
+
+.
 \end_layout
 
 \begin_layout Standard
@@ -488,10 +497,16 @@ Verify that
 \end_layout
 
 \begin_layout Standard
+
+\end_layout
+
+\begin_layout Standard
 \begin_inset Formula 
 \begin{align*}
-X^{T}Xw & =X^{T}\left(U\Sigma V^{T}\right)\left(VPU^{T}y\right)\\
- & =X^{T}U\Sigma PU^{T}y
+X^{T}Xw & =\left(V\Sigma U^{T}\right)\left(U\Sigma V^{T}\right)\left(VPU^{T}y\right)\\
+ & =V\Sigma\Sigma PU^{T}y\\
+ & =V\Sigma U^{T}y\\
+ & =X^{T}y
 \end{align*}
 
 \end_inset
