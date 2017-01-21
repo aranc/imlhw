@@ -449,6 +449,68 @@ All in all, the complexity of this action is
 
 \begin_layout Standard
 b.
+ Denote by 
+\begin_inset Formula $\Phi$
+\end_inset
+
+ the matrix with columns 
+\begin_inset Formula $\phi(x_{1}),...\phi(x_{n})$
+\end_inset
+
+.
+ Using SVD, we have 
+\begin_inset Formula $\Phi=U\Sigma V^{T}$
+\end_inset
+
+, so 
+\begin_inset Formula $U=\Phi V\Sigma^{+}$
+\end_inset
+
+, and 
+\begin_inset Formula $u_{1},..,u_{k}$
+\end_inset
+
+ are a linear combination of 
+\begin_inset Formula $\phi(x_{1}),...,\phi(x_{n})$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+Since 
+\begin_inset Formula $\Phi$
+\end_inset
+
+ may have a very large or even infinite number of rows, we can look on the
+ 
+\begin_inset Formula $n$
+\end_inset
+
+th first rows of 
+\begin_inset Formula $\Phi$
+\end_inset
+
+ and calculate the SVD on this smaller matrix of size 
+\begin_inset Formula $n\times n$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+TODO: this is probably good, maybe expand / explain more
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $\phantom{A}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+c.
  
 \end_layout
 
@@ -604,10 +666,6 @@ Since
 \end_inset
 
 .
-\end_layout
-
-\begin_layout Standard
-
 \end_layout
 
 \begin_layout Part*
