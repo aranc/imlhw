@@ -478,28 +478,35 @@ b.
 \end_layout
 
 \begin_layout Standard
-Since 
 \begin_inset Formula $\Phi$
 \end_inset
 
- may have a very large or even infinite number of rows, we can look on the
- 
+ may be infeasible to calculate.
+ But since the relation above remains true when we look on the first 
 \begin_inset Formula $n$
 \end_inset
 
-th first rows of 
+th rows (and with the same coefficients 
+\begin_inset Formula $V\Sigma^{+}$
+\end_inset
+
+), we can instead calculate only the 
+\begin_inset Formula $n$
+\end_inset
+
+ first rows of 
 \begin_inset Formula $\Phi$
 \end_inset
 
- and calculate the SVD on this smaller matrix of size 
+ (or any 
+\begin_inset Formula $n$
+\end_inset
+
+ rows) and calculate the SVD on this smaller matrix of size 
 \begin_inset Formula $n\times n$
 \end_inset
 
 .
-\end_layout
-
-\begin_layout Standard
-TODO: this is probably good, maybe expand / explain more
 \end_layout
 
 \begin_layout Standard
