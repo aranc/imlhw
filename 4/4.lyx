@@ -518,6 +518,67 @@ b.
 
 \begin_layout Standard
 c.
+ We precalculate the coefficients of the linear combination as specified
+ in the above subquestion.
+ This step is done once and is not considered as part of the complexity.
+ Let 
+\begin_inset Formula $u_{j}=\sum_{i=1}^{n}C_{\sum ji}\phi(x_{i})$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+We need to calculate the following 
+\begin_inset Formula $k$
+\end_inset
+
+ times, for every 
+\begin_inset Formula $j=1,...,k$
+\end_inset
+
+:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{align*}
+\left\langle u_{j},\phi(x)\right\rangle  & =\left\langle \sum_{i=1}^{n}C_{\sum ji}\phi(x_{i}),\phi(x)\right\rangle \\
+ & =\sum_{i=1}^{n}C_{\sum ji}\left\langle \phi(x_{i}),\phi(x)\right\rangle \\
+ & =\sum_{i=1}^{n}C_{\sum ji}K(x_{i},x)
+\end{align*}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Assuming 
+\begin_inset Formula $K(x,y)$
+\end_inset
+
+ is an 
+\begin_inset Formula $O(1)$
+\end_inset
+
+ operation (otherwise multiply time bounds accordingly), we calculate 
+\begin_inset Formula $O(n)$
+\end_inset
+
+ time per 
+\begin_inset Formula $j$
+\end_inset
+
+, and therefore the total complexity of calculating for all 
+\begin_inset Formula $j=1,...,k$
+\end_inset
+
+ is 
+\begin_inset Formula $O(kn)$
+\end_inset
+
+.
  
 \end_layout
 

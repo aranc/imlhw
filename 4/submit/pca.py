@@ -12,6 +12,8 @@ from hw4 import *
 def subquestions_abc(filnames, data):
     #Plot the mean
     mean = np.mean(data, 0)
+    print np.min(mean)
+    print np.max(mean)
     plt.imshow(mean.reshape(28,28), interpolation='nearest')
     plt.savefig(filenames[0])
 
