@@ -497,16 +497,83 @@ Verify that
 \end_layout
 
 \begin_layout Standard
-
-\end_layout
-
-\begin_layout Standard
 \begin_inset Formula 
 \begin{align*}
 X^{T}Xw & =\left(V\Sigma U^{T}\right)\left(U\Sigma V^{T}\right)\left(VPU^{T}y\right)\\
  & =V\Sigma\Sigma PU^{T}y\\
  & =V\Sigma U^{T}y\\
  & =X^{T}y
+\end{align*}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $\phantom{A}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Let 
+\begin_inset Formula $z$
+\end_inset
+
+ be another vector that satisfies the constraint.
+ 
+\begin_inset Formula $X^{T}Xz=X^{T}y$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+Let 
+\begin_inset Formula $V_{r}=I_{r}V$
+\end_inset
+
+.
+ Note that since only the first 
+\begin_inset Formula $r$
+\end_inset
+
+ diagonal elements of 
+\begin_inset Formula $\Sigma$
+\end_inset
+
+ are non-zero, we have 
+\begin_inset Formula $\Sigma V^{T}=\Sigma V_{r}^{T}$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+Let 
+\begin_inset Formula $z'$
+\end_inset
+
+ be the projection 
+\begin_inset Formula $z'=V_{r}V_{r}^{T}z$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $z'$
+\end_inset
+
+ also satisfies the constraint:
+\begin_inset Formula 
+\begin{align*}
+X^{T}Xz' & =X^{T}XV_{r}V_{r}^{T}z\\
+ & =X^{T}\left(U\Sigma V^{T}\right)V_{r}V_{r}^{T}z\\
+ & =X^{T}\left(U\Sigma V_{r}^{T}\right)V_{r}V_{r}^{T}z\\
+ & =
 \end{align*}
 
 \end_inset
