@@ -573,11 +573,36 @@ Let
 X^{T}Xz' & =X^{T}XV_{r}V_{r}^{T}z\\
  & =X^{T}\left(U\Sigma V^{T}\right)V_{r}V_{r}^{T}z\\
  & =X^{T}\left(U\Sigma V_{r}^{T}\right)V_{r}V_{r}^{T}z\\
- & =
+ & =X^{T}U\Sigma V_{r}^{T}I_{r}z\\
+ & =X^{T}U\Sigma V_{r}^{T}z\\
+ & =X^{T}U\Sigma V^{T}z\\
+ & =X^{T}Xz\\
+ & =X^{T}y
 \end{align*}
 
 \end_inset
 
+
+\end_layout
+
+\begin_layout Standard
+Since 
+\begin_inset Formula $z'$
+\end_inset
+
+ is a projection, 
+\begin_inset Formula $\left\Vert z'\right\Vert \le\left\Vert z\right\Vert $
+\end_inset
+
+.
+ So we can assume wlog that 
+\begin_inset Formula $z=V_{r}V_{r}^{T}z$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
 
 \end_layout
 
