@@ -448,6 +448,18 @@ All in all, the complexity of this action is
 \end_layout
 
 \begin_layout Standard
+b.
+ 
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $\phantom{A}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
 4.
  Let 
 \begin_inset Formula $w=VPU^{T}y$
