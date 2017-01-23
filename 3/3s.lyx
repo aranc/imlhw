@@ -1,0 +1,2560 @@
+#LyX 2.2 created this file. For more info see http://www.lyx.org/
+\lyxformat 508
+\begin_document
+\begin_header
+\save_transient_properties true
+\origin unavailable
+\textclass article
+\begin_preamble
+\date{}
+\usepackage{tikz}
+\usepackage{xcolor}
+\hypersetup{
+    colorlinks,
+    linkcolor={black!50!black},
+    citecolor={blue!50!black},
+    urlcolor={blue!80!black}
+}
+\usepackage{culmus}
+\def\L{\protect\pL}
+\usepackage{minted}
+\usepackage{bbold}
+\end_preamble
+\use_default_options true
+\maintain_unincluded_children false
+\language english
+\language_package default
+\inputencoding auto
+\fontencoding global
+\font_roman "default" "default"
+\font_sans "default" "default"
+\font_typewriter "default" "default"
+\font_math "auto" "auto"
+\font_default_family default
+\use_non_tex_fonts false
+\font_sc false
+\font_osf false
+\font_sf_scale 100 100
+\font_tt_scale 100 100
+\graphics default
+\default_output_format default
+\output_sync 0
+\bibtex_command default
+\index_command default
+\paperfontsize default
+\spacing single
+\use_hyperref true
+\pdf_bookmarks true
+\pdf_bookmarksnumbered false
+\pdf_bookmarksopen false
+\pdf_bookmarksopenlevel 1
+\pdf_breaklinks false
+\pdf_pdfborder false
+\pdf_colorlinks false
+\pdf_backref section
+\pdf_pdfusetitle false
+\papersize default
+\use_geometry false
+\use_package amsmath 2
+\use_package amssymb 1
+\use_package cancel 1
+\use_package esint 1
+\use_package mathdots 1
+\use_package mathtools 1
+\use_package mhchem 1
+\use_package stackrel 1
+\use_package stmaryrd 1
+\use_package undertilde 1
+\cite_engine basic
+\cite_engine_type default
+\biblio_style plain
+\use_bibtopic false
+\use_indices false
+\paperorientation portrait
+\suppress_date false
+\justification true
+\use_refstyle 1
+\index Index
+\shortcut idx
+\color #008000
+\end_index
+\secnumdepth 3
+\tocdepth 3
+\paragraph_separation skip
+\defskip smallskip
+\quotes_language english
+\papercolumns 1
+\papersides 1
+\paperpagestyle default
+\tracking_changes false
+\output_changes false
+\html_math_output 0
+\html_css_as_file 0
+\html_be_strict false
+\end_header
+
+\begin_body
+
+\begin_layout Title
+HW3
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+\begin{array}{ccc}
+\text{Inbal Joffe} &  & \text{Aran Carmon}\end{array}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $\phantom{A}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Part*
+Theory Questions
+\end_layout
+
+\begin_layout Standard
+\begin_inset FormulaMacro
+\newcommand{\lag}{\mathcal{L}}
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset FormulaMacro
+\newcommand{\hag}{\mathcal{H}}
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+1.
+ Let's look at the inputs set 
+\begin_inset Formula $S=x_{1},...,x_{d}\in R^{d}$
+\end_inset
+
+ such that 
+\begin_inset Formula $\left(x_{i}\right)_{j}=\delta_{ij}$
+\end_inset
+
+ (that is, 
+\begin_inset Formula $1$
+\end_inset
+
+ if 
+\begin_inset Formula $i=j$
+\end_inset
+
+, and 
+\begin_inset Formula $0$
+\end_inset
+
+ otherwise).
+\end_layout
+
+\begin_layout Standard
+The size of the set is 
+\begin_inset Formula $d$
+\end_inset
+
+.
+ And for every subset 
+\begin_inset Formula $A$
+\end_inset
+
+ of 
+\begin_inset Formula $S$
+\end_inset
+
+, we can build a network that will give 
+\begin_inset Formula $1$
+\end_inset
+
+ only on inputs in 
+\begin_inset Formula $A$
+\end_inset
+
+:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $\phantom{A}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+All layers except the first will simply pass through the previous layer:
+ 
+\begin_inset Formula $W_{ij}^{(t+1)}=\delta_{ij}$
+\end_inset
+
+, 
+\begin_inset Formula $b_{i}^{(t+1)}=\frac{1}{2}$
+\end_inset
+
+.
+ (The last layer will pass the first neuron).
+\end_layout
+
+\begin_layout Standard
+The first layer will only accept inputs from 
+\begin_inset Formula $A$
+\end_inset
+
+: 
+\begin_inset Formula $W_{ij}^{(1)}=\begin{cases}
+1 & x_{i}\in A\\
+0 & \text{otherwise}
+\end{cases}$
+\end_inset
+
+, 
+\begin_inset Formula $b_{i}^{(1)}=\frac{1}{2}$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $\phantom{A}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Box Boxed
+position "t"
+hor_pos "c"
+has_inner_box 1
+inner_pos "t"
+use_parbox 0
+use_makebox 0
+width "100col%"
+special "none"
+height "1in"
+height_special "totalheight"
+thickness "0.4pt"
+separation "3pt"
+shadowsize "4pt"
+framecolor "black"
+backgroundcolor "none"
+status open
+
+\begin_layout Plain Layout
+Notice that we can get a better lower bound by looking at the network that
+ connects all the inputs to the first neuron, and that only passes the output
+ of the first neuron all the way to the final output.
+ This network is essentially only the first neuron, and we know that it's
+ VCdim equals 
+\begin_inset Formula $d+1$
+\end_inset
+
+.
+ We will use this result in the next question.
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $\phantom{A}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+2.
+ a.
+ The hypothesis class is of the form: 
+\begin_inset Formula $B=\left\{ \left.h_{1}\times...\times h_{d}\right|h_{1},...,h_{d}\in\mathcal{H}\right\} $
+\end_inset
+
+ 
+\end_layout
+
+\begin_layout Standard
+We have seen in the recitation that for 
+\begin_inset Formula $m\ge\text{VCdim(\mathcal{H})}=d+1$
+\end_inset
+
+, 
+\begin_inset Formula 
+\[
+\pi_{\hag}(m)\le\left(\frac{em}{d+1}\right)^{d+1}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Also, we saw in class that 
+\begin_inset Formula $\pi_{F_{1}\times F_{2}}(m)\le\pi_{F_{1}}(m)\cdot\pi_{F_{2}}(m)$
+\end_inset
+
+ (and inductively we can deduce for all 
+\begin_inset Formula $n\in\mathbb{N}$
+\end_inset
+
+: 
+\begin_inset Formula $\pi_{F_{1}\times...\times F_{n}}(m)\le\pi_{F_{1}}(m)\cdot...\cdot\pi_{F_{n}}(m))$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $\phantom{A}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Therefore, 
+\begin_inset Formula $\pi_{B}(m)\le\left(\frac{em}{d+1}\right)^{d\left(d+1\right)}$
+\end_inset
+
+ 
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $\phantom{A}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+b.
+ The hypothesis class 
+\begin_inset Formula $C$
+\end_inset
+
+ is of the form 
+\begin_inset Formula $\left\{ \left.b_{1}\circ...\circ b_{l}\right|b_{1},...,b_{l}\in B\right\} $
+\end_inset
+
+ where 
+\begin_inset Formula $B$
+\end_inset
+
+ is as defined above.
+ 
+\end_layout
+
+\begin_layout Standard
+We saw in class that 
+\begin_inset Formula $\pi_{F_{1}\circ F_{2}}(m)\le\pi_{F_{1}}(m)\cdot\pi_{F_{2}}(m)$
+\end_inset
+
+ (and inductively we can deduce for all 
+\begin_inset Formula $n\in\mathbb{N}$
+\end_inset
+
+: 
+\begin_inset Formula $\pi_{F_{1}\circ...\circ F_{n}}(m)\le\pi_{F_{1}}(m)\cdot...\cdot\pi_{F_{n}}(m))$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+Therefore, 
+\begin_inset Formula $\pi_{C}(m)\le\left(\frac{em}{d+1}\right)^{ld\left(d+1\right)}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $\phantom{A}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+c.
+ Each neuron has 
+\begin_inset Formula $d+1$
+\end_inset
+
+ parameters (
+\begin_inset Formula $w_{i,:}^{(t)}$
+\end_inset
+
+ and 
+\begin_inset Formula $\left(b_{t+1}\right)_{i}$
+\end_inset
+
+).
+ For each of the first 
+\begin_inset Formula $L-1$
+\end_inset
+
+ layers, we have 
+\begin_inset Formula $d$
+\end_inset
+
+ neurons per layer, and an additional single neuron in the last layer; all
+ in all, 
+\begin_inset Formula $N=(d+1)d(L-1)+(d+1)$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $\phantom{A}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+d.
+ Assume 
+\begin_inset Formula $2^{m}\le\left(em\right)^{N}$
+\end_inset
+
+; then 
+\begin_inset Formula $m\le N\log_{2}\left(em\right)\iff em\le eN\log_{2}(em)\overset{(*)}{\Rightarrow}em\le2eN\log_{2}\left(eN\right)\iff m\le2N\log_{2}(eN)$
+\end_inset
+
+, as required.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Box Boxed
+position "t"
+hor_pos "c"
+has_inner_box 1
+inner_pos "t"
+use_parbox 0
+use_makebox 0
+width "100col%"
+special "none"
+height "1in"
+height_special "totalheight"
+thickness "0.4pt"
+separation "3pt"
+shadowsize "4pt"
+framecolor "black"
+backgroundcolor "none"
+status open
+
+\begin_layout Plain Layout
+(*) Lemma: 
+\begin_inset Formula $\forall a>0$
+\end_inset
+
+, 
+\begin_inset Formula $x\le a\log_{2}(x)\Rightarrow x\le2a\log_{2}(a)$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+Proof: Let 
+\begin_inset Formula $a>0$
+\end_inset
+
+, and assume 
+\begin_inset Formula $x>2a\log_{2}(a)$
+\end_inset
+
+; we need to show that 
+\begin_inset Formula $x>a\log_{2}(x)$
+\end_inset
+
+.
+ Notice that for 
+\begin_inset Formula $a\le\sqrt{e}$
+\end_inset
+
+ it holds that 
+\begin_inset Formula $x>a\log_{2}(x)$
+\end_inset
+
+ (for x
+\begin_inset Formula $\le1$
+\end_inset
+
+it is trivial, else 
+\begin_inset Formula $0<x-\sqrt{e}\log_{2}(x)\le x-a\log_{2}(x)).$
+\end_inset
+
+ Now, for 
+\begin_inset Formula $a>\sqrt{e}$
+\end_inset
+
+ we get 
+\begin_inset Formula $x>2a\log_{2}(A)>\frac{2a}{2\ln(2)}\Rightarrow x>\frac{a}{\ln(2)}$
+\end_inset
+
+ (#).
+\end_layout
+
+\begin_layout Plain Layout
+Let us look at the function 
+\begin_inset Formula $f(x)=x-a\log_{2}(x);$
+\end_inset
+
+ its derivative is 
+\begin_inset Formula $f'(x)=1-\frac{a}{x\ln(2)}\overset{(\#)}{\ge}0$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+At last, since 
+\begin_inset Formula $a-2\log_{2}(a)>0$
+\end_inset
+
+ for all 
+\begin_inset Formula $a>0$
+\end_inset
+
+, it follows that: 
+\begin_inset Formula $f(x)=x-a\log_{2}(x)\ge2a\log_{2}(a)$
+\end_inset
+
+-
+\begin_inset Formula $a\log_{2}(2a\log_{2}(a))=2a\log_{2}(a)-a\log_{2}(a)-a\log_{2}(2\log_{2}(a))=a\log_{2}(a)-a\log_{2}(2\log_{2}(a))\ge0$
+\end_inset
+
+ 
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Formula $\Rightarrow x>a\log_{2}(x)$
+\end_inset
+
+, as required.
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $\phantom{A}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+e.
+ For every 
+\begin_inset Formula $m\in\mathbb{N},$
+\end_inset
+
+ we have,
+\begin_inset Formula 
+\[
+\pi_{C}(m)=\max_{\left|S\right|=m}\left|\Pi_{C}(S)\right|=\max_{\left|S\right|=m}\left|\left\{ \left.\left\langle h(s_{1}),...,h(s_{m})\right\rangle \right|h\in C\right\} \right|\le2^{m}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+The last inequality holds since 
+\begin_inset Formula $\left\{ \left.\left\langle h(s_{1}),...,h(s_{m})\right\rangle \right|h\in C\right\} \subseteq\left\{ -1,1\right\} ^{m}$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $\phantom{A}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+We need to show:
+\begin_inset Formula 
+\[
+\pi_{C}(m)\le(\frac{em}{d+1})^{Ld(d+1)}\overset{?}{\le}(em)^{(d+1)d(L-1)+d+1}=(em)^{N}\text{\,\,\,\,\ensuremath{\text{(for \ensuremath{m\ge d+1\text{)}}}}}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Using 
+\begin_inset Formula $-d\le1$
+\end_inset
+
+ and 
+\begin_inset Formula $1\le L$
+\end_inset
+
+ 
+\begin_inset Formula $\Rightarrow$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{align*}
+-Ld^{2}-Ld & \le-d^{2}+1
+\end{align*}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $\iff$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+\left(em\right)^{-Ld^{2}-Ld}\le\left(em\right)^{-d^{2}+1}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $\Rightarrow$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{align*}
+\left(d+1\right)^{-Ld^{2}-Ld} & \le\left(em\right)^{-d^{2}+1}
+\end{align*}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $\iff$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+\left(em\right)^{Ld^{2}+Ld}\left(d+1\right)^{-Ld^{2}-Ld}\le\left(em\right)^{Ld^{2}+Ld-d^{2}+1}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $\iff$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+\left(\frac{em}{d+1}\right)^{Ld^{2}+Ld}\le\left(em\right)^{N}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+And we get 
+\begin_inset Formula $\pi_{C}(m)\le(em)^{N}\text{\,\,\,\,\ensuremath{\text{(for \ensuremath{m\ge d+1\text{)}}}}}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $\phantom{A}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Therefore, when 
+\begin_inset Formula $m=\text{VCdim}(C)$
+\end_inset
+
+, we have 
+\begin_inset Formula $2^{m}=\pi_{C}(m)\le(em)^{N}$
+\end_inset
+
+, and we can apply the previous subquestion to get:
+\begin_inset Formula 
+\[
+\text{VCdim}(C)=m\le2N\log_{2}(eN)
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Notice that we can assign 
+\begin_inset Formula $m=\text{VCdim}(C)$
+\end_inset
+
+, since VCdim
+\begin_inset Formula $(C)\ge d+1$
+\end_inset
+
+ as we showed in the previous question.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $\phantom{A}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+3.
+ a.
+ In order to project, we first test if 
+\begin_inset Formula $\left\Vert x\right\Vert \le R$
+\end_inset
+
+.
+ If it is, we return 
+\begin_inset Formula $x$
+\end_inset
+
+; else, we return 
+\begin_inset Formula $\frac{R}{\left\Vert x\right\Vert }x$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $\phantom{A}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+b.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Graphics
+	filename pics/i1.png
+	lyxscale 20
+	scale 30
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Let 
+\begin_inset Formula $z\in K$
+\end_inset
+
+, and denote by 
+\begin_inset Formula $a,b,c$
+\end_inset
+
+ the edges of the triangle between 
+\begin_inset Formula $x,y,z$
+\end_inset
+
+ as in the picture.
+ From the definition of 
+\begin_inset Formula $x$
+\end_inset
+
+ we know that 
+\begin_inset Formula $a\le b$
+\end_inset
+
+, and we need to show that 
+\begin_inset Formula $c\le b$
+\end_inset
+
+.
+ It is sufficient to show that 
+\begin_inset Formula $90^{o}\le\beta$
+\end_inset
+
+ for that matter.
+\end_layout
+
+\begin_layout Standard
+Notice that for every 
+\begin_inset Formula $z=\epsilon x+\left(1-\epsilon\right)z$
+\end_inset
+
+ (for 
+\begin_inset Formula $0<\epsilon<1),$
+\end_inset
+
+ the equivalent triangle 
+\begin_inset Formula $\triangle xyz'$
+\end_inset
+
+ also upholds 
+\begin_inset Formula $a'\le b'$
+\end_inset
+
+; in addition 
+\begin_inset Formula $\beta'=\beta$
+\end_inset
+
+, so 
+\begin_inset Formula $\alpha'\le\beta$
+\end_inset
+
+ for every 
+\begin_inset Formula $\triangle xyz'$
+\end_inset
+
+.
+ Assume by way of contradiction that 
+\begin_inset Formula $\beta<90^{o};$
+\end_inset
+
+then 
+\begin_inset Formula $\alpha'<90^{o}$
+\end_inset
+
+ for every 
+\begin_inset Formula $\triangle xyz'$
+\end_inset
+
+ 
+\begin_inset Formula $\Rightarrow$
+\end_inset
+
+ there exists 
+\begin_inset Formula $\gamma'>0$
+\end_inset
+
+ small enough such that 
+\begin_inset Formula $\alpha'+\beta+\gamma'<180^{o}$
+\end_inset
+
+; a contradiction.
+ we then deduce 
+\begin_inset Formula $\beta\ge90^{o}$
+\end_inset
+
+ 
+\begin_inset Formula $\Rightarrow$
+\end_inset
+
+
+\begin_inset Formula $b$
+\end_inset
+
+ is the largest edge in 
+\begin_inset Formula $\triangle xyz$
+\end_inset
+
+ 
+\begin_inset Formula $\Rightarrow$
+\end_inset
+
+
+\begin_inset Formula $c\le b$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $\phantom{A}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+c.
+ The proof is exactly the same as the proof mentioned in the question, until
+ equation (12).
+ In our case, we use 
+\begin_inset Formula $w_{t+1}=\Pi_{K}\left(w_{t}-\eta v_{t}\right)$
+\end_inset
+
+ instead of 
+\begin_inset Formula $w_{t+1}=w_{t}-\eta v_{t}$
+\end_inset
+
+, and it changes the equation after equation (12) from 
+\begin_inset Formula 
+\begin{align*}
+\left\Vert w_{t+1}-w^{*}\right\Vert _{2}^{2} & =\left\Vert w_{t}-\eta v_{t}-w^{*}\right\Vert _{2}^{2}\\
+ & =\left\Vert w_{t}-w^{*}\right\Vert _{2}^{2}+\eta^{2}\left\Vert v_{t}\right\Vert _{2}^{2}-2\eta\left(w_{t}-w^{*}\right)v_{t}
+\end{align*}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+to
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{align*}
+\left\Vert w_{t+1}-w^{*}\right\Vert _{2}^{2} & =\left\Vert \Pi_{K}\left(w_{t}-\eta v_{t}\right)-w^{*}\right\Vert _{2}^{2}\\
+ & \le\left\Vert w_{t}-\eta v_{t}-w^{*}\right\Vert _{2}^{2}\\
+ & =\left\Vert w_{t}-w^{*}\right\Vert _{2}^{2}+\eta^{2}\left\Vert v_{t}\right\Vert _{2}^{2}-2\eta\left(w_{t}-w^{*}\right)v_{t}
+\end{align*}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Where the inequality is the inequality from the previous subquestion.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $\phantom{A}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+We continue to rearrange equation 13 to
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+v_{t}\left(w_{t}-w^{*}\right)\le\frac{\left\Vert w_{t}-w^{*}\right\Vert _{2}^{2}-\left\Vert w_{t+1}-w^{*}\right\Vert _{2}^{2}}{2\eta}+0.5\eta\left\Vert v_{t}\right\Vert _{2}^{2}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+The rest of the proof continues without other modifications.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $\phantom{A}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+4.
+ a.
+ Let 
+\begin_inset Formula $w_{1}$
+\end_inset
+
+ and 
+\begin_inset Formula $w_{2}$
+\end_inset
+
+ be the weights of a multiclass classifier with 
+\begin_inset Formula $k=2$
+\end_inset
+
+.
+ We classify a new point 
+\begin_inset Formula $x$
+\end_inset
+
+ as 
+\begin_inset Formula $1$
+\end_inset
+
+ iff 
+\begin_inset Formula $w_{1}x>w_{2}x$
+\end_inset
+
+, that is 
+\begin_inset Formula $(w_{1}-w_{2})x>0$
+\end_inset
+
+ which is the same as using a single class classifier with weights 
+\begin_inset Formula $w=w_{1}-w_{2}$
+\end_inset
+
+.
+ And 
+\begin_inset Formula $wx>0$
+\end_inset
+
+ iff 
+\begin_inset Formula $(w_{1}-w_{2})x\ge0$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+On the other hand, if we have a single class classifier with weights 
+\begin_inset Formula $w$
+\end_inset
+
+, we can build a multiclass classifier with 
+\begin_inset Formula $w_{1}=w$
+\end_inset
+
+ and 
+\begin_inset Formula $w_{2}=-w$
+\end_inset
+
+.
+ The new classifier will classify a new point as 
+\begin_inset Formula $1$
+\end_inset
+
+ iff,
+\begin_inset Formula 
+\begin{align*}
+w_{1}x & >w_{2}x\\
+wx & >-wx\\
+2wx & >0\\
+wx & >0
+\end{align*}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+which is the same as the original single class classifier.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $\phantom{A}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Furthermore, let us consider the optimization of the multiclass classifier,
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+f=\frac{1}{2}\left\Vert w_{1}\right\Vert ^{2}+\frac{1}{2}\left\Vert w_{2}\right\Vert ^{2}+\frac{C}{2}\sum_{i=1}^{m}\max(0,\left(w_{3-y_{i}}-w_{y_{i}}\right)x_{i}+1)
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Since we classify to either label 
+\begin_inset Formula $1$
+\end_inset
+
+ or label 
+\begin_inset Formula $2$
+\end_inset
+
+, it is reasonable to expect 
+\begin_inset Formula $w_{1}^{*}=-w_{2}^{*}$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+In that case the above turns to,
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{align*}
+f & =\left\Vert w_{1}\right\Vert ^{2}+\frac{C}{2}\sum_{i=1}^{m}\max(0,1-2w_{y_{i}}x_{i})
+\end{align*}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Define 
+\begin_inset Formula $y'_{i}=\begin{cases}
+1 & y_{i}=1\\
+-1 & y_{i}=2
+\end{cases}$
+\end_inset
+
+, and define 
+\begin_inset Formula $w=\frac{1}{2}w_{1}$
+\end_inset
+
+,
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{align*}
+f & =2^{d}\left\Vert w\right\Vert ^{2}+\frac{C}{2}\sum_{i=1}^{m}\max(0,1-y'_{i}wx_{i})
+\end{align*}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+We can define 
+\begin_inset Formula $c'=2^{d+2}C$
+\end_inset
+
+ and get,
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+f=\frac{1}{2}\left\Vert w\right\Vert ^{2}+C\sum_{i=1}^{m}\max(0,1-y'_{i}wx_{i})
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+which is the same optimization problem as in the SVM we learned.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $\phantom{A}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset FormulaMacro
+\newcommand{\one}{\mathbb{1}}
+{1}
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+b.
+ Derive with respect to 
+\begin_inset Formula $w_{j}$
+\end_inset
+
+:
+\end_layout
+
+\begin_layout Standard
+We define 
+\begin_inset Formula $j^{*}(w,x_{i},y_{i})=\text{arg}\max_{p}\left(w_{p}x_{i}-w_{y_{i}}x_{i}+\one(p\ne y_{i})\right)$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+\frac{\partial\ell}{\partial w_{j}}=x_{i}\left(\one(j=j^{*})-\one(j=y_{i})\right)
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+\frac{\partial f}{\partial w_{j}}=w_{j}+\frac{C}{m}\sum_{i=1}^{m}\frac{\partial\ell}{\partial w_{j}}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+So an SGD version, would be to sample a random point at each step, and to
+ update all 
+\begin_inset Formula $w_{j}$
+\end_inset
+
+s according to the following rule,
+\end_layout
+
+\begin_layout Standard
+If 
+\begin_inset Formula $j\ne y_{i}$
+\end_inset
+
+ and 
+\begin_inset Formula $j=\text{arg}\max_{p}\left(w_{p,t}x_{i}-w_{y_{i},t}x_{i}+\one(p\ne y_{i})\right)$
+\end_inset
+
+:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+w_{j,t+1}=(1-\eta)w_{j,t}-\eta Cx_{i}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+If 
+\begin_inset Formula $j=y_{i}$
+\end_inset
+
+ and 
+\begin_inset Formula $j\ne\text{arg}\max_{p}\left(w_{p,t}x_{i}-w_{y_{i},t}x_{i}+\one(p\ne y_{i})\right)$
+\end_inset
+
+:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+w_{j,t+1}=(1-\eta)w_{j,t}+\eta Cx_{i}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+In any other case:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+w_{j,t+1}=(1-\eta)w_{j,t}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $\phantom{A}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset FormulaMacro
+\newcommand{\pluseq}{\mathrel{+}=}
+{+=}
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+c.
+ We notice that 
+\begin_inset Formula $w_{j}$
+\end_inset
+
+ is a linear combination of 
+\begin_inset Formula $x_{i}$
+\end_inset
+
+s.
+ Instead of keeping 
+\begin_inset Formula $w_{j}$
+\end_inset
+
+ explicitly, we can keep track of the coefficients of 
+\begin_inset Formula $x_{i}$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+Define 
+\begin_inset Formula $w_{j}=\sum_{i=1}^{m}M_{j,i}x_{i}$
+\end_inset
+
+.
+ Classifying a new point 
+\begin_inset Formula $x$
+\end_inset
+
+ would be 
+\begin_inset Formula $y=\text{arg}\max_{j}(\sum_{i=1}^{m}M_{j,i}K(x_{i},x))$
+\end_inset
+
+.
+ Where 
+\begin_inset Formula $K$
+\end_inset
+
+ is the kernel function used.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $\phantom{A}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Pseudo-code for training:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Box Boxed
+position "t"
+hor_pos "c"
+has_inner_box 1
+inner_pos "t"
+use_parbox 0
+use_makebox 0
+width "100col%"
+special "none"
+height "1in"
+height_special "totalheight"
+thickness "0.4pt"
+separation "3pt"
+shadowsize "4pt"
+framecolor "black"
+backgroundcolor "none"
+status open
+
+\begin_layout Plain Layout
+Input:
+\end_layout
+
+\begin_layout Itemize
+kernel function 
+\begin_inset Formula $K$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+list 
+\begin_inset Formula $\left\langle x_{i},y_{i}\right\rangle $
+\end_inset
+
+ of 
+\begin_inset Formula $m$
+\end_inset
+
+ training samples
+\end_layout
+
+\begin_layout Itemize
+\begin_inset Formula $T$
+\end_inset
+
+ number of iterations
+\end_layout
+
+\begin_layout Itemize
+\begin_inset Formula $\eta$
+\end_inset
+
+ step size
+\end_layout
+
+\begin_layout Itemize
+\begin_inset Formula $C$
+\end_inset
+
+ penalty coefficient
+\end_layout
+
+\begin_layout Plain Layout
+Output: A matrix 
+\begin_inset Formula $M\in\text{Mat}(k,m)$
+\end_inset
+
+ to be used for classifying new points
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Formula $\phantom{A}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+Initialize 
+\begin_inset Formula $M\in\text{Mat}(k,m)$
+\end_inset
+
+ to be zeroes
+\end_layout
+
+\begin_layout Plain Layout
+for 
+\begin_inset Formula $T$
+\end_inset
+
+ iterations:
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+choose a random point 
+\begin_inset Formula $i\in\left[m\right]:\,x_{i},y_{i}$
+\end_inset
+
+ from the training set
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+find 
+\begin_inset Formula $j*=\text{arg}\max_{j}(\sum_{t=1}^{m}M_{j,t}K(x_{t},x_{i}))$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset Formula $M=(1-\eta)M$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+for each 
+\begin_inset Formula $j\in\left[k\right]$
+\end_inset
+
+:
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+if 
+\begin_inset Formula $j\ne y_{i}$
+\end_inset
+
+ and 
+\begin_inset Formula $j=j*$
+\end_inset
+
+:
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset Formula $M_{j,i}=M_{j,i}-\eta C$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+if 
+\begin_inset Formula $j=y_{i}$
+\end_inset
+
+ and 
+\begin_inset Formula $j\ne j*$
+\end_inset
+
+:
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset Formula $M_{j,i}=M_{j,i}+\eta C$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+return 
+\begin_inset Formula $M$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $\phantom{A}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+5.
+ If at each level 
+\begin_inset Formula $i$
+\end_inset
+
+ of the tree, we will ask 
+\begin_inset Formula $x_{i}=0$
+\end_inset
+
+, then after 
+\begin_inset Formula $d$
+\end_inset
+
+ questions, each leaf will contain only one member.
+ That is, one-to-one correspondence between leafs and vectors 
+\begin_inset Formula $\{0,1\}^{d}$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+To implement an arbitrary classifier using this tree, classify every leaf
+ the same way the arbitrary classifier does.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $\phantom{A}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Let us show that the VCdim is 
+\begin_inset Formula $2^{d}$
+\end_inset
+
+:
+\end_layout
+
+\begin_layout Standard
+Let 
+\begin_inset Formula $S\subseteq\left\{ 0,1\right\} ^{d}$
+\end_inset
+
+ with 
+\begin_inset Formula $\left|S\right|=2^{d}$
+\end_inset
+
+ (that is, 
+\begin_inset Formula $S=\left\{ 0,1\right\} ^{d}$
+\end_inset
+
+), and let 
+\begin_inset Formula $y_{1},...,y_{2^{d}}$
+\end_inset
+
+ be arbitrary labels.
+ Since we can classify any subset we wish as 
+\begin_inset Formula $1$
+\end_inset
+
+, we can choose a binary decision tree in which each the leaf corresponding
+ to each input 
+\begin_inset Formula $s_{i}$
+\end_inset
+
+ will be classified as 
+\begin_inset Formula $y_{i}$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+We showed that a set of size 
+\begin_inset Formula $2^{d}$
+\end_inset
+
+ can be shattered, which means VCdim
+\begin_inset Formula $\ge2^{d}$
+\end_inset
+
+; and since VCdim
+\begin_inset Formula $\le\left|\left\{ 0,1\right\} ^{d}\right|=2^{d}$
+\end_inset
+
+, we have VCdim
+\begin_inset Formula $=2^{d}$
+\end_inset
+
+.
+ 
+\end_layout
+
+\begin_layout Part*
+\begin_inset Newpage pagebreak
+\end_inset
+
+HW3: Programming Assignment
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+\begin{array}{ccc}
+\text{Aran Carmon} &  & \text{Inbal Joffe}\end{array}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $\phantom{A}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+6.
+ a.
+ We created 2 functions to plot the training and validation errors for various
+ 
+\begin_inset Formula $\eta$
+\end_inset
+
+ and 
+\begin_inset Formula $C$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Box ovalbox
+position "t"
+hor_pos "c"
+has_inner_box 1
+inner_pos "t"
+use_parbox 0
+use_makebox 0
+width "100col%"
+special "none"
+height "1in"
+height_special "totalheight"
+thickness "0.4pt"
+separation "3pt"
+shadowsize "4pt"
+framecolor "black"
+backgroundcolor "none"
+status open
+
+\begin_layout Plain Layout
+How to run:
+\end_layout
+
+\begin_layout Plain Layout
+python q.py 6 find_eta <from> <to> <step> <C> <T> <filename>
+\end_layout
+
+\begin_layout Plain Layout
+python q.py 6 find_C <from> <to> <step> <eta> <T> <filename>
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+We first start with scanning for 
+\begin_inset Formula $\eta$
+\end_inset
+
+ along a logarithmic scale, with 
+\begin_inset Formula $T=1000$
+\end_inset
+
+, and with 
+\begin_inset Formula $c=1$
+\end_inset
+
+:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Graphics
+	filename pics/q6a_1.png
+	lyxscale 20
+	scale 30
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Both the test error and the validation error are shown in the plot, and
+ we see they are almost the same.
+\end_layout
+
+\begin_layout Standard
+We continue to scan for 
+\begin_inset Formula $C$
+\end_inset
+
+, using 
+\begin_inset Formula $T=1000$
+\end_inset
+
+ and 
+\begin_inset Formula $\eta=10^{-6.7}:$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Graphics
+	filename pics/q6a_2.png
+	lyxscale 20
+	scale 30
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+We zoom in, and use 
+\begin_inset Formula $T=10000$
+\end_inset
+
+:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Graphics
+	filename pics/q6a_3.png
+	lyxscale 20
+	scale 30
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+We choose the parameters 
+\begin_inset Formula $\eta=10^{-6.7}$
+\end_inset
+
+ and 
+\begin_inset Formula $C=10^{-0.5}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $\phantom{A}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+b.
+ Weights for the digits, shown as images:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Graphics
+	filename pics/q6b_0.png
+	lyxscale 20
+	scale 30
+
+\end_inset
+
+
+\begin_inset Graphics
+	filename pics/q6b_1.png
+	lyxscale 20
+	scale 30
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Graphics
+	filename pics/q6b_2.png
+	lyxscale 20
+	scale 30
+
+\end_inset
+
+
+\begin_inset Graphics
+	filename pics/q6b_3.png
+	lyxscale 20
+	scale 30
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Graphics
+	filename pics/q6b_4.png
+	lyxscale 20
+	scale 30
+
+\end_inset
+
+
+\begin_inset Graphics
+	filename pics/q6b_5.png
+	lyxscale 20
+	scale 30
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Graphics
+	filename pics/q6b_6.png
+	lyxscale 20
+	scale 30
+
+\end_inset
+
+
+\begin_inset Graphics
+	filename pics/q6b_7.png
+	lyxscale 20
+	scale 30
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Graphics
+	filename pics/q6b_8.png
+	lyxscale 20
+	scale 30
+
+\end_inset
+
+
+\begin_inset Graphics
+	filename pics/q6b_9.png
+	lyxscale 20
+	scale 30
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+We see that some of the weights resemble the digits they classify.
+ e.g.
+ 2, 3, and 9.
+ Other weights look more like a mix of other digits.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Box ovalbox
+position "t"
+hor_pos "c"
+has_inner_box 1
+inner_pos "t"
+use_parbox 0
+use_makebox 0
+width "100col%"
+special "none"
+height "1in"
+height_special "totalheight"
+thickness "0.4pt"
+separation "3pt"
+shadowsize "4pt"
+framecolor "black"
+backgroundcolor "none"
+status open
+
+\begin_layout Plain Layout
+How to run:
+\end_layout
+
+\begin_layout Plain Layout
+python q.py 6 show_digit <C> <eta> <T> <digit> <filename>
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $\phantom{A}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+c.
+\end_layout
+
+\begin_layout Standard
+Using 
+\begin_inset Formula $T=4*$
+\end_inset
+
+len(train_data)=
+\begin_inset Formula $200000$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+We measured an accuracy of 
+\begin_inset Formula $0.9165$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Box ovalbox
+position "t"
+hor_pos "c"
+has_inner_box 1
+inner_pos "t"
+use_parbox 0
+use_makebox 0
+width "100col%"
+special "none"
+height "1in"
+height_special "totalheight"
+thickness "0.4pt"
+separation "3pt"
+shadowsize "4pt"
+framecolor "black"
+backgroundcolor "none"
+status open
+
+\begin_layout Plain Layout
+How to run:
+\end_layout
+
+\begin_layout Plain Layout
+python q.py 6 calc_accuracy <C> <eta> <T>
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $\phantom{A}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+7.
+ a.
+ 
+\end_layout
+
+\begin_layout Standard
+We created 2 functions to plot the training and validation errors for various
+ 
+\begin_inset Formula $\eta$
+\end_inset
+
+ and 
+\begin_inset Formula $C$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Box ovalbox
+position "t"
+hor_pos "c"
+has_inner_box 1
+inner_pos "t"
+use_parbox 0
+use_makebox 0
+width "100col%"
+special "none"
+height "1in"
+height_special "totalheight"
+thickness "0.4pt"
+separation "3pt"
+shadowsize "4pt"
+framecolor "black"
+backgroundcolor "none"
+status open
+
+\begin_layout Plain Layout
+How to run:
+\end_layout
+
+\begin_layout Plain Layout
+python q.py 7 find_eta <kernel> <training size> <from> <to> <step> <C> <T>
+ <filename>
+\end_layout
+
+\begin_layout Plain Layout
+python q.py 7 find_C <kernel> <training size> <from> <to> <step> <eta> <T>
+ <filename>
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+For a quicker tuning of parameters, we used a training set of only 
+\begin_inset Formula $1000$
+\end_inset
+
+ points, sampled randomly each time from the training set.
+\end_layout
+
+\begin_layout Standard
+We started by scanning for an 
+\begin_inset Formula $\eta$
+\end_inset
+
+ value, with 
+\begin_inset Formula $T=1000$
+\end_inset
+
+ and 
+\begin_inset Formula $C=1$
+\end_inset
+
+:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Graphics
+	filename pics/find_eta_q__c0.png
+	lyxscale 20
+	scale 30
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+The accuracy is mostly uniform at the lower part of the plot, we continue
+ to scan for 
+\begin_inset Formula $C$
+\end_inset
+
+ value with 
+\begin_inset Formula $\eta=10^{-6}:$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Graphics
+	filename pics/find_C__1.png
+	lyxscale 20
+	scale 30
+
+\end_inset
+
+
+\begin_inset Graphics
+	filename pics/find_C__2.png
+	lyxscale 20
+	scale 30
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+The accuracy of 
+\begin_inset Formula $C$
+\end_inset
+
+ values seems uniform, so we will choose 
+\begin_inset Formula $C=1$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+b.
+ With 
+\begin_inset Formula $C=1$
+\end_inset
+
+,
+\begin_inset Formula $\eta=10^{-6},$
+\end_inset
+
+ and 
+\begin_inset Formula $T=10000$
+\end_inset
+
+, we measured on the test set an accuracy of: 
+\begin_inset Formula $0.9352$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Box ovalbox
+position "t"
+hor_pos "c"
+has_inner_box 1
+inner_pos "t"
+use_parbox 0
+use_makebox 0
+width "100col%"
+special "none"
+height "1in"
+height_special "totalheight"
+thickness "0.4pt"
+separation "3pt"
+shadowsize "4pt"
+framecolor "black"
+backgroundcolor "none"
+status open
+
+\begin_layout Plain Layout
+How to run:
+\end_layout
+
+\begin_layout Plain Layout
+python q.py 7 calc_accuracy <kernel> <C> <eta> <T>
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $\phantom{A}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+c.
+ We measured an accuracy of 
+\begin_inset Formula $0.932$
+\end_inset
+
+ with RBF 
+\begin_inset Formula $\sigma=1000$
+\end_inset
+
+, 
+\begin_inset Formula $T=10000$
+\end_inset
+
+, 
+\begin_inset Formula $C=1$
+\end_inset
+
+, 
+\begin_inset Formula $\eta=10^{-6}$
+\end_inset
+
+ which is comparable to the quadratic kernel.
+ Due to time constraints, we did not investigate it further.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Box ovalbox
+position "t"
+hor_pos "c"
+has_inner_box 1
+inner_pos "t"
+use_parbox 0
+use_makebox 0
+width "100col%"
+special "none"
+height "1in"
+height_special "totalheight"
+thickness "0.4pt"
+separation "3pt"
+shadowsize "4pt"
+framecolor "black"
+backgroundcolor "none"
+status open
+
+\begin_layout Plain Layout
+How to run:
+\end_layout
+
+\begin_layout Plain Layout
+python q.py 7 calc_accuracy r1000 0 -6 10000
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_body
+\end_document
