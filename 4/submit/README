@@ -14,6 +14,8 @@ Usage:
     Answers subquestion c. All parameters are filenames of the output plots.
   python pca.py d <plot filename>
     Answers subquestion d.
+  python pca.py e <plot filename>
+    Randomly choose an image and show its reconstruction for k=10,30,50
 
   python ada.py <T> <plot a filename> <plot b filename>
     Run adaboost for T iterations. Plot for subquestions a and b.

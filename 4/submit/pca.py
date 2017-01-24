@@ -1,9 +1,10 @@
 import sys
 import time
 import operator
+import random
 import numpy as np
 import matplotlib
-matplotlib.use('Agg')
+#matplotlib.use('Agg')
 import matplotlib.pyplot as plt
 from numpy.linalg import svd
 from hw4 import *
@@ -65,6 +66,35 @@ def subquestion_d(filename):
 
     plt.savefig(filename)
 
+#Answers subquestion e
+def subquestion_e(filename):
+    #Call SVD
+    u, s, v = svd(train_data)
+
+    #Choose a random image
+    i = random.randint(0, len(train_data) - 1)
+
+    #Calc image projection on first k principal axes
+    def project_image(k):
+        return train_data[i]
+
+    #Plot images
+    ax = plt.subplot("141")
+    ax.set_title("Original image")
+    ax.imshow(train_data[i].reshape((28,28)))
+    ax = plt.subplot("142")
+    ax.set_title("k=10")
+    ax.imshow(project_image(10).reshape((28,28)))
+    ax = plt.subplot("143")
+    ax.set_title("k=30")
+    ax.imshow(project_image(30).reshape((28,28)))
+    ax = plt.subplot("144")
+    ax.set_title("k=50")
+    ax.imshow(project_image(50).reshape((28,28)))
+    
+    plt.show()
+    #plt.savefig(filename)
+
 if True:
     if len(sys.argv) > 1 and sys.argv[1] == 'a':
         #We output 7 plots for subquestions a,b, and c.
@@ -105,6 +135,9 @@ if True:
     elif len(sys.argv) > 1 and sys.argv[1] == 'd':
         filename = sys.argv[2]
         subquestion_d(filename)
+    elif len(sys.argv) > 1 and sys.argv[1] == 'e':
+        filename = sys.argv[2]
+        subquestion_e(filename)
     elif len(sys.argv) > 1 and sys.argv[1] == 'debug':
         pass
     else:
