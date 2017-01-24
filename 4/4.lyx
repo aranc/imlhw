@@ -1000,7 +1000,18 @@ b.
 \end_layout
 
 \begin_layout Standard
-TODO: explain
+The average exponential loss on the training set is decreasing because AdaBoost
+ minimizes the average exponential loss (as seen in the recitation).
+\end_layout
+
+\begin_layout Standard
+We were surprised to see that the average exponential loss is increasing
+ on the test set.
+ We believe that it happens because the 
+\begin_inset Formula $h_{t}$
+\end_inset
+
+s give large confidence values to points that were hard to classify.
 \end_layout
 
 \begin_layout Standard
