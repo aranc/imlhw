@@ -730,8 +730,8 @@ X^{T}X(V_{r}V_{r}^{T}z) & =X^{T}\left(U\Sigma V^{T}\right)(V_{r}V_{r}^{T}z)\\
 \end_layout
 
 \begin_layout Standard
-From Pythagoras, the projection has smaller length.
- So we can assume that a minimal solution is spanned by 
+From Pythagoras, the projection has smaller length, so we can assume that
+ a minimal solution is spanned by 
 \begin_inset Formula $V_{r}$
 \end_inset
 
