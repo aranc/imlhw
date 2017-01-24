@@ -4,7 +4,7 @@ import operator
 import random
 import numpy as np
 import matplotlib
-#matplotlib.use('Agg')
+matplotlib.use('Agg')
 import matplotlib.pyplot as plt
 from numpy.linalg import svd
 from hw4 import *
@@ -94,8 +94,7 @@ def subquestion_e(filename):
     ax.set_title("k=50")
     ax.imshow(project_image(50).reshape((28,28)))
     
-    plt.show()
-    #plt.savefig(filename)
+    plt.savefig(filename)
 
 if True:
     if len(sys.argv) > 1 and sys.argv[1] == 'a':
