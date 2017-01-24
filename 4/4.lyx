@@ -180,40 +180,29 @@ Theory Questions
 \begin_layout Standard
 1.
  a.
- Divide the input space into 
-\begin_inset Formula $3$
-\end_inset
-
- thirds.
  Let 
+\begin_inset Formula $\left\{ x_{1},x_{2},x_{3}\right\} $
+\end_inset
+
+ be our input space, and let 
 \begin_inset Formula $h_{i}$
 \end_inset
 
- be a classifier that classifies correctly if and only if the input is from
- the 
-\begin_inset Formula $i$
+ be a classifier that classifies correctly if and only if the input is 
+\begin_inset Formula $x_{i}$
 \end_inset
 
-th third.
- e.g.
- 
-\begin_inset Formula $h_{2}$
+.
+ For 
+\begin_inset Formula $\epsilon=\frac{1}{3}$
 \end_inset
 
- will classify correctly if and only if the input is from the 
-\begin_inset Formula $2$
-\end_inset
-
-nd third.
-\end_layout
-
-\begin_layout Standard
-Each of the 
+, each of the 
 \begin_inset Formula $h_{i}$
 \end_inset
 
- has an error of 
-\begin_inset Formula $\frac{2}{3}$
+s has an error of 
+\begin_inset Formula $2\epsilon$
 \end_inset
 
 , but the majority 
@@ -221,7 +210,19 @@ Each of the
 \end_inset
 
  will always be wrong, with an error of 
-\begin_inset Formula $\frac{3}{3}$
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\uuline off
+\uwave off
+\noun off
+\color none
+
+\begin_inset Formula $3\epsilon$
 \end_inset
 
 .
