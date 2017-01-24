@@ -241,14 +241,14 @@ b.
 \begin_inset Formula $S$
 \end_inset
 
- be the size of the input space.
- We are going to count how many mistakes are needed for the majority to
- have an error greater than 
+ be the input space.
+ We are going to show how many mistakes are needed for the majority to have
+ an error greater than 
 \begin_inset Formula $2\epsilon$
 \end_inset
 
-, and to count how many errors all the hypothesis can contribute together,
- and show that it's impossible.
+, how many errors all the hypothesis can contribute together, and that there
+ is a gap between them.
 \end_layout
 
 \begin_layout Standard
@@ -257,22 +257,21 @@ If we want the majority of the classifiers to have an error greater than
 \begin_inset Formula $2\epsilon$
 \end_inset
 
-, we need more than half of the hypothesis to err on each input point that
- the majority is erring on.
- So we need 
-\begin_inset Formula $2\epsilon S\left(k+1\right)=2\epsilon sK+2\epsilon S$
+, we need more than half of the hypotheses to err on each input point that
+ the majority is erring on: 
+\begin_inset Formula $2\epsilon\left|S\right|\left(k+1\right)=2\epsilon\left|S\right|k+2\epsilon\left|S\right|$
 \end_inset
 
  errors.
 \end_layout
 
 \begin_layout Standard
-However, since each hypothesis can only contribute 
-\begin_inset Formula $\epsilon S$
+However, since each hypothesis can contribute 
+\begin_inset Formula $\epsilon\left|S\right|$
 \end_inset
 
  errors at most, we can't accumulate more than 
-\begin_inset Formula $\left(2k+1\right)\epsilon S=2\epsilon kS+\epsilon S$
+\begin_inset Formula $\left(2k+1\right)\epsilon\left|S\right|=2\epsilon\left|S\right|k+\epsilon\left|S\right|$
 \end_inset
 
  errors.
