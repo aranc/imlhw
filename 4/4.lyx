@@ -1594,6 +1594,24 @@ e.
 \end_layout
 
 \begin_layout Standard
+We see that when reconstructing with 
+\begin_inset Formula $k=10$
+\end_inset
+
+ the images look somewhat similar, but when reconstructing with 
+\begin_inset Formula $k=50$
+\end_inset
+
+ they look almost identical.
+ Almost all the information is present in the first 
+\begin_inset Formula $50$
+\end_inset
+
+ elements.
+\end_layout
+
+\begin_layout Standard
+c
 \begin_inset Box ovalbox
 position "t"
 hor_pos "c"
