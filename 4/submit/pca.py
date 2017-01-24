@@ -76,8 +76,9 @@ def subquestion_e(filename):
 
     #Calc image projection on first k principal axes
     def project_image(k):
-        p = np.matrix(v[:k])
-        return p*p.T*train_data[i]
+        p = np.matrix(v[:k]).T
+        image = np.matrix(train_data[i]).T
+        return p*p.T*image
 
     #Plot images
     ax = plt.subplot("141")
