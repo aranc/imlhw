@@ -1460,7 +1460,156 @@ The first eignvalues are larger.
 
 \begin_layout Standard
 d.
- 
+\end_layout
+
+\begin_layout Standard
+\begin_inset Graphics
+	filename pics/d.png
+	lyxscale 20
+	scale 30
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Box ovalbox
+position "t"
+hor_pos "c"
+has_inner_box 1
+inner_pos "t"
+use_parbox 0
+use_makebox 0
+width "100col%"
+special "none"
+height "1in"
+height_special "totalheight"
+thickness "0.4pt"
+separation "3pt"
+shadowsize "4pt"
+framecolor "black"
+backgroundcolor "none"
+status open
+
+\begin_layout Plain Layout
+How to run:
+\end_layout
+
+\begin_layout Plain Layout
+python 
+\begin_inset Formula $\sim$
+\end_inset
+
+arancarmon/imlhw/4/submit/pca.py d <plot filename>
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $\phantom{A}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+e.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Graphics
+	filename pics/e1.png
+	lyxscale 20
+	scale 30
+	BoundingBox 0bp 150bp 800bp 300bp
+	clip
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Graphics
+	filename pics/e5.png
+	lyxscale 20
+	scale 30
+	BoundingBox 0bp 150bp 800bp 300bp
+	clip
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Graphics
+	filename pics/e3.png
+	lyxscale 20
+	scale 30
+	BoundingBox 0bp 150bp 800bp 300bp
+	clip
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Graphics
+	filename pics/e4.png
+	lyxscale 20
+	scale 30
+	BoundingBox 0bp 150bp 800bp 300bp
+	clip
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Box ovalbox
+position "t"
+hor_pos "c"
+has_inner_box 1
+inner_pos "t"
+use_parbox 0
+use_makebox 0
+width "100col%"
+special "none"
+height "1in"
+height_special "totalheight"
+thickness "0.4pt"
+separation "3pt"
+shadowsize "4pt"
+framecolor "black"
+backgroundcolor "none"
+status open
+
+\begin_layout Plain Layout
+How to run:
+\end_layout
+
+\begin_layout Plain Layout
+python 
+\begin_inset Formula $\sim$
+\end_inset
+
+arancarmon/imlhw/4/submit/pca.py e <plot filename>
+\end_layout
+
+\begin_layout Plain Layout
+Randomly choose an image and show its reconstruction for k=10,30,50
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \end_body
