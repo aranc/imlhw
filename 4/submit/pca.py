@@ -51,7 +51,7 @@ def subquestion_d(filename):
     blue_points = []
 
     #Project images on first and second eigenvctors
-    for i in range(len(train_data):
+    for i in range(len(train_data)):
         x = np.dot(v[0], train_data[i])
         y = np.dot(v[1], train_data[i])
         if train_labels[i] == 1:
@@ -63,7 +63,8 @@ def subquestion_d(filename):
     plt.plot([p[0] for p in red_points], [p[1] for p in red_points], '.r') 
     plt.plot([p[0] for p in blue_points], [p[1] for p in blue_points], '.b') 
 
-    plt.savefig(filename)
+    plt.show()
+    #plt.savefig(filename)
 
 if True:
     if len(sys.argv) > 1 and sys.argv[1] == 'a':
