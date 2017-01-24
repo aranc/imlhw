@@ -928,7 +928,13 @@ arancarmon/imlhw/4/submit
 \end_layout
 
 \begin_layout Standard
-TODO: explain
+As we use more iterations, the errors (both training and test) decrease.
+ This is expected since we saw in class that the training error is bounded
+ from above by the (decreasing) function 
+\begin_inset Formula $2^{T}\prod_{t=1}^{T}\sqrt{\epsilon_{t}\left(1-\epsilon_{t}\right)}$
+\end_inset
+
+.
 \end_layout
 
 \begin_layout Standard
@@ -1602,8 +1608,9 @@ We see that when reconstructing with
 \begin_inset Formula $k=50$
 \end_inset
 
- they look almost identical.
- Almost all the information is present in the first 
+ they look almost identical to the original.
+ It means that a vast portion of the information is present in the first
+ 10 axes, and almost all the information is present in the first 
 \begin_inset Formula $50$
 \end_inset
 
