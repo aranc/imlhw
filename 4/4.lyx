@@ -661,53 +661,43 @@ Let
 \end_layout
 
 \begin_layout Standard
-Let 
-\begin_inset Formula $V_{r}=I_{r}V$
+We can divide 
+\begin_inset Formula $z$
 \end_inset
 
-.
- Note that since only the first 
-\begin_inset Formula $r$
+ to 
+\begin_inset Formula $2$
 \end_inset
 
- diagonal elements of 
-\begin_inset Formula $\Sigma$
-\end_inset
-
- are non-zero, we have 
-\begin_inset Formula $\Sigma V^{T}=\Sigma V_{r}^{T}$
-\end_inset
-
-.
-\end_layout
-
-\begin_layout Standard
-Let 
-\begin_inset Formula $z'$
-\end_inset
-
- be the projection 
-\begin_inset Formula $z'=V_{r}V_{r}^{T}z$
+ parts: 
+\begin_inset Formula $z=X^{T}Xz+\left(I-X^{T}X\right)z$
 \end_inset
 
 
 \end_layout
 
 \begin_layout Standard
-\begin_inset Formula $z'$
+Define 
+\begin_inset Formula $V_{r}=VI_{r}$
 \end_inset
 
- also satisfies the constraint:
+.
+ We note that 
+\begin_inset Formula $V_{r}V_{r}^{T}$
+\end_inset
+
+ is a projection operator on the subspace spanned by the columns of 
+\begin_inset Formula $V_{r}$
+\end_inset
+
+:
+\end_layout
+
+\begin_layout Standard
 \begin_inset Formula 
 \begin{align*}
-X^{T}Xz' & =X^{T}XV_{r}V_{r}^{T}z\\
- & =X^{T}\left(U\Sigma V^{T}\right)V_{r}V_{r}^{T}z\\
- & =X^{T}\left(U\Sigma V_{r}^{T}\right)V_{r}V_{r}^{T}z\\
- & =X^{T}U\Sigma V_{r}^{T}I_{r}z\\
- & =X^{T}U\Sigma V_{r}^{T}z\\
- & =X^{T}U\Sigma V^{T}z\\
- & =X^{T}Xz\\
- & =X^{T}y
+\left(V_{r}V_{r}^{T}\right)\left(V_{r}V_{r}^{T}\right) & =V_{r}I_{r}V_{r}^{T}\\
+ & =V_{r}V_{r}^{T}
 \end{align*}
 
 \end_inset
@@ -716,24 +706,31 @@ X^{T}Xz' & =X^{T}XV_{r}V_{r}^{T}z\\
 \end_layout
 
 \begin_layout Standard
-Since 
-\begin_inset Formula $z'$
+We note that the projection 
+\begin_inset Formula $V_{r}V_{r}^{T}z$
 \end_inset
 
- is a projection, 
-\begin_inset Formula $\left\Vert z'\right\Vert \le\left\Vert z\right\Vert $
+ also satisfies the constraint:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{align*}
+X^{T}X(V_{r}V_{r}^{T}z) & =X^{T}\left(U\Sigma V^{T}\right)(V_{r}V_{r}^{T}z)\\
+ & =X^{T}\left(U\Sigma V^{T}V_{r}V_{r}^{T}\right)z\\
+ & =X^{T}\left(U\Sigma I_{r}V_{r}^{T}\right)z\\
+ & =X^{T}\left(U\Sigma\left(V_{r}I_{r}\right)^{T}\right)z\\
+ & =X^{T}\left(U\Sigma V^{T}\right)z\\
+ & =X^{T}Xz
+\end{align*}
+
 \end_inset
 
-.
- So we can reduce our scope of intrest to solutions 
-\begin_inset Formula $z$
-\end_inset
 
- such that 
-\begin_inset Formula $z=V_{r}V_{r}^{T}z$
-\end_inset
+\end_layout
 
-.
+\begin_layout Standard
+
 \end_layout
 
 \begin_layout Part*
