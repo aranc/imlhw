@@ -730,6 +730,67 @@ X^{T}X(V_{r}V_{r}^{T}z) & =X^{T}\left(U\Sigma V^{T}\right)(V_{r}V_{r}^{T}z)\\
 \end_layout
 
 \begin_layout Standard
+From Pythagoras, the projection has smaller length, and therefore we can
+ assume that a minimal solution is spanned by 
+\begin_inset Formula $V_{r}$
+\end_inset
+
+, that is 
+\begin_inset Formula 
+\[
+z=V_{r}V_{r}^{T}z
+\]
+
+\end_inset
+
+ Since,
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{align*}
+V_{r}V_{r}^{T}w & =V_{r}V_{r}^{T}VPU^{T}y\\
+ & =\left(V_{r}I_{r}\right)PU^{T}y\\
+ & =\left(VI_{r}\right)PU^{T}y\\
+ & =V\left(I_{r}P\right)U^{T}y\\
+ & =VPU^{T}y\\
+ & =w
+\end{align*}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+We have that both 
+\begin_inset Formula $z$
+\end_inset
+
+ and 
+\begin_inset Formula $w$
+\end_inset
+
+ are spanned by 
+\begin_inset Formula $V$
+\end_inset
+
+.
+ Their difference is also spanned by 
+\begin_inset Formula $V$
+\end_inset
+
+, and:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+V_{r}V_{r}^{T}\left(w-z\right)
+\]
+
+\end_inset
+
 
 \end_layout
 
