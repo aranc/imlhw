@@ -1166,6 +1166,21 @@ Eigenvalues:
 \end_layout
 
 \begin_layout Standard
+The first eigenvectors look like the figure 
+\begin_inset Formula $8$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $\phantom{A}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
 b.
 \end_layout
 
@@ -1236,7 +1251,7 @@ Eigenvectors:
 \begin_inset Graphics
 	filename pics/b_v2.png
 	lyxscale 20
-	scale 30
+	scale 10
 
 \end_inset
 
@@ -1252,7 +1267,7 @@ Eigenvectors:
 \begin_inset Graphics
 	filename pics/b_v4.png
 	lyxscale 20
-	scale 30
+	scale 10
 
 \end_inset
 
@@ -1277,6 +1292,17 @@ Eigenvalues:
 	lyxscale 20
 	scale 30
 
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+The first eigenvectors look like the figure 0.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $\phantom{A}$
 \end_inset
 
 
@@ -1397,6 +1423,44 @@ Eigenvalues:
 \end_inset
 
 
+\end_layout
+
+\begin_layout Standard
+We note that the mean is now 
+\begin_inset Formula $0$
+\end_inset
+
+ (the mean image is composed of very very small values).
+ 
+\end_layout
+
+\begin_layout Standard
+The Eigenvectors look like a mixture of 
+\begin_inset Formula $0$
+\end_inset
+
+ and 
+\begin_inset Formula $8$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+The first eignvalues are larger.
+ TODO: add why.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $\phantom{A}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+d.
+ 
 \end_layout
 
 \end_body

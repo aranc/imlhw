@@ -42,6 +42,29 @@ def subquestion_b(filenames):
 def subquestion_c(filenames):
     subquestions_abc(filenames, train_data)
 
+#Answers subquestion d
+def subquestion_d(filename):
+    #Call SVD
+    u, s, v = svd(data)
+
+    red_points = []
+    blue_points = []
+
+    #Project images on first and second eigenvctors
+    for i in range(len(train_data):
+        x = np.dot(v[0], train_data[i])
+        y = np.dot(v[1], train_data[i])
+        if train_labels[i] == 1:
+            red_points.append((x,y))
+        elif train_labels[i] == -1:
+            blue_points.append((x,y))
+
+    #Plot colored points
+    plt.plot([p[0] for p in red_points], [p[1] for p in red_points], '.r') 
+    plt.plot([p[0] for p in blue_points], [p[1] for p in blue_points], '.b') 
+
+    plt.savefig(filename)
+
 if True:
     if len(sys.argv) > 1 and sys.argv[1] == 'a':
         #We output 7 plots for subquestions a,b, and c.
@@ -79,18 +102,10 @@ if True:
         filenames[5] = sys.argv[7]
         filenames[6] = sys.argv[8]
         subquestion_c(filenames)
+    elif len(sys.argv) > 1 and sys.argv[1] == 'd':
+        filename = sys.argv[2]
+        subquestion_d(filename)
     elif len(sys.argv) > 1 and sys.argv[1] == 'debug':
-        data1 = train_data[train_labels==-1][0]
-        data2 = train_data[train_labels==-1][1]
-        mean = np.mean(np.vstack((data1, data2)), 0)
-        plt.clf()
-        plt.imshow(data1.reshape(28,28), interpolation='nearest')
-        plt.show()
-        plt.clf()
-        plt.imshow(data2.reshape(28,28), interpolation='nearest')
-        plt.show()
-        plt.clf()
-        plt.imshow(mean.reshape(28,28), interpolation='nearest')
-        plt.show()
+        pass
     else:
         print "Error: please choose a valid command"
