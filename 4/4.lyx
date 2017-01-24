@@ -1431,11 +1431,14 @@ We note that the mean is now
 \end_inset
 
  (the mean image is composed of very very small values).
+ The pixels in the picture look varied more than they really are due to
+ the amplified colors; it happens in order to make us see the picture (that
+ is almost completely flat) clearer.
  
 \end_layout
 
 \begin_layout Standard
-The Eigenvectors look like a mixture of 
+The eigenvectors look like a mixture of 
 \begin_inset Formula $0$
 \end_inset
 
@@ -1447,8 +1450,13 @@ The Eigenvectors look like a mixture of
 \end_layout
 
 \begin_layout Standard
-The first eignvalues are larger.
- TODO: add why.
+The first eigenvalues are larger, and a little experiment made us reach
+ the following conclusions: First of all, the more images we examined, the
+ larger eigenvalues we got; we suspect that it has to do with the amount
+ of information received.
+ Furthermore, the same amount of images produced larger eigenvalues when
+ they were mixed (0&8) than when they were of the same figure; we guess
+ that this also is a result of more information to process.
 \end_layout
 
 \begin_layout Standard
@@ -1471,6 +1479,19 @@ d.
 \end_inset
 
 
+\end_layout
+
+\begin_layout Standard
+We see that the first principal axis clusters the points nicely according
+ to label.
+ We notice that second principal axis gives very little if any information
+ regarding the labels (we see that the margins of the blue dots are slightly
+ wider than the red dots on the second axis).
+\end_layout
+
+\begin_layout Standard
+This is expected because most of the difference is captured by the first
+ principal axis.
 \end_layout
 
 \begin_layout Standard
