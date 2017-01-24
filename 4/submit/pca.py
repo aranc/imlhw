@@ -3,7 +3,7 @@ import time
 import operator
 import numpy as np
 import matplotlib
-#matplotlib.use('Agg')
+matplotlib.use('Agg')
 import matplotlib.pyplot as plt
 from numpy.linalg import svd
 from hw4 import *
@@ -45,7 +45,7 @@ def subquestion_c(filenames):
 #Answers subquestion d
 def subquestion_d(filename):
     #Call SVD
-    u, s, v = svd(data)
+    u, s, v = svd(train_data)
 
     red_points = []
     blue_points = []
@@ -63,8 +63,7 @@ def subquestion_d(filename):
     plt.plot([p[0] for p in red_points], [p[1] for p in red_points], '.r') 
     plt.plot([p[0] for p in blue_points], [p[1] for p in blue_points], '.b') 
 
-    plt.show()
-    #plt.savefig(filename)
+    plt.savefig(filename)
 
 if True:
     if len(sys.argv) > 1 and sys.argv[1] == 'a':
