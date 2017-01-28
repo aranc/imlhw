@@ -199,6 +199,70 @@ a.
 \end_layout
 
 \begin_layout Standard
+To find the maximum, derive according to 
+\begin_inset Formula $\lambda$
+\end_inset
+
+:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{align*}
+0 & =\frac{m}{\lambda}-\sum_{i=1}^{m}x_{i}
+\end{align*}
+
+\end_inset
+
+Therefore:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+\lambda=\frac{m}{\sum_{i=1}^{m}x_{i}}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Check second derivative:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+-\frac{m}{\lambda^{2}}=-\frac{m}{m^{2}}\left(\sum_{i=1}^{m}x_{i}\right)^{2}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Has same sign as:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+-\frac{1}{m}<0
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+And therefore we found a maximum.
+\end_layout
+
+\begin_layout Standard
 \begin_inset Formula $\phantom{A}$
 \end_inset
 
