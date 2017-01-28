@@ -442,10 +442,40 @@ HW5: Programming Assignment
 \end_inset
 
  case.
+ (but they are note independent, they are conditionally independent...)
 \end_layout
 
 \begin_layout Standard
-TODO: write rules
+\begin_inset Formula 
+\[
+\mu_{m}^{t+1}=\frac{\sum_{i=1}^{n}\pr\left(z_{i}=m|x_{i},\theta^{t}\right)x_{i}}{\sum_{i=1}^{n}\pr\left(z_{i}=m|x_{i},\theta^{t}\right)}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+\sigma_{m}^{2,t+1}=\frac{\sum_{i=1}^{n}\pr\left(z_{i}=m|x_{i},\theta^{t}\right)\left(x_{i}-\mu_{m}^{t+1}\right)^{2}}{\sum_{i=1}^{n}\pr\left(z_{i}=m|x_{i},\theta^{t}\right)}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+c_{m}^{t+1}=\frac{1}{n}\sum_{i=1}^{n}\pr\left(z_{i}=m|x_{i},\theta^{t}\right)
+\]
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
