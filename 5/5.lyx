@@ -270,6 +270,69 @@ And therefore we found a maximum.
 \end_layout
 
 \begin_layout Standard
+b.
+\end_layout
+
+\begin_layout Standard
+We want to find,
+\begin_inset Formula 
+\begin{align*}
+\text{arg}\max_{\lambda}\left(\Pr\left(\lambda|x_{1},...,x_{m}\right)\right) & =\text{arg}\max_{\lambda}\left(\Pr\left(x_{1},...,x_{m}|\lambda\right)\Pr\left(\lambda\right)\right)\\
+ & =\text{arg}\max_{\lambda}\left(\left(\prod_{i=1}^{m}\lambda e^{-\lambda x_{i}}\right)\left(e^{-\lambda}\right)\right)\\
+ & =\text{arg}\max_{\lambda}\left(-\lambda+\sum_{i=1}^{m}\left(\log\lambda-\lambda x_{i}\right)\right)
+\end{align*}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+To find the maximum, derive according to 
+\begin_inset Formula $\lambda$
+\end_inset
+
+:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+0=-1+\frac{m}{\lambda}-\sum_{i=1}^{m}x_{i}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Therefore,
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+\lambda=\frac{m}{\sum_{i=1}^{m}x_{i}+1}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Second derivative is identical to what we got in ML, so we found a maximum.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $\phantom{A}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
 2.
 \end_layout
 
