@@ -436,7 +436,16 @@ HW5: Programming Assignment
 \begin_layout Standard
 4.
  a.
- TODO: Guessing now, formalize later
+ Since the dimensions are independent of each other, the EM can be calculated
+ separately per dimension, exactly like in the 
+\begin_inset Formula $d=1$
+\end_inset
+
+ case.
+\end_layout
+
+\begin_layout Standard
+TODO: write rules
 \end_layout
 
 \begin_layout Standard
