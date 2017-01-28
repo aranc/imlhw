@@ -178,6 +178,27 @@ Theory Questions
 \end_layout
 
 \begin_layout Standard
+a.
+ We want to find 
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{align*}
+\text{arg}\max_{\lambda}\left(L\left(\lambda\right)\right) & =\text{arg}\max_{\lambda}\left(\prod_{i=1}^{m}\pr\left(x_{i};\lambda\right)\right)\\
+\intertext{\text{Using \ensuremath{\text{Pr}(x)\approx f(x)dx} for continuous distributions:}}\\
+ & =\text{arg}\max_{\lambda}\left(\prod_{i=1}^{m}f\left(x_{i};\lambda\right)\right)\\
+ & =\text{arg}\max_{\lambda}\left(\prod_{i=1}^{m}\lambda e^{-\lambda x_{i}}\right)\\
+\intertext{\text{Taking log}:}\\
+ & =\text{arg}\max_{\lambda}\left(\sum_{i=1}^{m}\left(\log\lambda-\lambda x_{i}\right)\right)
+\end{align*}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
 \begin_inset Formula $\phantom{A}$
 \end_inset
 
