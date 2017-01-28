@@ -7,6 +7,7 @@ import matplotlib
 matplotlib.use('Agg')
 import matplotlib.pyplot as plt
 from hw5 import *
+from scipy.misc import logsumexp
 
 
 if False:
