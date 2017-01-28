@@ -1,0 +1,10 @@
+Aran Carmon aran.carmon@gmail.com 038847588
+Inbal Joffe inbaljoffe@mail.tau.ac.il 302868898
+
+Files:
+  q.py Answers question 4 about GMM EM
+
+Usage:
+  python q.py a <Mean plot> <Eigenvector 1> <Eigenvector 2> <Eigenvector 3>  <Eigenvector 4>  <Eigenvector 5>  <Eigenvalues plot>
+    Answers subquestion a. All parameters are filenames of the output plots.
+
