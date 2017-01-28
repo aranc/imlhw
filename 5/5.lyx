@@ -334,6 +334,63 @@ Second derivative is identical to what we got in ML, so we found a maximum.
 
 \begin_layout Standard
 2.
+ Denote by 
+\begin_inset Formula $n_{x}$
+\end_inset
+
+ the number of times 
+\begin_inset Formula $x$
+\end_inset
+
+ appears in 
+\begin_inset Formula $\left\{ x_{1},...,x_{n}\right\} $
+\end_inset
+
+.
+ i.e.
+ 
+\begin_inset Formula $n_{x}=n\cdot\hat{p}(x)$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{align*}
+\arg\max_{p\in\mathcal{F}}\pr_{p}\left(x_{1},...,x_{n}\right) & =\arg\max_{p\in\mathcal{F}}\prod_{i=1}^{n}p\left(x_{i}\right)\\
+ & =\arg\max_{p\in\mathcal{F}}\sum_{i=1}^{n}\log p\left(x_{i}\right)
+\end{align*}
+
+\end_inset
+
+
+\begin_inset Formula 
+\begin{align*}
+\arg\min_{p\in\mathcal{F}}D_{KL}\left[\hat{p};p\right] & =\arg\min_{p\in\mathcal{F}}\sum_{x\in\chi}\hat{p}(x)\log\frac{\hat{p}(x)}{p(x)}\\
+ & =\arg\min_{p\in\mathcal{F}}\mbox{-}\sum_{x\in\chi}\hat{p}(x)\log p(x)\\
+ & =\arg\max_{p\in\mathcal{F}}\sum_{x\in\chi}\hat{p}(x)\log p(x)\\
+ & =\arg\max_{p\in\mathcal{F}}n\sum_{x\in\chi}\hat{p}(x)\log p(x)\\
+ & =\arg\max_{p\in\mathcal{F}}\sum_{x\in\chi}n_{x}\log p(x)\\
+ & =\arg\max_{p\in\mathcal{F}}\sum_{x\in\left\{ x_{1},...,x_{n}\right\} }n_{x}\log p(x)\\
+ & =\arg\max_{p\in\mathcal{F}}\sum_{i=1}^{n}\log p\left(x_{i}\right)
+\end{align*}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Therefore,
+\begin_inset Formula 
+\[
+\arg\min_{p\in\mathcal{F}}D_{KL}\left[\hat{p};p\right]=\arg\max_{p\in\mathcal{F}}\pr_{p}\left(x_{1},...,x_{n}\right)
+\]
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
@@ -390,10 +447,6 @@ HW5: Programming Assignment
 
 \begin_layout Standard
 b.
-\end_layout
-
-\begin_layout Standard
-
 \end_layout
 
 \end_body
