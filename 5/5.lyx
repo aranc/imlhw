@@ -403,6 +403,69 @@ Therefore,
 \begin_layout Standard
 3.
  a.
+ The parameters of the model are 
+\begin_inset Formula $p_{r}$
+\end_inset
+
+ for 
+\begin_inset Formula $r=0,...,31$
+\end_inset
+
+.
+ Each masked string 
+\begin_inset Formula $x_{i}$
+\end_inset
+
+ can originate from 
+\begin_inset Formula $4$
+\end_inset
+
+ original unmasked strings.
+ Denote by 
+\begin_inset Formula $U(x_{i})$
+\end_inset
+
+ the set of possible unmasked strings.
+ The log likelihood is,
+\begin_inset Formula 
+\[
+\ell(p_{0},...,p_{31})=\sum_{i=1}^{n}\log\left(\sum_{r\in M\left(x_{i}\right)}p_{r}\right)
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $\phantom{A}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+b.
+\end_layout
+
+\begin_layout Standard
+First we calculate 
+\begin_inset Formula $Q\left(\theta;\theta^{t}\right)$
+\end_inset
+
+,
+\begin_inset Formula 
+\[
+Q\left(\theta;\theta^{t}\right)=\sum_{i=1}^{n}\sum_{r\in U\left(x_{i}\right)}p_{r}\log\left(\sum_{r\in M\left(x_{i}\right)}p_{r}\right)
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+TODO: hmmmmmm?
 \end_layout
 
 \begin_layout Part*
