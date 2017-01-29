@@ -436,19 +436,38 @@ HW5: Programming Assignment
 \begin_layout Standard
 4.
  a.
- Since the dimensions are independent of each other, the EM can be calculated
- separately per dimension, exactly like in the 
-\begin_inset Formula $d=1$
+ First we calculate 
+\begin_inset Formula $Q\left(\theta;\theta^{t}\right)$
 \end_inset
 
- case.
- (but they are note independent, they are conditionally independent...)
+, (the parameters 
+\begin_inset Formula $\theta$
+\end_inset
+
+ are similar to the one-dimensional case: 
+\begin_inset Formula $c_{k}^{t},\mu_{k}^{t}$
+\end_inset
+
+ and 
+\begin_inset Formula $\sigma_{k}^{2,t}$
+\end_inset
+
+.
+ This time 
+\begin_inset Formula $\mu_{k}^{t}$
+\end_inset
+
+ is a vector, and 
+\begin_inset Formula $\sigma_{k}^{2,t}$
+\end_inset
+
+ is used in a different meaning).
 \end_layout
 
 \begin_layout Standard
 \begin_inset Formula 
 \[
-\mu_{m}^{t+1}=\frac{\sum_{i=1}^{n}\pr\left(z_{i}=m|x_{i},\theta^{t}\right)x_{i}}{\sum_{i=1}^{n}\pr\left(z_{i}=m|x_{i},\theta^{t}\right)}
+Q\left(\theta;\theta^{t}\right)=\sum_{i}\sum_{z_{i}}p\left(z_{i}|x_{i},\theta^{t}\right)\log p\left(x_{i},z_{i};\theta\right)
 \]
 
 \end_inset
@@ -457,9 +476,10 @@ HW5: Programming Assignment
 \end_layout
 
 \begin_layout Standard
+where,
 \begin_inset Formula 
 \[
-\sigma_{m}^{2,t+1}=\frac{\sum_{i=1}^{n}\pr\left(z_{i}=m|x_{i},\theta^{t}\right)\left(x_{i}-\mu_{m}^{t+1}\right)^{2}}{\sum_{i=1}^{n}\pr\left(z_{i}=m|x_{i},\theta^{t}\right)}
+p\left(z_{i}=m|x_{i},\theta^{t}\right)=\frac{\mathcal{N}\left(x_{i},\mu_{m}^{t},\sigma_{m}^{2,t}I\right)c_{m}^{t}}{\sum_{k}\mathcal{N}\left(x_{i},\mu_{k}^{t},\sigma_{k}^{2,t}I\right)c_{k}^{t}}
 \]
 
 \end_inset
@@ -468,10 +488,112 @@ HW5: Programming Assignment
 \end_layout
 
 \begin_layout Standard
+And,
+\begin_inset Formula 
+\begin{align*}
+\mathcal{N}\left(x_{i},\mu_{k}^{t},\sigma_{k}^{2,t}I\right) & =\left(2\pi\right)^{-\frac{k}{2}}\left|\sigma_{k}^{2,t}I\right|^{-\frac{1}{2}}e^{-\frac{1}{2}\left(x_{i}-\mu_{k}^{t}\right)^{T}\left(\sigma_{k}^{2,t}I\right)^{-1}\left(x_{i}-\mu_{k}^{t}\right)}\\
+ & =\left(2\pi\right)^{-\frac{k}{2}}\left(\sigma_{k}^{2,t}\right)^{-\frac{1}{2}}e^{-\frac{\left(x_{i}-\mu_{k}^{t}\right)^{T}\left(x_{i}-\mu_{k}^{t}\right)}{2\sigma_{k}^{2,t}}}
+\end{align*}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+And,
+\end_layout
+
+\begin_layout Standard
 \begin_inset Formula 
 \[
-c_{m}^{t+1}=\frac{1}{n}\sum_{i=1}^{n}\pr\left(z_{i}=m|x_{i},\theta^{t}\right)
+c_{k}^{t+1}=\frac{1}{n}\sum_{i=1}^{n}p\left(z_{i}=k|x_{i},\theta^{t}\right)
 \]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+So we know how to calculate 
+\begin_inset Formula $p\left(z_{i}|x_{i},\theta^{t}\right)$
+\end_inset
+
+, and we know how to calculate 
+\begin_inset Formula $Q\left(\theta;\theta^{t}\right)$
+\end_inset
+
+ as a function of the parameters 
+\begin_inset Formula $\theta$
+\end_inset
+
+.
+ Now we want to find 
+\begin_inset Formula $\mu_{k}^{t}$
+\end_inset
+
+ and 
+\begin_inset Formula $\sigma_{k}^{2,t}$
+\end_inset
+
+ that maximize 
+\begin_inset Formula $Q$
+\end_inset
+
+.
+\begin_inset Formula 
+\begin{align*}
+Q\left(\theta;\theta^{t}\right) & =\sum_{i}\sum_{z_{i}}p\left(z_{i}|x_{i},\theta^{t}\right)\log p\left(x_{i},z_{i};\theta\right)\\
+ & =\sum_{i}\sum_{z_{i}}p\left(z_{i}|x_{i},\theta^{t}\right)\log\left(\left(2\pi\right)^{-\frac{k}{2}}\left(\sigma_{k}^{2,t+1}\right)^{-\frac{1}{2}}\right)-\sum_{i}\sum_{z_{i}}p\left(z_{i}|x_{i},\theta^{t}\right)\left(\frac{\left(x_{i}-\mu_{k}^{t+1}\right)^{T}\left(x_{i}-\mu_{k}^{t+1}\right)}{2\sigma_{k}^{2,t+1}}\right)
+\end{align*}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Differentiate according to 
+\begin_inset Formula $\mu_{m}^{t+1}$
+\end_inset
+
+ and compare to 
+\begin_inset Formula $0$
+\end_inset
+
+, 
+\begin_inset Formula 
+\begin{align*}
+0 & =\sum_{i}p\left(z_{i}=m|x_{i},\theta^{t}\right)\left(\frac{-2\left(x_{i}-\mu_{m}^{t+1}\right)}{2\sigma_{m}^{2,t+1}}\right) & \Rightarrow\\
+0 & =\sum_{i}p\left(z_{i}=m|x_{i},\theta^{t}\right)\left(x_{i}-\mu_{m}^{t+1}\right) & \Rightarrow\\
+\mu_{m}^{t+1} & =\frac{\sum_{i}p\left(z_{i}=m|x_{i},\theta^{t}\right)x_{i}}{\sum_{i}p\left(z_{i}=m|x_{i},\theta^{t}\right)}
+\end{align*}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Differentiate according to 
+\begin_inset Formula $\sigma_{m}^{2,t+1}$
+\end_inset
+
+ and compare to 
+\begin_inset Formula $0$
+\end_inset
+
+,
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{align*}
+0 & =\sum_{i}p\left(z_{i}=m|x_{i},\theta^{t}\right)\left(-\frac{1}{2}\right)\frac{1}{\sigma_{m}^{2,t+1}}-\sum_{i}p\left(z_{i}=m|x_{i},\theta^{t}\right)\left(-1\right)\left(\frac{\left(x_{i}-\mu_{k}^{t+1}\right)^{T}\left(x_{i}-\mu_{k}^{t+1}\right)}{2\left(\sigma_{k}^{2,t+1}\right)^{2}}\right) & \Rightarrow\\
+0 & =\sum_{i}p\left(z_{i}=m|x_{i},\theta^{t}\right)\left(-1\right)\sigma_{m}^{2,t+1}+\sum_{i}p\left(z_{i}=m|x_{i},\theta^{t}\right)\left(x_{i}-\mu_{k}^{t+1}\right)^{T}\left(x_{i}-\mu_{k}^{t+1}\right) & \Rightarrow\\
+\sigma_{m}^{2,t+1} & =\frac{\sum_{i}p\left(z_{i}=m|x_{i},\theta^{t}\right)\left(x_{i}-\mu_{k}^{t+1}\right)^{T}\left(x_{i}-\mu_{k}^{t+1}\right)}{\sum_{i}p\left(z_{i}=m|x_{i},\theta^{t}\right)}
+\end{align*}
 
 \end_inset
 
