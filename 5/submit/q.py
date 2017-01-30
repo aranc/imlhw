@@ -45,30 +45,34 @@ def do_em_step(x, mu, ss, c):
             ss[m] += p[i, m] * np.norm(x[i] - mu[m]
         ss[m] /= p[:m].sum()
 
+#Use the implementation above to produce plots and measurements for question 4
+def answer(filenames):
+    #Init parameters
+    k = 5
+    t = 0
+    x = train_data
+    c = np.ones(k) / float(k)
+    ss = np.ones(k) * train_data.var(axis=1).mean()
+    mu = np.random.randint(0, 256, (k, len(train_data[0])))
+
+    while True:
+        old_mu = mu.copy()
+        do_em_step(x, mu, ss, c)
+        stop_crit = (mu-old_mu).mean(axis=1).sum()
+        print "itreation", t, "stop_crit:", stop_crit
+        if stop_crit < 1:
+            print "reached stop criterion"
+            break 
+
 if False:
-    if len(sys.argv) > 1 and sys.argv[1] == 'a':
-        #We output 7 plots for subquestions a,b, and c.
-        #Plot the mea, plot 5 eigenvectors, and plot the eigenvalues
-        filenames = [None] * 7
+    if len(sys.argv) > 1 and sys.argv[1] == '4':
+        #We output 6 plots for subquestions b-e
+        #Plot the likelihood, plot 5 clusters
+        filenames = [None] * 4
         filenames[0] = sys.argv[2]
         filenames[1] = sys.argv[3]
         filenames[2] = sys.argv[4]
         filenames[3] = sys.argv[5]
-        filenames[4] = sys.argv[6]
-        filenames[5] = sys.argv[7]
-        filenames[6] = sys.argv[8]
-        subquestion_a(filenames)
-    elif len(sys.argv) > 1 and sys.argv[1] == 'b':
-        #We output 7 plots for subquestions a,b, and c.
-        #Plot the mea, plot 5 eigenvectors, and plot the eigenvalues
-        filenames = [None] * 7
-        filenames[0] = sys.argv[2]
-        filenames[1] = sys.argv[3]
-        filenames[2] = sys.argv[4]
-        filenames[3] = sys.argv[5]
-        filenames[4] = sys.argv[6]
-        filenames[5] = sys.argv[7]
-        filenames[6] = sys.argv[8]
-        subquestion_b(filenames)
+        answer(filenames)
     else:
         print "Error: please choose a valid command"

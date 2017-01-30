@@ -674,5 +674,53 @@ Differentiate according to
 b.
 \end_layout
 
+\begin_layout Standard
+Initialization: For the priors 
+\begin_inset Formula $c_{m}^{0}$
+\end_inset
+
+, init as a uniform distribution 
+\begin_inset Formula $\frac{1}{k}=\frac{1}{5}$
+\end_inset
+
+.
+ For the 
+\begin_inset Formula $\sigma_{m}^{2,0}$
+\end_inset
+
+, we want something between the min and max variances of the data: e.g.
+ train_data.var(axis=1).mean().
+ For the 
+\begin_inset Formula $\mu_{m}^{0}$
+\end_inset
+
+ use random values.
+\end_layout
+
+\begin_layout Standard
+Stopping criterion: Measure 
+\begin_inset Formula $\sum_{m=1}^{k}\left\Vert \mu_{m}^{t+1}-\mu_{m}^{t}\right\Vert $
+\end_inset
+
+ and stop when it decreases below a threshold.
+ we will start with some threshold, say 
+\begin_inset Formula $1$
+\end_inset
+
+, and see if it gives good results / converge fast enough, and adjust accordingl
+y.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $\phantom{A}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+c.
+\end_layout
+
 \end_body
 \end_document
