@@ -10,7 +10,6 @@ from hw5 import *
 from scipy.misc import logsumexp
 
 #####TODO#######
-#logsumexp
 #test for subquestion e
 #calc likelihood for another subquestion
 
@@ -27,10 +26,11 @@ def do_em_step(x, mu, ss, c):
     p = np.zeros((n, k))
     for i in range(n):
         for m in range(k):
-            p[i, m] = (2*pi)**(-k/2.0)
-            p[i, m] *= ss[m] ** (-1.0/2.0)
-            p[i, m] *= e ** (-(np.norm(x[i]-mu[m]))/(2*ss[m]))
-        p[i,:] /= p[i].sum()
+            p[i, m] = log((2*pi)**(-k/2.0))
+            p[i, m] += log(ss[m] ** (-1.0/2.0))
+            p[i, m] += (-(np.norm(x[i]-mu[m]))/(2*ss[m]))
+        p[i,:] -= logsumexp(p[i])
+    p = e**p
 
     #Calc new c
     for m in range(k):
