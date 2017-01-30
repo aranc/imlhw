@@ -8,6 +8,7 @@ matplotlib.use('Agg')
 import matplotlib.pyplot as plt
 from hw5 import *
 from scipy.misc import logsumexp
+from numpy.linalg import norm
 
 #Perform an EM step
 #ss stands for sigma squared
@@ -24,7 +25,7 @@ def do_em_step(x, mu, ss, c):
         for m in range(k):
             p[i, m] = log((2*pi)**(-k/2.0))
             p[i, m] += log(ss[m] ** (-1.0/2.0))
-            p[i, m] += (-(np.norm(x[i]-mu[m]))/(2*ss[m]))
+            p[i, m] += (-(norm(x[i]-mu[m]))/(2*ss[m]))
         p[i,:] -= logsumexp(p[i])
     p = e**p
 
@@ -43,7 +44,7 @@ def do_em_step(x, mu, ss, c):
     for m in range(k):
         ss[m] = 0
         for i in range(n):
-            ss[m] += p[i, m] * np.norm(x[i] - mu[m]
+            ss[m] += p[i, m] * norm(x[i] - mu[m]
         ss[m] /= p[:m].sum()
 
 #Classify according to clusters
@@ -53,7 +54,7 @@ def classify(mu, ss, c, x):
     best_cluster = -1
 
     for i in range(k):
-        prob = ss[i]**(-1.0/2.0) * e**(-(np.norm(x-mu[i]))/(2*ss[i]))
+        prob = ss[i]**(-1.0/2.0) * e**(-(norm(x-mu[i]))/(2*ss[i]))
         if prob > max_prob:
             max_prob = prob
             best_cluster = i
