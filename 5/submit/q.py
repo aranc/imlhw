@@ -9,10 +9,6 @@ import matplotlib.pyplot as plt
 from hw5 import *
 from scipy.misc import logsumexp
 
-#####TODO#######
-#test for subquestion e
-#calc likelihood for another subquestion
-
 #Perform an EM step
 #ss stands for sigma squared
 #c stands for the prior
@@ -50,6 +46,28 @@ def do_em_step(x, mu, ss, c):
             ss[m] += p[i, m] * np.norm(x[i] - mu[m]
         ss[m] /= p[:m].sum()
 
+#Classify according to clusters
+def classify(mu, ss, c, x):
+    k = len(c)
+    max_prob = 0
+    best_cluster = -1
+
+    for i in range(k):
+        prob = ss[i]**(-1.0/2.0) * e**(-(np.norm(x-mu[i]))/(2*ss[i]))
+        if prob > max_prob:
+            max_prob = prob
+            best_cluster = i
+
+    return best_cluster
+
+#Measure accuracy on the test set
+def measure_accuracy(mu, ss, c):
+    errors = 0
+    for i in range(len(test_data)):
+        if classify(mu, ss, c, test_data[i]) != test_labels[i]:
+            errors += 1
+    return 1 - float(errors) / float(len(test_data))
+
 #Use the implementation above to produce plots and measurements for question 4
 def answer(filenames):
     #Init parameters
@@ -64,11 +82,13 @@ def answer(filenames):
     likelihood = []
 
     while True:
+        start = time.time()
         old_mu = mu.copy()
         do_em_step(x, mu, ss, c)
         stop_crit = (mu-old_mu).mean(axis=1).sum()
         likelihood.append(calc_likelihood(x, mu, ss, c))
-        print "itreation", t, "stop_crit:", stop_crit, "likelihood:", likelihood[-1]
+        elapsed = time.time() - start
+        print "itreation", t, "elapsed:", elapsed, "stop_crit:", stop_crit, "likelihood:", likelihood[-1]
         if stop_crit < 1:
             print "reached stop criterion"
             break 
@@ -82,6 +102,9 @@ def answer(filenames):
         print "cluster number", m, "c:", c[m], "ss:", ss[m]
         plt.imshow(mu[m].reshape(28,28), interpolation='nearest')
         plt.savefig(filenames[1+m])
+
+    print "Measure accuracy:",
+    print measure_accuracy(mu, ss, c)
 
 if False:
     if len(sys.argv) > 1 and sys.argv[1] == '4':
