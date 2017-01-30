@@ -1,0 +1,2 @@
+python ../submit/q.py 4 likelihood.png cluster1.png cluster2.png cluster3.png cluster4.png cluster5.png | tee output.txt
+cat tmp.txt | ~/scripts/send.py "run"
