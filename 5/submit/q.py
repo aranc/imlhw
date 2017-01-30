@@ -9,6 +9,11 @@ import matplotlib.pyplot as plt
 from hw5 import *
 from scipy.misc import logsumexp
 
+#####TODO#######
+#logsumexp
+#test for subquestion e
+#calc likelihood for another subquestion
+
 #Perform an EM step
 #ss stands for sigma squared
 #c stands for the prior
