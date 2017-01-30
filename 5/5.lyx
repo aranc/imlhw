@@ -498,7 +498,59 @@ HW5: Programming Assignment
 
 \begin_layout Standard
 4.
- a.
+ 
+\end_layout
+
+\begin_layout Standard
+\begin_inset Box ovalbox
+position "t"
+hor_pos "c"
+has_inner_box 1
+inner_pos "t"
+use_parbox 0
+use_makebox 0
+width "100col%"
+special "none"
+height "1in"
+height_special "totalheight"
+thickness "0.4pt"
+separation "3pt"
+shadowsize "4pt"
+framecolor "black"
+backgroundcolor "none"
+status open
+
+\begin_layout Plain Layout
+How to run:
+\end_layout
+
+\begin_layout Plain Layout
+python 
+\begin_inset Formula $\sim$
+\end_inset
+
+arancarmon/imlhw/5/submit/q.py 4 <likelihood plot> <cluster #1> <cluster
+ #2> <cluster #3> <cluster #4> <cluster #5> 
+\end_layout
+
+\begin_layout Plain Layout
+Create plots and prints required measurements to stdout
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $\phantom{A}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+a.
  First we calculate 
 \begin_inset Formula $Q\left(\theta;\theta^{t}\right)$
 \end_inset

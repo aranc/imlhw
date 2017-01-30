@@ -63,16 +63,19 @@ def answer(filenames):
         do_em_step(x, mu, ss, c)
         stop_crit = (mu-old_mu).mean(axis=1).sum()
         likelihood.append(calc_likelihood(x, mu, ss, c))
-        print "itreation", t, "stop_crit:", stop_crit
+        print "itreation", t, "stop_crit:", stop_crit, "likelihood:", likelihood[-1]
         if stop_crit < 1:
             print "reached stop criterion"
             break 
 
     #Plot likelihood
+        plt.plot(range(1,t+1), likelihood, 'ko')
+        plt.savefig(filenames[1+m])
 
     #Plot clusters
     for m in range(k):
-        plt.imshow(mean.reshape(28,28), interpolation='nearest')
+        print "cluster number", m, "c:", c[m], "ss:", ss[m]
+        plt.imshow(mu[m].reshape(28,28), interpolation='nearest')
         plt.savefig(filenames[1+m])
 
 if False:
