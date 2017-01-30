@@ -55,14 +55,25 @@ def answer(filenames):
     ss = np.ones(k) * train_data.var(axis=1).mean()
     mu = np.random.randint(0, 256, (k, len(train_data[0])))
 
+    #Save likelihood for plot
+    likelihood = []
+
     while True:
         old_mu = mu.copy()
         do_em_step(x, mu, ss, c)
         stop_crit = (mu-old_mu).mean(axis=1).sum()
+        likelihood.append(calc_likelihood(x, mu, ss, c))
         print "itreation", t, "stop_crit:", stop_crit
         if stop_crit < 1:
             print "reached stop criterion"
             break 
+
+    #Plot likelihood
+
+    #Plot clusters
+    for m in range(k):
+        plt.imshow(mean.reshape(28,28), interpolation='nearest')
+        plt.savefig(filenames[1+m])
 
 if False:
     if len(sys.argv) > 1 and sys.argv[1] == '4':
@@ -73,6 +84,8 @@ if False:
         filenames[1] = sys.argv[3]
         filenames[2] = sys.argv[4]
         filenames[3] = sys.argv[5]
+        filenames[4] = sys.argv[6]
+        filenames[5] = sys.argv[7]
         answer(filenames)
     else:
         print "Error: please choose a valid command"

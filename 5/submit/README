@@ -5,6 +5,6 @@ Files:
   q.py Answers question 4 about GMM EM
 
 Usage:
-  python q.py a <Mean plot> <Eigenvector 1> <Eigenvector 2> <Eigenvector 3>  <Eigenvector 4>  <Eigenvector 5>  <Eigenvalues plot>
-    Answers subquestion a. All parameters are filenames of the output plots.
+  python q.py 4 <likelihood plot> <cluster #1> <cluster #2> <cluster #3>  <cluster #4>  <cluster #5>
+    Answers question 4. All parameters are filenames of the output plots.
 
