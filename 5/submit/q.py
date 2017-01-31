@@ -44,7 +44,7 @@ def do_em_step(x, mu, ss, c):
     for m in range(k):
         ss[m] = 0
         for i in range(n):
-            ss[m] += p[i, m] * norm(x[i] - mu[m]
+            ss[m] += p[i, m] * norm(x[i] - mu[m])
         ss[m] /= p[:m].sum()
 
 #Classify according to clusters
