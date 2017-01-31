@@ -90,7 +90,7 @@ def answer(filenames):
     x = train_data
     c = np.ones(k) / float(k)
     ss = np.ones(k) * train_data.var(axis=1).mean()
-    mu = np.random.randint(0, 256, (k, len(train_data[0])))
+    mu = np.random.randint(0, 256, (k, len(train_data[0]))).astype(train_data.dtype)
 
     #Save likelihood for plot
     likelihood = []
