@@ -124,7 +124,7 @@ if True:
     if len(sys.argv) > 1 and sys.argv[1] == '4':
         #We output 6 plots for subquestions b-e
         #Plot the likelihood, plot 5 clusters
-        filenames = [None] * 4
+        filenames = [None] * 6
         filenames[0] = sys.argv[2]
         filenames[1] = sys.argv[3]
         filenames[2] = sys.argv[4]
