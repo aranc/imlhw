@@ -1,0 +1,4 @@
+init sigmas as well
+test accuracy and likelihood after fke init
+debug why it goes to heck after a single interation
+
