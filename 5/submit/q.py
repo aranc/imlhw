@@ -2,6 +2,7 @@ import sys
 import time
 import operator
 import random
+import math
 import numpy as np
 import matplotlib
 matplotlib.use('Agg')
@@ -105,7 +106,7 @@ def answer(filenames):
         likelihood.append(calc_likelihood(x, mu, ss, c))
         elapsed = time.time() - start
         print "itreation", t, "elapsed:", elapsed, "stop_crit:", stop_crit, "likelihood:", likelihood[-1]
-        if stop_crit < 1:
+        if stop_crit < 1 or math.isnan(stop_crit):
             print "reached stop criterion"
             break 
 
