@@ -120,7 +120,7 @@ def answer(filenames):
     print "Measure accuracy:",
     print measure_accuracy(mu, ss, c)
 
-if False:
+if True:
     if len(sys.argv) > 1 and sys.argv[1] == '4':
         #We output 6 plots for subquestions b-e
         #Plot the likelihood, plot 5 clusters
