@@ -11,6 +11,8 @@ from hw5 import *
 from scipy.misc import logsumexp
 from numpy.linalg import norm
 
+stop_crit_threshold = 0.0001
+
 #Perform an EM step
 #ss stands for sigma squared
 #c stands for the prior
@@ -106,7 +108,7 @@ def answer(filenames):
         likelihood.append(calc_likelihood(x, mu, ss, c))
         elapsed = time.time() - start
         print "itreation", t, "elapsed:", elapsed, "stop_crit:", stop_crit, "likelihood:", likelihood[-1]
-        if stop_crit < 1 or math.isnan(stop_crit):
+        if stop_crit < stop_crit_threshold or math.isnan(stop_crit):
             print "reached stop criterion"
             break 
 
