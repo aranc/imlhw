@@ -109,8 +109,7 @@ def answer(filenames):
         elapsed = time.time() - start
         print "itreation", t, "elapsed:", elapsed, "stop_crit:", stop_crit, "likelihood:", likelihood[-1]
         print "debug:", measure_accuracy(mu, ss, c)
-        #TODO: remove debug criterion below (t > 100)
-        if t > 100 and (stop_crit < stop_crit_threshold or math.isnan(stop_crit)):
+        if stop_crit < stop_crit_threshold or math.isnan(stop_crit):
             print "reached stop criterion"
             break
             
