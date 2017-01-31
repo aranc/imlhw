@@ -71,13 +71,15 @@ def measure_accuracy(mu, ss, c):
 
 #Calculate the likelihood
 def calc_likelihood(x, mu, ss, c):
-    #TODO: correct this !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
     log_likelihood = 0
     for i in range(len(x)):
+        single_likelihood = 0
         for m in range(len(c)):
-            log_likelihood += log((2*pi)**(-k/2.0))
-            log_likelihood += log(ss[m] ** (-1.0/2.0))
-            log_likelihood += (-(norm(x[i]-mu[m]))/(2*ss[m]))
+            l = log((2*pi)**(-k/2.0))
+            l += log(ss[m] ** (-1.0/2.0))
+            l += (-(norm(x[i]-mu[m]))/(2*ss[m]))
+            single_likelihood += e ** l
+        log_likelihood += log(single_point_likelihood)
     return e ** log_likelihood
 
 #Use the implementation above to produce plots and measurements for question 4
