@@ -96,6 +96,15 @@ def answer(filenames):
     ss = np.ones(k) * train_data.var(axis=1).mean()
     mu = np.random.randint(0, 256, (k, len(train_data[0]))).astype(train_data.dtype)
 
+    if False:
+        #Init hack tests
+        mu = test_data[:k].copy()
+        mu[0] = test_data[test_labels == 0].mean(axis=0)
+        mu[1] = test_data[test_labels == 1].mean(axis=0)
+        mu[2] = test_data[test_labels == 3].mean(axis=0)
+        mu[3] = test_data[test_labels == 4].mean(axis=0)
+        mu[4] = test_data[test_labels == 8].mean(axis=0)
+
     #Save likelihood for plot
     likelihood = []
 
