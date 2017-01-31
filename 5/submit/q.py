@@ -97,6 +97,7 @@ def answer(filenames):
     likelihood = []
 
     while True:
+        t += 1
         start = time.time()
         old_mu = mu.copy()
         do_em_step(x, mu, ss, c)
@@ -110,7 +111,7 @@ def answer(filenames):
 
     #Plot likelihood
         plt.plot(range(1,t+1), likelihood, 'ko')
-        plt.savefig(filenames[1+m])
+        plt.savefig(filenames[0])
 
     #Plot clusters
     for m in range(k):
