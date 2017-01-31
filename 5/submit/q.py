@@ -108,9 +108,12 @@ def answer(filenames):
         likelihood.append(calc_likelihood(x, mu, ss, c))
         elapsed = time.time() - start
         print "itreation", t, "elapsed:", elapsed, "stop_crit:", stop_crit, "likelihood:", likelihood[-1]
-        if stop_crit < stop_crit_threshold or math.isnan(stop_crit):
+        print "debug:", measure_accuracy(mu, ss, c)
+        #TODO: remove debug criterion below (t > 100)
+        if t > 100 and (stop_crit < stop_crit_threshold or math.isnan(stop_crit)):
             print "reached stop criterion"
-            break 
+            break
+            
 
     #Plot likelihood
         plt.plot(range(1,t+1), likelihood, 'ko')
