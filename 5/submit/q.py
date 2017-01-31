@@ -100,7 +100,7 @@ def answer(filenames):
         start = time.time()
         old_mu = mu.copy()
         do_em_step(x, mu, ss, c)
-        stop_crit = (mu-old_mu).mean(axis=1).sum()
+        stop_crit = norm(mu-old_mu, axis=1).sum()
         likelihood.append(calc_likelihood(x, mu, ss, c))
         elapsed = time.time() - start
         print "itreation", t, "elapsed:", elapsed, "stop_crit:", stop_crit, "likelihood:", likelihood[-1]
