@@ -63,6 +63,10 @@ def classify(mu, ss, c, x):
     for i in range(k):
         #prob = ss[i]**(-1.0/2.0) * e**(-(norm_square(x-mu[i]))/(2*ss[i]))
         prob = log(ss[i])*(-1.0/2.0) + (-(norm_square(x-mu[i]))/(2*ss[i]))
+        if False:
+            print "norm_square(x-mu[i])", norm_square(x-mu[i])
+            print "ss[i]", ss[i]
+            print "prob:", prob
         if prob > max_prob:
             max_prob = prob
             best_cluster = i
