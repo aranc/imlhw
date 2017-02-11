@@ -185,3 +185,5 @@ if True:
         answer(filenames)
     else:
         print "Error: please choose a valid command"
+
+#TODO: fix likelihood, restore iterations, remove fake init
