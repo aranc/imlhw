@@ -34,25 +34,26 @@ def do_em_step(x, mu, ss, c):
             p[i, m] += log(ss[m]) * (-1.0/2.0)
             p[i, m] += (-(norm_square(x[i]-mu[m]))/(2*ss[m]))
         p[i,:] -= logsumexp(p[i])
-    p = e**p
+    ep = e**p
 
     #Calc new c
     for m in range(k):
-        c[m] = (1.0/n) * p[:,m].sum()
+        c[m] = (1.0/n) * ep[:,m].sum()
 
     #Calc new mu
     for m in range(k):
         mu[m] = 0
         for i in range(n):
-            mu[m] += p[i, m] * x[i]
-        mu[m] /= p[:,m].sum()
+            mu[m] += ep[i, m] * x[i]
+        mu[m] /= ep[:,m].sum()
 
     #Calc new ss
     for m in range(k):
         ss[m] = 0
+        tmp = np.zeros(n)
         for i in range(n):
-            ss[m] += p[i, m] * norm_square(x[i] - mu[m])
-        ss[m] /= p[:,m].sum()
+            tmp[i] = p[i, m] + log(norm_square(x[i] - mu[m]))
+        ss[m] = e** (logsumexp(tmp) - logsumexp(p[:,m]))
 
 #Classify according to clusters
 def classify(mu, ss, c, x):
