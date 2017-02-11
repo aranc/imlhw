@@ -56,6 +56,10 @@ def do_em_step____log(x, mu, ss, c):
             tmp[i] = p[i, m] + log(norm_square(x[i] - mu[m]))
         ss[m] = e ** (logsumexp(tmp) - logsumexp(p[:,m]))
 
+#Perform an EM step
+#ss stands for sigma squared
+#c stands for the prior
+#Modifies mu, ss, c vectors
 def do_em_step(x, mu, ss, c):
     #Get n,k consts from input
     n = len(x)
@@ -169,6 +173,7 @@ def answer(filenames):
         likelihood.append(calc_likelihood(x, mu, ss, c))
         elapsed = time.time() - start
         print "itreation", t, "elapsed:", elapsed, "stop_crit:", stop_crit, "likelihood:", likelihood[-1]
+        print "and the accuracy is", measure_accuracy(mu, ss, c, keys) #remove this
         if stop_crit < stop_crit_threshold or math.isnan(stop_crit):
             print "reached stop criterion"
             break
