@@ -76,17 +76,16 @@ def measure_accuracy(mu, ss, c, labels):
 #Calculate the likelihood
 def calc_likelihood(x, mu, ss, c):
     k = len(c)
-    log_likelihood = 0
-    single_point_likelihoods = np.zeros(len(x), dtype=x.dtype)
+    log_likelihoods = []
     for i in range(len(x)):
-        single_point_likelihood = 0
+        single_point_likelihoods = []
         for m in range(len(c)):
-            l = log((2*pi)**(-k/2.0))
-            l += log(ss[m] ** (-1.0/2.0))
+            l = log((2*pi)) * (-k/2.0)
+            l += log(ss[m]) * (-1.0/2.0)
             l += (-(norm(x[i]-mu[m]))/(2*ss[m]))
-            single_point_likelihood += e ** l
-        log_likelihood += log(single_point_likelihood)
-    return e ** log_likelihood
+            single_point_likelihoods.append(l)
+        log_likelihoods.append(logsumexp(single_point_likelihoods))
+    return logsumexp(log_likelihoods)
 
 #Use the implementation above to produce plots and measurements for question 4
 def answer(filenames):
@@ -98,7 +97,7 @@ def answer(filenames):
     ss = np.ones(k) * train_data.var(axis=1).mean()
     mu = np.random.randint(0, 256, (k, len(train_data[0]))).astype(train_data.dtype)
 
-    if True:
+    if False:
         print "******************************"
         print "lets take the best sigmas and vars"
         keys = [0, 1, 3, 4, 8]
@@ -123,7 +122,7 @@ def answer(filenames):
     #Save likelihood for plot
     likelihood = []
 
-    while False:
+    while True:
         t += 1
         start = time.time()
         old_mu = mu.copy()
@@ -142,7 +141,7 @@ def answer(filenames):
 
     votes = {}
     for i in range(k):
-        votes[i] = {}
+        votes[i] = {-1:0}
 
     for i in range(len(train_data)):
         cluster_index = classify(mu, ss, c, train_data[i])
