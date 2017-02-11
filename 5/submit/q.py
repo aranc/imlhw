@@ -43,9 +43,10 @@ def do_em_step(x, mu, ss, c):
     #Calc new mu
     for m in range(k):
         mu[m] = 0
+        tmp = np.zeros((n, len(x[0])))
         for i in range(n):
-            mu[m] += ep[i, m] * x[i]
-        mu[m] /= ep[:,m].sum()
+            tmp[i] = p[i, m] + log(x[i])
+        mu[m] = e ** (logsumexp(tmp, axis=0) - logsumexp(p[:,m]))
 
     #Calc new ss
     for m in range(k):
