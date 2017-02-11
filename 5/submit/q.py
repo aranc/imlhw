@@ -78,14 +78,14 @@ def calc_likelihood(x, mu, ss, c):
     k = len(c)
     log_likelihoods = []
     for i in range(len(x)):
-        single_point_likelihoods = []
+        single_point_log_likelihoods = []
         for m in range(len(c)):
             l = log((2*pi)) * (-k/2.0)
             l += log(ss[m]) * (-1.0/2.0)
             l += (-(norm(x[i]-mu[m]))/(2*ss[m]))
-            single_point_likelihoods.append(l)
-        log_likelihoods.append(logsumexp(single_point_likelihoods))
-    return logsumexp(log_likelihoods)
+            single_point_log_likelihoods.append(l)
+        log_likelihoods.append(logsumexp(single_point_log_likelihoods))
+    return np.sum(log_likelihoods)
 
 #Use the implementation above to produce plots and measurements for question 4
 def answer(filenames):
