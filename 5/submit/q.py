@@ -97,7 +97,7 @@ def answer(filenames):
     ss = np.ones(k) * train_data.var(axis=1).mean()
     mu = np.random.randint(0, 256, (k, len(train_data[0]))).astype(train_data.dtype)
 
-    if False:
+    if True:
         print "******************************"
         print "lets take the best sigmas and vars"
         keys = [0, 1, 3, 4, 8]
