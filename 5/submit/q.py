@@ -101,7 +101,7 @@ def answer(filenames):
     ss = np.ones(k) * train_data.var(axis=1).mean()
     mu = np.random.randint(0, 256, (k, len(train_data[0]))).astype(train_data.dtype)
 
-    if True:
+    if False:
         print "******************************"
         print "lets take the best sigmas and vars"
         keys = [0, 1, 3, 4, 8]
@@ -140,7 +140,7 @@ def answer(filenames):
 
     votes = {}
     for i in range(k):
-        votes[i] = {-1:0}
+        votes[i] = {0:0}
 
     for i in range(len(train_data)):
         cluster_index = classify(mu, ss, c, train_data[i])
