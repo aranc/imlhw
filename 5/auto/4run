@@ -1,4 +1,4 @@
-rm *.png -f
+\rm *.png -f
 python ../submit/q.py 4 likelihood.png cluster1.png cluster2.png cluster3.png cluster4.png cluster5.png | tee output.txt
 #cat output.txt | ~/scripts/send.py "4run"
 if [ 1 -eq 0 ]; then
