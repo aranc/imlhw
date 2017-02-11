@@ -21,7 +21,7 @@ def norm_square(x):
 #ss stands for sigma squared
 #c stands for the prior
 #Modifies mu, ss, c vectors
-def do_em_step(x, mu, ss, c):
+def do_em_step____log(x, mu, ss, c):
     #Get n,k consts from input
     n = len(x)
     k = len(mu)
@@ -56,8 +56,38 @@ def do_em_step(x, mu, ss, c):
             tmp[i] = p[i, m] + log(norm_square(x[i] - mu[m]))
         ss[m] = e ** (logsumexp(tmp) - logsumexp(p[:,m]))
 
-def do_em_step___old(x, mu, ss, c):
+def do_em_step(x, mu, ss, c):
+    #Get n,k consts from input
+    n = len(x)
+    k = len(mu)
 
+    #Calc p(z_i = m | x_i, theta)
+    p = np.zeros((n, k))
+    for i in range(n):
+        for m in range(k):
+            p[i, m] = log((2*pi)**(-k/2.0))
+            p[i, m] += log(ss[m] ** (-1.0/2.0))
+            p[i, m] += (-(norm(x[i]-mu[m]))/(2*ss[m]))
+        p[i,:] -= logsumexp(p[i])
+    p = e**p
+
+    #Calc new c
+    for m in range(k):
+        c[m] = (1.0/n) * p[:,m].sum()
+
+    #Calc new mu
+    for m in range(k):
+        mu[m] = 0
+        for i in range(n):
+            mu[m] += p[i, m] * x[i]
+        mu[m] /= p[:,m].sum()
+
+    #Calc new ss
+    for m in range(k):
+        ss[m] = 0
+        for i in range(n):
+            ss[m] += p[i, m] * norm(x[i] - mu[m])
+        ss[m] /= p[:,m].sum()
 
 #Classify according to clusters
 def classify(mu, ss, c, x):
