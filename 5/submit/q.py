@@ -108,11 +108,6 @@ def answer(filenames):
             ss[i] = test_data[test_labels == m].var(axis=1).mean()
             ss[i] = 10
 
-        #print "generating fake news"
-        #for i in range(len(test_data)):
-        #    m = keys.index(test_labels[i])
-        #    test_data[i] = mu[m]
-
         print "what is the likelihood of this perfection?"
         print "its", calc_likelihood(x, mu, ss, c)
 
