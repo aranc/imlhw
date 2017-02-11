@@ -53,7 +53,7 @@ def do_em_step(x, mu, ss, c):
         tmp = np.zeros(n)
         for i in range(n):
             tmp[i] = p[i, m] + log(norm_square(x[i] - mu[m]))
-        ss[m] = e** (logsumexp(tmp) - logsumexp(p[:,m]))
+        ss[m] = e ** (logsumexp(tmp) - logsumexp(p[:,m]))
 
 #Classify according to clusters
 def classify(mu, ss, c, x):
