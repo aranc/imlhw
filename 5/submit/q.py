@@ -153,7 +153,7 @@ def answer(filenames):
             c[i] = float(len(test_labels == m)) / float(len(test_labels))
             mu[i] = test_data[test_labels == m].mean(axis=0)
             ss[i] = test_data[test_labels == m].var(axis=1).mean()
-            ss[i] = 10
+            ss[i] = 1000
 
         print "what is the likelihood of this perfection?"
         print "its", calc_likelihood(x, mu, ss, c)
