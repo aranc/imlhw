@@ -13,6 +13,10 @@ from numpy.linalg import norm
 
 stop_crit_threshold = 0.0001
 
+def norm_square(x):
+    n = norm(x)
+    return n * n
+
 #Perform an EM step
 #ss stands for sigma squared
 #c stands for the prior
@@ -28,7 +32,7 @@ def do_em_step(x, mu, ss, c):
         for m in range(k):
             p[i, m] = log((2*pi)) * (-k/2.0)
             p[i, m] += log(ss[m]) * (-1.0/2.0)
-            p[i, m] += (-(norm(x[i]-mu[m]))/(2*ss[m]))
+            p[i, m] += (-(norm_square(x[i]-mu[m]))/(2*ss[m]))
         p[i,:] -= logsumexp(p[i])
     p = e**p
 
@@ -47,7 +51,7 @@ def do_em_step(x, mu, ss, c):
     for m in range(k):
         ss[m] = 0
         for i in range(n):
-            ss[m] += p[i, m] * norm(x[i] - mu[m])
+            ss[m] += p[i, m] * norm_square(x[i] - mu[m])
         ss[m] /= p[:,m].sum()
 
 #Classify according to clusters
@@ -57,8 +61,8 @@ def classify(mu, ss, c, x):
     best_cluster = -1
 
     for i in range(k):
-        #prob = ss[i]**(-1.0/2.0) * e**(-(norm(x-mu[i]))/(2*ss[i]))
-        prob = log(ss[i])*(-1.0/2.0) + (-(norm(x-mu[i]))/(2*ss[i]))
+        #prob = ss[i]**(-1.0/2.0) * e**(-(norm_square(x-mu[i]))/(2*ss[i]))
+        prob = log(ss[i])*(-1.0/2.0) + (-(norm_square(x-mu[i]))/(2*ss[i]))
         if prob > max_prob:
             max_prob = prob
             best_cluster = i
@@ -82,7 +86,7 @@ def calc_likelihood(x, mu, ss, c):
         for m in range(len(c)):
             l = log((2*pi)) * (-k/2.0)
             l += log(ss[m]) * (-1.0/2.0)
-            l += (-(norm(x[i]-mu[m]))/(2*ss[m]))
+            l += (-(norm_square(x[i]-mu[m]))/(2*ss[m]))
             single_point_log_likelihoods.append(l)
         log_likelihoods.append(logsumexp(single_point_log_likelihoods))
     return np.sum(log_likelihoods)
