@@ -56,6 +56,9 @@ def do_em_step(x, mu, ss, c):
             tmp[i] = p[i, m] + log(norm_square(x[i] - mu[m]))
         ss[m] = e ** (logsumexp(tmp) - logsumexp(p[:,m]))
 
+def do_em_step___old(x, mu, ss, c):
+
+
 #Classify according to clusters
 def classify(mu, ss, c, x):
     k = len(c)
