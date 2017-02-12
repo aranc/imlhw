@@ -71,7 +71,7 @@ def do_em_step(x, mu, ss, c):
         for m in range(k):
             p[i, m] = log((2*pi)) * (-k/2.0)
             p[i, m] += log(ss[m]) * (-1.0/2.0)
-            p[i, m] += (-(norm(x[i]-mu[m]))/(2*ss[m]))
+            p[i, m] += (-(norm_square(x[i]-mu[m]))/(2*ss[m]))
             p[i, m] += log(c[m])
         p[i,:] -= logsumexp(p[i])
     p = e**p
@@ -91,7 +91,7 @@ def do_em_step(x, mu, ss, c):
     for m in range(k):
         ss[m] = 0
         for i in range(n):
-            ss[m] += p[i, m] * norm(x[i] - mu[m])
+            ss[m] += p[i, m] * norm_square(x[i] - mu[m])
         ss[m] /= p[:,m].sum()
 
 #Classify according to clusters
