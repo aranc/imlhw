@@ -93,6 +93,7 @@ def do_em_step(x, mu, ss, c):
         for i in range(n):
             ss[m] += p[i, m] * norm_square(x[i] - mu[m])
         ss[m] /= p[:,m].sum()
+        ss[m] = 10
 
 #Classify according to clusters
 def classify(mu, ss, c, x):
@@ -145,7 +146,7 @@ def answer(filenames):
     ss = np.ones(k) * train_data.var(axis=1).mean()
     mu = np.random.randint(0, 256, (k, len(train_data[0]))).astype(train_data.dtype)
 
-    if True:
+    if False:
         print "******************************"
         print "lets take the best sigmas and vars"
         keys = [0, 1, 3, 4, 8]
