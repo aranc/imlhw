@@ -93,7 +93,7 @@ def do_em_step(x, mu, ss, c):
     for m in range(k):
         ss[m] = 0
         for i in range(n):
-            ss[m] += p[i, m] * norm(x[i] - mu[m])
+            ss[m] += p[i, m] * norm_square(x[i] - mu[m])
         ss[m] /= p[:,m].sum()
         if ss[m] < 1: ss[m] = 10.0
         if ss[m] > 1000: ss[m] = 1000.0
