@@ -21,11 +21,12 @@ def norm_square(x):
 #ss stands for sigma squared
 #c stands for the prior
 #Modifies mu, ss, c vectors
-def do_em_step____log(x, mu, ss, c):
+def do_em_step_____(x, mu, ss, c):
     #Get n,k consts from input
     n = len(x)
     k = len(mu)
 
+    print ss
     #Calc p(z_i = m | x_i, theta)
     p = np.zeros((n, k))
     for i in range(n):
@@ -33,6 +34,7 @@ def do_em_step____log(x, mu, ss, c):
             p[i, m] = log((2*pi)) * (-k/2.0)
             p[i, m] += log(ss[m]) * (-1.0/2.0)
             p[i, m] += (-(norm_square(x[i]-mu[m]))/(2*ss[m]))
+            p[i, m] += log(c[m])
         p[i,:] -= logsumexp(p[i])
     ep = e**p
 
@@ -50,11 +52,11 @@ def do_em_step____log(x, mu, ss, c):
 
     #Calc new ss
     for m in range(k):
-        ss[m] = 0
         tmp = np.zeros(n)
         for i in range(n):
             tmp[i] = p[i, m] + log(norm_square(x[i] - mu[m]))
         ss[m] = e ** (logsumexp(tmp) - logsumexp(p[:,m]))
+        print m, ss[m]
 
 #Perform an EM step
 #ss stands for sigma squared
@@ -64,6 +66,8 @@ def do_em_step(x, mu, ss, c):
     #Get n,k consts from input
     n = len(x)
     k = len(mu)
+
+    print ss
 
     #Calc p(z_i = m | x_i, theta)
     p = np.zeros((n, k))
@@ -93,7 +97,7 @@ def do_em_step(x, mu, ss, c):
         for i in range(n):
             ss[m] += p[i, m] * norm_square(x[i] - mu[m])
         ss[m] /= p[:,m].sum()
-        ss[m] = 10
+        ss[m] = 10.0
 
 #Classify according to clusters
 def classify(mu, ss, c, x):
@@ -144,6 +148,7 @@ def answer(filenames):
     x = train_data
     c = np.ones(k) / float(k)
     ss = np.ones(k) * train_data.var(axis=1).mean()
+    ss = np.ones(k) * 10.0
     mu = np.random.randint(0, 256, (k, len(train_data[0]))).astype(train_data.dtype)
 
     if False:
