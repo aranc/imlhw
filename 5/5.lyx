@@ -716,6 +716,14 @@ Differentiate according to
 \end_layout
 
 \begin_layout Standard
+In practice, I had to cap the variance.
+ I added a constraint to limit it to the range 10-1000.
+ I'm not sure if these is due to a bug in the implementation or a bug in
+ the analysis above.
+ 
+\end_layout
+
+\begin_layout Standard
 \begin_inset Formula $\phantom{A}$
 \end_inset
 
