@@ -67,8 +67,6 @@ def do_em_step(x, mu, ss, c):
     n = len(x)
     k = len(mu)
 
-    print ss
-
     #Calc p(z_i = m | x_i, theta)
     p = np.zeros((n, k))
     for i in range(n):
@@ -95,9 +93,10 @@ def do_em_step(x, mu, ss, c):
     for m in range(k):
         ss[m] = 0
         for i in range(n):
-            ss[m] += p[i, m] * norm_square(x[i] - mu[m])
+            ss[m] += p[i, m] * norm(x[i] - mu[m])
         ss[m] /= p[:,m].sum()
-        ss[m] = 10.0
+        if ss[m] < 1: ss[m] = 10.0
+        if ss[m] > 1000: ss[m] = 1000.0
 
 #Classify according to clusters
 def classify(mu, ss, c, x):
