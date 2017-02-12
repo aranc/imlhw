@@ -740,7 +740,7 @@ Initialization: For the priors
 \end_inset
 
 , init as a uniform distribution 
-\begin_inset Formula $\frac{1}{k}=\frac{1}{5}$
+\begin_inset Formula $c_{m}^{0}=\frac{1}{k}=\frac{1}{5}$
 \end_inset
 
 .
@@ -748,13 +748,16 @@ Initialization: For the priors
 \begin_inset Formula $\sigma_{m}^{2,0}$
 \end_inset
 
-, we want something between the min and max variances of the data: e.g.
+, I initially wanted something between the min and max variances of the
+ data: e.g.
  train_data.var(axis=1).mean().
+ Since I'm capping the variance, this effectively inits the variance to
+ 1000.
  For the 
 \begin_inset Formula $\mu_{m}^{0}$
 \end_inset
 
- use random values.
+ I used random integer values in the range 0-255.
 \end_layout
 
 \begin_layout Standard
@@ -763,12 +766,7 @@ Stopping criterion: Measure
 \end_inset
 
  and stop when it decreases below a threshold.
- we will start with some threshold, say 
-\begin_inset Formula $1$
-\end_inset
-
-, and see if it gives good results / converge fast enough, and adjust accordingl
-y.
+ I used 0.0001 as the threshold.
 \end_layout
 
 \begin_layout Standard
