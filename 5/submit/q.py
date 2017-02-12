@@ -72,6 +72,7 @@ def do_em_step(x, mu, ss, c):
             p[i, m] = log((2*pi)) * (-k/2.0)
             p[i, m] += log(ss[m]) * (-1.0/2.0)
             p[i, m] += (-(norm(x[i]-mu[m]))/(2*ss[m]))
+            p[i, m] += log(c[m])
         p[i,:] -= logsumexp(p[i])
     p = e**p
 
@@ -173,7 +174,8 @@ def answer(filenames):
         likelihood.append(calc_likelihood(x, mu, ss, c))
         elapsed = time.time() - start
         print "itreation", t, "elapsed:", elapsed, "stop_crit:", stop_crit, "likelihood:", likelihood[-1]
-        print "and the accuracy is", measure_accuracy(mu, ss, c, keys) #remove this
+        #print "and the accuracy is", measure_accuracy(mu, ss, c, keys) #remove this
+        print ">>>>>>>>>>>>>>>>>>>", norm(mu[0] - mu[1])
         if stop_crit < stop_crit_threshold or math.isnan(stop_crit):
             print "reached stop criterion"
             break
