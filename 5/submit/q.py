@@ -147,25 +147,8 @@ def answer(filenames):
     x = train_data
     c = np.ones(k) / float(k)
     ss = np.ones(k) * train_data.var(axis=1).mean()
-    ss = np.ones(k) * 10.0
+    #ss = np.ones(k) * 10.0
     mu = np.random.randint(0, 256, (k, len(train_data[0]))).astype(train_data.dtype)
-
-    if False:
-        print "******************************"
-        print "lets take the best sigmas and vars"
-        keys = [0, 1, 3, 4, 8]
-        for i in range(k):
-            m = keys[i]
-            c[i] = float(len(test_labels == m)) / float(len(test_labels))
-            mu[i] = test_data[test_labels == m].mean(axis=0)
-            ss[i] = test_data[test_labels == m].var(axis=1).mean()
-            ss[i] = 1000
-
-        print "what is the likelihood of this perfection?"
-        print "its", calc_likelihood(x, mu, ss, c)
-
-        print "and the accuracy is", measure_accuracy(mu, ss, c, keys)
-        print "******************************"
 
     #Save likelihood for plot
     likelihood = []
