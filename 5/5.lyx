@@ -429,7 +429,7 @@ Therefore,
  The log likelihood is,
 \begin_inset Formula 
 \[
-\ell(p_{0},...,p_{31})=\sum_{i=1}^{n}\log\left(\sum_{r\in M\left(x_{i}\right)}p_{r}\right)
+\ell(p_{0},...,p_{31})=\sum_{i=1}^{n}\log\left(\frac{1}{10}\sum_{r\in U\left(x_{i}\right)}p_{r}\right)
 \]
 
 \end_inset
@@ -456,7 +456,7 @@ First we calculate
 ,
 \begin_inset Formula 
 \[
-Q\left(\theta;\theta^{t}\right)=\sum_{i=1}^{n}\sum_{r\in U\left(x_{i}\right)}p_{r}\log\left(\sum_{r\in M\left(x_{i}\right)}p_{r}\right)
+Q\left(\theta;\theta^{t}\right)=\sum_{i=1}^{n}\sum_{r\in U\left(x_{i}\right)}c_{ir}\log\left(\frac{1}{10}\sum_{r\in U\left(x_{i}\right)}p_{r}\right)
 \]
 
 \end_inset
@@ -465,7 +465,113 @@ Q\left(\theta;\theta^{t}\right)=\sum_{i=1}^{n}\sum_{r\in U\left(x_{i}\right)}p_{
 \end_layout
 
 \begin_layout Standard
-TODO: hmmmmmm?
+Where 
+\begin_inset Formula 
+\[
+c_{ir}=\frac{p_{r}}{\sum_{t\in U\left(x_{i}\right)}p_{t}}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Find the 
+\begin_inset Formula $p_{r}$
+\end_inset
+
+ values that maximize 
+\begin_inset Formula $Q$
+\end_inset
+
+, using lagrange multipliers, with the restriction 
+\begin_inset Formula $\sum p_{r}=1$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+\lag=\sum_{i=1}^{n}\sum_{r\in U\left(x_{i}\right)}c_{ir}\log\left(\frac{1}{10}\sum_{r\in U\left(x_{i}\right)}p_{r}\right)+\lambda\left(1-\sum_{r=0}^{31}p_{r}\right)
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Derive with respect to 
+\begin_inset Formula $p_{r}$
+\end_inset
+
+:
+\begin_inset Formula 
+\[
+0=\sum_{i=1}^{n}\one\left(r\in U\left(x_{i}\right)\right)c_{ir}-\lambda p_{r}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+p_{r}=\frac{1}{\lambda}\sum_{i=1}^{n}\one\left(r\in U\left(x_{i}\right)\right)c_{ir}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Using the constraint 
+\begin_inset Formula $\sum p_{r}=1$
+\end_inset
+
+:
+\begin_inset Formula 
+\[
+\frac{1}{\lambda}\sum_{r=0}^{31}\sum_{i=1}^{n}\one\left(r\in U\left(x_{i}\right)\right)c_{ir}=1
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{align*}
+\lambda & =\sum_{i=1}^{n}\sum_{r=0}^{31}\one\left(r\in U\left(x_{i}\right)\right)c_{ir}\\
+ & =\sum_{i=1}^{n}\sum_{r=0}^{31}\one\left(r\in U\left(x_{i}\right)\right)\frac{p_{r}}{\sum_{t\in U\left(x_{i}\right)}p_{t}}\\
+ & =\sum_{i=1}^{n}\frac{\sum_{r=0}^{31}\one\left(r\in U\left(x_{i}\right)\right)p_{r}}{\sum_{t\in U\left(x_{i}\right)}p_{t}}\\
+ & =\sum_{i=1}^{n}\frac{\sum_{r\in U\left(x_{i}\right)}p_{r}}{\sum_{t\in U\left(x_{i}\right)}p_{t}}\\
+ & =\sum_{i=1}^{n}1\\
+ & =n
+\end{align*}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+And therefore,
+\begin_inset Formula 
+\[
+p_{r}=\frac{1}{n}\sum_{i=1}^{n}\one\left(r\in U\left(x_{i}\right)\right)c_{ir}
+\]
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Part*
