@@ -777,7 +777,191 @@ Stopping criterion: Measure
 \end_layout
 
 \begin_layout Standard
+\begin_inset Newpage pagebreak
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
 c.
+\end_layout
+
+\begin_layout Standard
+The log likelihood as a function of iteration number:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Graphics
+	filename pics/likelihood.png
+	lyxscale 20
+	scale 30
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $\phantom{A}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+d.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $\phantom{A}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Graphics
+	filename pics/cluster1.png
+	lyxscale 20
+	scale 30
+
+\end_inset
+
+
+\begin_inset Graphics
+	filename pics/cluster2.png
+	lyxscale 20
+	scale 30
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Graphics
+	filename pics/cluster3.png
+	lyxscale 20
+	scale 30
+
+\end_inset
+
+
+\begin_inset Graphics
+	filename pics/cluster4.png
+	lyxscale 20
+	scale 30
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Graphics
+	filename pics/cluster5.png
+	lyxscale 20
+	scale 30
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+As seen above, each cluster corresponds to one digit.
+\end_layout
+
+\begin_layout Standard
+Cluster probabilities and variances:
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+cluster number 0 c: 0.222222222222 ss: 1000.0 
+\end_layout
+
+\begin_layout Plain Layout
+
+cluster number 1 c: 0.21626984127 ss: 1000.0 
+\end_layout
+
+\begin_layout Plain Layout
+
+cluster number 2 c: 0.164682539683 ss: 1000.0 
+\end_layout
+
+\begin_layout Plain Layout
+
+cluster number 3 c: 0.172619047619 ss: 1000.0 
+\end_layout
+
+\begin_layout Plain Layout
+
+cluster number 4 c: 0.224206349207 ss: 1000.0 
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+The variance ss is capped to the range 10-1000, so this is indeed cheating
+ a bit (learning the variance in ways that are not GMM EM).
+ But this is the best I could do.
+\end_layout
+
+\begin_layout Standard
+I also saw that forcing the variance to be 10 at all iterations gave a nice
+ results.
+\end_layout
+
+\begin_layout Standard
+For some reason in my implementation or analysis, the uncapped variance
+ goes too wild.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $\phantom{A}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+We see that the cluster probabilities remain mostly uniform.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $\phantom{A}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+e.
+ The accuracy is around 80%.
+ sometimes as high as 84%, sometimes as low as 73%.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $\phantom{A}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+I've experimented a bit and saw that using the true expectations of the
+ data (using the train_labels), can give accuracy of above 90%.
+ So I believe that our 80% accuracy can be further improved.
 \end_layout
 
 \end_body
